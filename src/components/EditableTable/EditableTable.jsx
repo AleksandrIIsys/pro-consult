@@ -58,93 +58,93 @@ const EditableTable = observer(({ columns, rows, actions }) => {
   }
 
   return (
-    <Table striped bordered hover>
-      <thead>
-      <tr>
-        {columns.map((column) => {
-          return <th key={column.field}>{ column.fieldName }</th>
-        })}
-      </tr>
-      </thead>
-      <tbody>
-      {rowsState.map((row) => {
-        return <tr key={row.id}>
-          <td>
-            {row.id}
-          </td>
-          <td>
-            { isEditMode && rowIDToEdit === row.id
-              ? <Form.Control
-                type='text'
-                defaultValue={editedRow ? editedRow.image : row.image}
-                id={row.id}
-                name='image'
-                onChange={ (e) => handleOnChangeField(e, row.id) }
-              />
-                : <span>{row.image}</span>
-            }
-          </td>
-          <td>
-            { isEditMode && rowIDToEdit === row.id
-              ? <Form.Control
-                type='text'
-                defaultValue={editedRow ? editedRow.title : row.title}
-                id={row.id}
-                name='title'
-                onChange={ (e) => handleOnChangeField(e, row.id) }
-              />
-                : <span className={"title"}>{row.title}</span>
-            }
-          </td>
-          <td>
-            { isEditMode && rowIDToEdit === row.id
-                ? <Form.Control
-                    type='text'
-                    defaultValue={editedRow ? editedRow.text : row.text}
-                    id={row.id}
-                    name='text'
-                    onChange={ (e) => handleOnChangeField(e, row.id) }
-                />
-                : <span>{row.text}</span>
-            }
-          </td>
-          <td>
-            { isEditMode && rowIDToEdit === row.id
-                ? <Form.Control
-                    type='text'
-                    defaultValue={editedRow ? editedRow.date : row.date}
-                    id={row.id}
-                    name='date'
-                    onChange={ (e) => handleOnChangeField(e, row.id) }
-                />
-                : row.date
-            }
-          </td>
-          {actions &&
-          <td>
-            { isEditMode && rowIDToEdit === row.id
-              ? <button onClick={ () => handleSaveRowChanges() } className='custom-table__action-btn' disabled={!editedRow}>
-                <Save />
-              </button>
-              : <button  onClick={ () => handleEdit(row.id) } className='custom-table__action-btn'>
-                <PencilFill />
-              </button>
-            }
-
-            { isEditMode && rowIDToEdit === row.id
-              ? <button onClick={() => handleCancelEditing()} className='custom-table__action-btn'>
-                <XSquare />
-              </button>
-              : <button onClick={() => handleRemoveRow(row.id)} className='custom-table__action-btn'>
-                <Trash />
-              </button>
-            }
-          </td>
-          }
+      <Table striped bordered hover>
+        <thead>
+        <tr>
+          {columns.map((column) => {
+            return <th key={column.field}>{ column.fieldName }</th>
+          })}
         </tr>
-      })}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+        {rowsState.map((row) => {
+          return <tr key={row.id}>
+            <td>
+              {row.id}
+            </td>
+            <td>
+              { isEditMode && rowIDToEdit === row.id
+                  ? <Form.Control
+                      type='text'
+                      defaultValue={editedRow ? editedRow.image : row.image}
+                      id={row.id}
+                      name='image'
+                      onChange={ (e) => handleOnChangeField(e, row.id) }
+                  />
+                  : <span>{row.image}</span>
+              }
+            </td>
+            <td>
+              { isEditMode && rowIDToEdit === row.id
+                  ? <Form.Control
+                      type='text'
+                      defaultValue={editedRow ? editedRow.title : row.title}
+                      id={row.id}
+                      name='title'
+                      onChange={ (e) => handleOnChangeField(e, row.id) }
+                  />
+                  : <span className={"title"}>{row.title}</span>
+              }
+            </td>
+            <td>
+              { isEditMode && rowIDToEdit === row.id
+                  ? <Form.Control
+                      type='text'
+                      defaultValue={editedRow ? editedRow.text : row.text}
+                      id={row.id}
+                      name='text'
+                      onChange={ (e) => handleOnChangeField(e, row.id) }
+                  />
+                  : <span>{row.text}</span>
+              }
+            </td>
+            <td>
+              { isEditMode && rowIDToEdit === row.id
+                  ? <Form.Control
+                      type='text'
+                      defaultValue={editedRow ? editedRow.date : row.date}
+                      id={row.id}
+                      name='date'
+                      onChange={ (e) => handleOnChangeField(e, row.id) }
+                  />
+                  : row.date
+              }
+            </td>
+            {actions &&
+            <td>
+              { isEditMode && rowIDToEdit === row.id
+                  ? <button onClick={ () => handleSaveRowChanges() } className='custom-table__action-btn' disabled={!editedRow}>
+                    <Save />
+                  </button>
+                  : <button  onClick={ () => handleEdit(row.id) } className='custom-table__action-btn'>
+                    <PencilFill />
+                  </button>
+              }
+
+              { isEditMode && rowIDToEdit === row.id
+                  ? <button onClick={() => handleCancelEditing()} className='custom-table__action-btn'>
+                    <XSquare />
+                  </button>
+                  : <button onClick={() => handleRemoveRow(row.id)} className='custom-table__action-btn'>
+                    <Trash />
+                  </button>
+              }
+            </td>
+            }
+          </tr>
+        })}
+        </tbody>
+      </Table>
   );
 });
 

@@ -9,12 +9,17 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./components/AppRouter";
+import WhereWeWork from "./Models/WhereWeWork";
+import NewsPage from "./Models/NewsPage.js";
+
 function App() {
-  return (
-          <BrowserRouter>
+    return (
+        <BrowserRouter>
             <AppRouter/>
-          </BrowserRouter>
-  );
+        </BrowserRouter>
+   /* <NewsPage/>*/
+)
+    ;
 }
 
 export default App;

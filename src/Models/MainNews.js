@@ -14,8 +14,8 @@ const MainNews = observer(() => {
                 <Slider dots={true} infinite={true} speed={1000} slidesToScroll={1} arrows={false} slidesToShow={4}>
                     {
                         news.getNews().map(news_element=>
-                        <NewsElement news={news_element}></NewsElement>
-                    )}
+                            <NewsElement news={news_element}></NewsElement>
+                        )}
                 </Slider>
                 <div className=" news__item__btn"><a href="">Read all news</a>
                 </div>

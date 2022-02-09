@@ -1,8 +1,9 @@
 import React from 'react';
+import {Swiper, SwiperSlide} from "swiper/react";
 
 const SliderElement = (props) => {
     return (
-        <div className="slider__item">
+        <div className={"slider__item"}>
             <img className="img-fluid" src={props.slide.image} alt="..." width="100vw"
                  height="20vh"
                  loading="lazy"/>

@@ -27,8 +27,8 @@ const FooterTest = () => {
 
                     <div className={"copyright__block"}>
 
-                        <div className={"copyright__text"}>
-                            C. Copyright 2021. All the right reserved by PCC.
+                        <div className={"copyright__text"} style={{display: "flex", margin: "auto"}}>
+                            © Copyright 2021. All the right reserved by PCC.
                         </div>
                     </div>
                         <div className="footer__contacts">

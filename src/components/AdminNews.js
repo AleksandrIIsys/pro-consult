@@ -63,20 +63,20 @@ const AdminNews = observer(() => {
                     const fd = new FormData();
                     let d = news.getNews()
                     d.push( {id:String(news.getNews().length+1),image:url,title:document.querySelector(".text_title_send").value,text:document.querySelector(".text_area_news").value,date:'aboba'})
-                            // fd.append('data',JSON.stringify(d))
-                            // await fetch('/api/news/',
-                            //     {
-                            //         method: "POST",
-                            //         body: fd
-                            //     })
+                    // fd.append('data',JSON.stringify(d))
+                    // await fetch('/api/news/',
+                    //     {
+                    //         method: "POST",
+                    //         body: fd
+                    //     })
                     console.log(d);
                 }}/>
             </div>
-        <div className={"news_panel"}>
-            <div>
-                <EditableTable rows={news.getNews()} columns={columns} actions/>
+            <div className={"news_panel"}>
+                <div>
+                    <EditableTable rows={news.getNews()} columns={columns} actions/>
+                </div>
             </div>
-        </div>
         </div>
     );
 });
