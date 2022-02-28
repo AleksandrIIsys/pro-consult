@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import "./css/fonts.css";
 import "./css/media.css";
@@ -13,6 +12,7 @@ import {LOCALES} from "./i18n/Locale";
 import {IntlProvider} from "react-intl";
 import {messages} from "./i18n/Message";
 import {Context} from "./index";
+
 function App() {
     const {locale} = useContext(Context)
     function getInitialLocale() {

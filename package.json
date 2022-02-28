@@ -1,4 +1,4 @@
-{
+  {
   "name": "pro-consult",
   "version": "0.1.0",
   "private": true,
@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://pro-consult-server.herokuapp.com",
   "eslintConfig": {
     "extends": [
       "react-app",
