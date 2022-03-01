@@ -3,7 +3,6 @@ import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import {Form, Modal} from "react-bootstrap";
 import {LOCALES} from "../i18n/Locale";
-import CreatePanel from "./CreatePanel";
 import NewsTable from "./EditableTable/NewsTable";
 import ModalWindow from "./ModalWindow";
 
