@@ -70,7 +70,7 @@ export const NewsTable = observer(({columns, language, actions}) => {
             setIsEditMode(false);
             const fd = new FormData()
             if (file !== null)
-                fd.append('image', file);
+                fd.append('picture', file);
             fd.append("data", JSON.stringify(editedRow))
             editNews(fd).then((res) => {
                 if (res.status === 200) {
