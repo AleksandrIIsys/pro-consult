@@ -69,7 +69,7 @@
 
 .admin_create_news-ta {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 
@@ -158,7 +158,6 @@
     margin: 0%;
 
 }
-
 .admin_panel {
     display: flex;
     flex-direction: row;
@@ -184,30 +183,44 @@
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    height: 100%;
+    width: 100%;
 }
 
 .admin_create_news-image {
-    height: 128px;
-    width: 128px;
-    margin-left: 5px;
+    height: 200px;
+    width: 95%;
+    margin-left: 5%;
     border: 3px solid #5a5959;
-    border-radius: 10%;
+    border-radius: 7%;
+    resize: none;
+    padding: 5px 5px 5px 5px;
+    text-align: justify;
+    float: right;
+}
+.admin_create_news div {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    height: 100%;
 }
 
-.admin_create_news-ta textarea {
+.admin_create_news textarea {
     padding: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     resize: none;
-    height: 100%;
     border: 3px solid #5a5959;
     box-shadow: #4e4e4e;
+    height: 200px;
+    width: 85%;
+    float: left;
 }
 
 .admin_create_news {
     border: #4e4e4e 3px;
     margin: 10px 10px 10px 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .testimonials__slider {

@@ -24,6 +24,7 @@ const AdminNews = observer(() => {
         <div className={"admin_news"}>
             <div className={"top_panel"}>
                 <Form>
+                    <div className="lang" style={{display:"flex" ,paddingRight:"780px"}}>
                     {Object.keys(LOCALES).map(language => {
                         return <Form.Check
                             type={'radio'}
@@ -38,6 +39,7 @@ const AdminNews = observer(() => {
                             }
                         />
                     })}
+                    </div>
                 </Form>
                 <ModalWindow/>
             </div>
