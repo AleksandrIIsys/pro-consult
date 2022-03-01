@@ -1,21 +1,16 @@
 import React, {useContext, useEffect} from 'react';
 import Home from "../pages/Home";
-import {useRoutes} from "react-router";
 import {ADMIN_ROUTER, HOME_ROUTER, MAIN_ROUTER, NEWS_ROUTER, WHEREWEWORK_ROUTER} from "../utils/consts";
 import News from "../pages/News";
 import Admin from "../pages/Admin";
 import AdminNews from "./AdminNews";
 import {Context} from "../index";
-import {Route,Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import WhereWeWork from "../pages/WhereWeWork";
-import Header from "../Models/Header";
-import MainSlider from "../Models/MainSlider";
 import MainPage from "../pages/MainPage";
 import {fetchClients, fetchNews, fetchPartners, fetchTestimonials} from "../http/Api";
-import TestimonialsTable from "./EditableTable/TestimonialsTable";
 import AdminTestimonials from "./AdminTestimonials";
 import AdminClients from "./AdminClients";
-import PartnersElement from "../Models/PartnersElement";
 import AdminPartners from "./AdminPartners";
 
 const AppRouter = ({currentLocale,handleChangeLocale}) => {
@@ -41,6 +36,7 @@ const AppRouter = ({currentLocale,handleChangeLocale}) => {
             clients.setClients(data)
         })
         fetchPartners().then((data)=>{
+
             data.forEach((elem, index) => {
                 elem.id = index + 1
             });
