@@ -1,11 +1,7 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 import {LOCALES} from "../i18n/Locale";
 import {useDropzone} from "react-dropzone";
-import {Context} from "../index";
-import {createNews} from "../http/Api";
 import {Form} from "react-bootstrap";
-import {set} from "mobx";
-
 const CreatePanel = (props) => {
     const [newNews,setNewNews] = useState(props.data)
     useEffect(()=>{setNewNews(props.data)
@@ -44,9 +40,10 @@ const CreatePanel = (props) => {
     return (
         <div>
             <div className={"admin_create_news"}>
-                <div className={"admin_create_news-ta"}>
+                 <div className="lang" style={{display:"flex"}}>
                     {Object.keys(LOCALES).map(_language => {
                         return <Form.Check
+                            inline
                             type={'radio'}
                             name={"group1"}
                             label={_language}
@@ -59,6 +56,7 @@ const CreatePanel = (props) => {
                             }
                         />
                     })}
+                 </div>
                     <input
                         type={"text"}
                         className={"text_title_send"}
@@ -67,6 +65,7 @@ const CreatePanel = (props) => {
                         onChange={(e) => {
                             handleChangeText(e)
                         }}/>
+                <div>
                     <textarea
                         className={"text_area_news"}
                         value={textEdit}
@@ -75,17 +74,18 @@ const CreatePanel = (props) => {
                         onChange={(e) => {
                             handleChangeText(e)
                         }}/>
-                </div>
                 <div style={{cursor: 'pointer'}} {...getRootProps()}>
                     <input {...getInputProps()} />
 
                     {
                         haveIMG ? <img src={url} className={'admin_create_news-image'}/> :
                             isDragActive ?
-                                <p>Drop the files here ...</p> :
-                                <p>Drag 'n' drop some files here, or click to select files</p>
+                                <p className={'admin_create_news-image'} >Drop the files here ...</p> :
+                                <p className={'admin_create_news-image'} >Drag 'n' drop some files here, or click to select files...</p>
                     }
                 </div>
+                </div>
+
             </div>
         </div>
     );
