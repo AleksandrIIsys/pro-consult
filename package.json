@@ -29,7 +29,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://pro-consult-server.herokuapp.com",
+  "proxy": {
+    "/img": {
+      "target": "https://pro-consult-server.herokuapp.com",
+      "secure": false
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
