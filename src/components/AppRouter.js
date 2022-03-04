@@ -3,15 +3,15 @@ import Home from "../pages/Home";
 import {ADMIN_ROUTER, HOME_ROUTER, MAIN_ROUTER, NEWS_ROUTER, WHEREWEWORK_ROUTER} from "../utils/consts";
 import News from "../pages/News";
 import Admin from "../pages/Admin";
-import AdminNews from "./AdminNews";
+import AdminNews from "./AdminNews/AdminNews";
 import {Context} from "../index";
 import {Route, Routes} from "react-router-dom";
 import WhereWeWork from "../pages/WhereWeWork";
 import MainPage from "../pages/MainPage";
 import {fetchClients, fetchNews, fetchPartners, fetchTestimonials} from "../http/Api";
-import AdminTestimonials from "./AdminTestimonials";
-import AdminClients from "./AdminClients";
-import AdminPartners from "./AdminPartners";
+import AdminTestimonials from "./AdminTestimonials/AdminTestimonials";
+import AdminClients from "./AdminClients/AdminClients";
+import AdminPartners from "./AdminPartenrs/AdminPartners";
 
 const AppRouter = ({currentLocale,handleChangeLocale}) => {
     const {news,testimonials,partners,clients} = useContext(Context)

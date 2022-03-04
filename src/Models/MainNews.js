@@ -10,7 +10,7 @@ const MainNews = observer(() => {
     return (
         <div className="news">
             {
-                news.getNews().length > 4 ?
+                news.getNews().length > 3 ?
             <div className="container">
 
 

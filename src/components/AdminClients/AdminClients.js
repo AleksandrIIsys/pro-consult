@@ -1,12 +1,9 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, {useCallback, useContext, useState} from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
-import {LOCALES} from "../i18n/Locale";
+import {Context} from "../../index";
 import {useDropzone} from "react-dropzone";
-import {Form} from "react-bootstrap";
-import {createClient} from "../http/Api";
-import TestimonialsTable from "./EditableTable/TestimonialsTable";
-import ClientsTable from "./EditableTable/ClientsTable";
+import {createClient} from "../../http/Api";
+import ClientsTable from "../EditableTable/ClientsTable";
 
 const AdminClients = observer(() => {
     const {clients} = useContext(Context)

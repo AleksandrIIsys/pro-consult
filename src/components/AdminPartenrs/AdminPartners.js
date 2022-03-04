@@ -1,12 +1,9 @@
 import React, {useCallback, useContext, useState} from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
+import {Context} from "../../index";
 import {useDropzone} from "react-dropzone";
-import {createClient, createPartner} from "../http/Api";
-import ClientsTable from "./EditableTable/ClientsTable";
-import PartnersElement from "../Models/PartnersElement";
-import PartnersTable from "./EditableTable/PartnersTable";
-import {Button} from "react-yandex-maps";
+import {createPartner} from "../../http/Api";
+import PartnersTable from "../EditableTable/PartnersTable";
 
 const AdminPartners = observer(() => {
     const {partners} = useContext(Context)

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {Map, Placemark, YMaps} from "react-yandex-maps";
 
 const EventLocation = (() => {
-    const [load,setLoad] = useState(false)
     return (
     <div className="location">
         <div className="textLocation">

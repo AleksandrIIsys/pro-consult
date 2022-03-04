@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import {deleteClient, editClient} from "../../http/Api";
-import {Form, Table} from "react-bootstrap";
+import {Table} from "react-bootstrap";
 import {PencilFill, Save, Trash, XSquare} from "react-bootstrap-icons";
 
 const ClientsTable = observer(({columns, language, actions}) => {

@@ -115,8 +115,8 @@
 //     })
 //     return resualt
 // }
-const uri = "https://pro-consult-server.herokuapp.com"
-// const uri = "http://localhost:5000"
+// const uri = "https://pro-consult-server.herokuapp.com"
+const uri = "http://localhost:5000"
 export const fetchNews = async () => {
     const data = await fetch(`${uri}/api/news/`).then((response) => {
         return response.json()

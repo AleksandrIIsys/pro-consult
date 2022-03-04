@@ -7,10 +7,11 @@ import {FormattedMessage} from "react-intl";
 
 const MainClients = observer(() => {
     const {clients} = useContext(Context);
+    console.log(clients.getClients())
     return (
         <div className={"clients"}>
             {
-                clients.getClients().length > 4 ?
+                clients.getClients().length > 3 ?
             <div>
             <div className="clients__title">
                 <FormattedMessage id={"our_clients"}/>

@@ -15,8 +15,7 @@ const MainTestimonials = observer(() => {
                         <FormattedMessage id={'testimonials_title'}/>
                     </div>
                     <div className="testimonials__slider">{
-                        testimonials.getTestimonials().map((o,key) => <TestimonialsElement
-                            testimonials={o} key={key}></TestimonialsElement>)}
+                        testimonials.getTestimonials().map((o,key) => <TestimonialsElement testimonials={o} key={key}/>)}
                     </div>
                 </div>
                     : <></>

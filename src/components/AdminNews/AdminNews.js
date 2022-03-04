@@ -1,9 +1,9 @@
 import React, { useContext, useState} from 'react';
-import {Context} from "../index";
+import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import {Form, Modal} from "react-bootstrap";
-import {LOCALES} from "../i18n/Locale";
-import NewsTable from "./EditableTable/NewsTable";
+import {LOCALES} from "../../i18n/Locale";
+import NewsTable from "../EditableTable/NewsTable";
 import ModalWindow from "./ModalWindow";
 
 const AdminNews = observer(() => {

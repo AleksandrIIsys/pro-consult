@@ -127,7 +127,7 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 100%;
     margin-bottom: 10px;
 }
@@ -880,6 +880,8 @@ ul.breadcrumb li a:hover {
 
 .footer__short-menu, .footer__sitemap {
     display: flex;
+    justify-self: self-start;
+    height: 60%;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
@@ -890,7 +892,7 @@ ul.breadcrumb li a:hover {
     text-align: center;
     margin: 0 auto;
     font-size: 14px;
-    color: black;
+    color: white;
 }
 
 .footer__short-menu-title, .footer__sitemap-title {

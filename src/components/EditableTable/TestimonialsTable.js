@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Form, Table} from "react-bootstrap";
 import {PencilFill, Save, Trash, XSquare} from 'react-bootstrap-icons';
 import './EditableTable.styles.scss';

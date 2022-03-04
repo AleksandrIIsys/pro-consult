@@ -1,12 +1,10 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../index";
+import {Context} from "../../index";
 import {Form} from "react-bootstrap";
-import {LOCALES} from "../i18n/Locale";
-import CreatePanel from "./CreatePanel";
-import NewsTable from "./EditableTable/NewsTable";
-import TestimonialsTable from "./EditableTable/TestimonialsTable";
-import {createNews, createTestimonial} from "../http/Api";
+import {LOCALES} from "../../i18n/Locale";
+import TestimonialsTable from "../EditableTable/TestimonialsTable";
+import {createTestimonial} from "../../http/Api";
 import {useDropzone} from "react-dropzone";
 
 const AdminTestimonials = observer(() => {

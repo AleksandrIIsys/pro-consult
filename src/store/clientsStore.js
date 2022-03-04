@@ -18,6 +18,7 @@ export default class ClientsStore{
         this._clients[this._clients.map(elem=>{return elem._id}).indexOf(edit._id)] = edit
     }
     getClients(){
+        console.log(this._clients);
         return this._clients;
     }
 }

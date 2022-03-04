@@ -188,8 +188,7 @@
 }
 
 .admin_create_news-image {
-    height: 200px;
-    width: 95%;
+    width: 150px;
     margin-left: 5%;
     border: 3px solid #5a5959;
     border-radius: 7%;
@@ -291,7 +290,9 @@
 }
 
 .copyright__block {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .copyright__text {
@@ -306,7 +307,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
-    padding-bottom: 2vw;
     background-color: white;
 }
 
@@ -318,7 +318,7 @@
 
 .rofl {
     padding: 5px 0px 5px 0px;
-    height: 130px;
+    height: 140px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

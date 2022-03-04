@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
-import {deleteClient, deletePartner, editClient, editPartner} from "../../http/Api";
+import {deletePartner, editPartner} from "../../http/Api";
 import {Table} from "react-bootstrap";
 import {PencilFill, Save, Trash, XSquare} from "react-bootstrap-icons";
 

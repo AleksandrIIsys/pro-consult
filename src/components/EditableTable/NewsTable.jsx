@@ -5,7 +5,6 @@ import './EditableTable.styles.scss';
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
 import {deleteNews, editNews} from "../../http/Api";
-import {forEach} from "react-bootstrap/ElementChildren";
 
 export const NewsTable = observer(({columns, language, actions}) => {
     const {news} = useContext(Context);
