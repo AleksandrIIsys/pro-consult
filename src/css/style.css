@@ -991,7 +991,7 @@ footer {
 
 }
 
-.services {
+.services, aboutus {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -1001,7 +1001,7 @@ footer {
     background-color: white;
 }
 
-.plan, .design, .delivery {
+.plan, .design, .delivery, .manage, .decomission, .procurement{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1010,11 +1010,11 @@ footer {
 
 }
 
-.plan__contents, .design__contents, .delivery__contents {
+.plan__contents, .design__contents, .delivery__contents, .manage__contents, .decomissoin__contents {
     /* border-bottom: 5px groove #15337eed ; */
 }
 
-.plan__title, .design__title, .delivery__title {
+.plan__title, .design__title, .delivery__title, .manage__title, .decomission__title {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1022,7 +1022,7 @@ footer {
     text-align: center;
 }
 
-.plan__title p, .design__title p, .delivery__title p {
+.plan__title p, .design__title p, .delivery__title p , .manage__title p, .decomission__title p{
     margin: 20px 20px;
     /* font-family: 'Merriweather', serif; */
     position: relative;
@@ -1038,7 +1038,7 @@ footer {
     line-height: 1;
 }
 
-.plan__title p::before, .design__title p::before, .delivery__title p::before {
+.plan__title p::before, .design__title p::before, .delivery__title p::before, .manage__title p::before, .decomission__title p::before {
     content: "";
     position: absolute;
     width: 25px;
@@ -1049,7 +1049,7 @@ footer {
     box-sizing: border-box;
 }
 
-.plan__content, .design__content, .delivery__content {
+.plan__content, .design__content, .delivery__content, .manage__content, .decomission__content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -1057,7 +1057,7 @@ footer {
 }
 
 .plan__content-text, .design__content-text,
-.delivery__content-text {
+.delivery__content-text, .manage__content-text, .decomission__content-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1069,7 +1069,7 @@ footer {
     line-height: 26px;
 }
 
-.plan__content-text ul, .design__content-text ul, .delivery__content-text ul {
+.plan__content-text ul, .design__content-text ul, .delivery__content-text ul, .manage__content-text ul, .decomission__content-text ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1078,8 +1078,22 @@ footer {
     text-indent: 0;
     flex-wrap: wrap;
 }
+.headtext{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+    text-indent: 0;
+    flex-wrap: wrap;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #15337eed;
+    word-wrap: normal;
+}
 
-.plan__content-text li, .design__content-text li, .delivery__content-text li {
+.plan__content-text li, .design__content-text li, .delivery__content-text li, .manage__content-text li, .decomission__content-text li {
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
@@ -1099,7 +1113,7 @@ footer {
 }
 
 .plan__content-text li::before, .design__content-text li::before,
-.delivery__content-text li::before {
+.delivery__content-text li::before, .manage__content-text li::before, .decomission__content-text li::before {
     font-family: 'icomoon';
     content: "\f105";
     font-size: 20px;
