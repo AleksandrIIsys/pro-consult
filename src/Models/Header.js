@@ -52,9 +52,9 @@ const Header = ({currentLocale,handleChangeLocale}) => {
                                             <ul className="submenu">
                                                 <li><Link to={"/what-we-do/services#plan"}><FormattedMessage id={"plan"}/></Link></li>
                                                 <li><Link to={"/what-we-do/services#design"}><FormattedMessage id={"design"}/></Link></li>
-                                                <li><a href="#delivery"><FormattedMessage id={"deliver"}/></a></li>
-                                                <li><a href="#manage"><FormattedMessage id={"manage"}/></a></li>
-                                                <li><a href="#decommission"><FormattedMessage id={"decommission"}/></a></li>
+                                                <li><Link to={"/what-we-do/services#delivery"}><FormattedMessage id={"deliver"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services#manage"}><FormattedMessage id={"manage"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services#decommission"}><FormattedMessage id={"decommission"}/></Link></li>
                                             </ul>
                                         </li>
                                         <li><a href="/what-we-do/education"><FormattedMessage id={"education"}/></a>
