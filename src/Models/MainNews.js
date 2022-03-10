@@ -26,14 +26,16 @@ const MainNews = observer(() => {
                     slidesPerView={4}>
                     {
                     news.getNews().map((news_element,key)=>
-                        <SwiperSlide className="news__item"  key={key}>
-                        <img src= {news_element.image} alt=""/>
-                        <div className="news__item__title">
-                            {news_element.title[locale.getLocale()]}
-                        </div>
-                        <div className="news__item__text">
-                            {news_element.text[locale.getLocale()]}
-                        </div>
+                        <SwiperSlide  key={key}>
+                            <div className="news__item">
+                                <img src= {news_element.image}  alt=""/>
+                                <div className="news__item__title">
+                                    {news_element.title[locale.getLocale()]}
+                                </div>
+                                <div className="news__item__text">
+                                    {news_element.text[locale.getLocale()]}
+                                </div>
+                            </div>
                         </SwiperSlide>
                     )}
                 </Swiper>
