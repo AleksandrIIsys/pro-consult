@@ -3,6 +3,7 @@ import {LOCALES} from "../i18n/Locale";
 import {FormattedMessage, IntlProvider} from "react-intl";
 import {MessageHeader} from "../i18n/MessageHeader";
 import {NavLink} from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Header = ({currentLocale,handleChangeLocale}) => {
     const languages = [
@@ -29,35 +30,34 @@ const Header = ({currentLocale,handleChangeLocale}) => {
                                     <FormattedMessage id={"who_we_are"}/><span
                                     className="fa fa-angle-down"></span></div>
                                     <ul className="submenu">
-                                        <li><a href="about.html"><FormattedMessage id={"about_us"}/></a></li>
-                                        <li><a href=""><FormattedMessage id={"governance"}/></a></li>
-                                        <li><a href=""><FormattedMessage id={"foundation"}/></a></li>
-                                        <li><a href=""><FormattedMessage id={"partners"}/></a></li>
-                                        <li><a href=""><FormattedMessage id={"membership"}/></a></li>
-                                        <li><a href=""><FormattedMessage id={"police"}/> </a></li>
-                                        <li><a href=""><FormattedMessage id={"references"}/></a></li>
+                                        <li><Link to={"/about-us#about-us"}><FormattedMessage id={"about_us"}/></Link></li>
+                                        <li><Link to={"/about-us#foundation"}><FormattedMessage id={"foundation"}/></Link></li>
+                                        <li><Link to={"/about-us#partners"}><FormattedMessage id={"partners"}/></Link></li>
+                                        <li><Link to={"/about-us#membership"}><FormattedMessage id={"membership"}/></Link></li>
+                                        <li><Link to={"/about-us#polices"}><FormattedMessage id={"police"}/></Link></li>
+                                        <li><Link to={"/about-us#references"}><FormattedMessage id={"references"}/> </Link></li>
                                     </ul>
                                 </li>
                                 <li><div><FormattedMessage id={"what_we_do"}/><i className="bi bi-caret-right-fill"></i></div>
                                     <ul className="submenu">
-                                        <li><a href=""><FormattedMessage id={"sectors"}/></a>
+                                        <li><a href="/what-we-do/sectors"><FormattedMessage id={"sectors"}/></a>
                                             <ul className="submenu">
-                                                <li><a href=""><FormattedMessage id={"water_and_environment"}/></a></li>
-                                                <li><a href=""><FormattedMessage id={"energy_and_resources"}/></a></li>
-                                                <li><a href=""><FormattedMessage id={"transport"}/></a></li>
-                                                <li><a href=""><FormattedMessage id={"telecommunication"}/></a></li>
+                                                <li><Link to={"/what-we-do/sectors#water-environment"}><FormattedMessage id={"water_and_environment"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors#energy"}><FormattedMessage id={"energy_and_resources"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors#transport"}><FormattedMessage id={"transport"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors#telecommunication"}><FormattedMessage id={"telecommunication"}/></Link></li>
                                             </ul>
                                         </li>
-                                        <li><a href="services.html"><FormattedMessage id={"services"}/></a>
+                                        <li><a href="/what-we-do/services"><FormattedMessage id={"services"}/></a>
                                             <ul className="submenu">
-                                                <li><a href="services.html#plan"><FormattedMessage id={"plan"}/></a></li>
-                                                <li><a href="#design"><FormattedMessage id={"design"}/></a></li>
+                                                <li><Link to={"/what-we-do/services#plan"}><FormattedMessage id={"plan"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services#design"}><FormattedMessage id={"design"}/></Link></li>
                                                 <li><a href="#delivery"><FormattedMessage id={"deliver"}/></a></li>
                                                 <li><a href="#manage"><FormattedMessage id={"manage"}/></a></li>
                                                 <li><a href="#decommission"><FormattedMessage id={"decommission"}/></a></li>
                                             </ul>
                                         </li>
-                                        <li><a href=""><FormattedMessage id={"education"}/></a>
+                                        <li><a href="/what-we-do/education"><FormattedMessage id={"education"}/></a>
                                         </li>
                                     </ul>
                                 </li>

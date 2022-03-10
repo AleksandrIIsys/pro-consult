@@ -4,7 +4,7 @@ import FooterTest from "../Models/FooterTest";
 const Sectors = () => {
     return (
         <div>
-            <div id='design' className="design">
+            <div id='water-environment' className="design">
                 <div className="container">
                     <div className="design__contents">
                         <div className="design__title">
@@ -76,7 +76,7 @@ const Sectors = () => {
                 </div>
             </div>
 
-            <div id='plan' className="plan">
+            <div id='energy' className="plan">
                 <div className="container">
                     <div className="plan__contents">
                         <div className="plan__title">
@@ -112,7 +112,7 @@ const Sectors = () => {
                     </div>
                 </div>
             </div>
-            <div id='design' className="design">
+            <div id='transport' className="design">
                 <div className="container">
                     <div className="design__contents">
                         <div className="design__title">
@@ -142,7 +142,7 @@ const Sectors = () => {
                         </div>
                     </div>
                 </div>
-                <div id='delivery' className="delivery">
+                <div id='telecommunication' className="delivery">
                     <div className="container">
                         <div className="delivery__contents">
                             <div className="delivery__title">

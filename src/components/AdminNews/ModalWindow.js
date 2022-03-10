@@ -75,6 +75,7 @@ const ModalWindow = () => {
                                 event.target.disabled = false
                             })
                         })
+                        handleClose();
                     }}>
                         Add
                     </Button>

@@ -6,8 +6,9 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../css/style.css"
+import {observer} from "mobx-react-lite";
 
-const Careers = () => {
+const Careers = observer(() => {
     const {news} = useContext(Context)
     return (
         <div>
@@ -46,6 +47,6 @@ const Careers = () => {
             <FooterTest/>
         </div>
     );
-};
+});
 
 export default Careers;

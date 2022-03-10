@@ -4,7 +4,7 @@ import FooterTest from "../Models/FooterTest";
 const AboutUs = () => {
     return (
         <div>
-            <div id='design' className="design">
+            <div id='about-us' className="design">
                 <div className="container">
                     <div className="design__contents">
                         <div className="design__title">
@@ -31,8 +31,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-
-            <div id='plan' className="plan">
+            <div id='foundation' className="plan">
                 <div className="container">
                     <div className="plan__contents">
                         <div className="plan__title">
@@ -55,7 +54,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div id='design' className="design">
+            <div id='partners' className="design">
                 <div className="container">
                     <div className="design__contents">
                         <div className="design__title">
@@ -85,7 +84,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div id='delivery' className="delivery">
+                <div id='membership' className="delivery">
                     <div className="container">
                         <div className="delivery__contents">
                             <div className="delivery__title">
@@ -112,7 +111,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div id='delivery' className="delivery">
+                <div id='polices' className="delivery">
                     <div className="container">
                         <div className="delivery__contents">
                             <div className="delivery__title">
@@ -139,7 +138,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
-                <div id='delivery' className="delivery">
+                <div id='references' className="delivery">
                     <div className="container">
                         <div className="delivery__contents">
                             <div className="delivery__title">

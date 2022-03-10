@@ -5,7 +5,7 @@ import FooterTest from "../Models/FooterTest";
 const Services = () => {
     return (
         <div>
-            <div id='plan' className="plan">
+            <div id='Initiation' className="plan">
                 <div className="container">
                     <div className="plan__contents">
                         <div className="plan__title">
@@ -102,7 +102,7 @@ const Services = () => {
                         </div>
                     </div>
                 </div>
-                <div id='design' className="design">
+                <div id='procurement' className="design">
                     <div className="container">
                         <div className="design__contents">
                             <div className="design__title">
