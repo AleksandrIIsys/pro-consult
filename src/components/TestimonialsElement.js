@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
 import {Context} from "../index";
+import {observer} from "mobx-react-lite";
 
-const TestimonialsElement = (props) => {
+const TestimonialsElement = observer((props) => {
     const {locale} = useContext(Context)
     return (
         <div className="testimonials__items">
@@ -20,6 +21,6 @@ const TestimonialsElement = (props) => {
 
         </div>
     );
-};
+});
 
 export default TestimonialsElement;

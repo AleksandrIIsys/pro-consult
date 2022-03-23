@@ -11,7 +11,7 @@ import {IntlProvider} from "react-intl";
 
 const MainSlider = ({currentLocale}) => {
     const [slides,setSlides] = useState([
-        {image:"../image/slider/slider_img-1.jpg",
+        {image:"/image/slider/slider_img-1.jpg",
             lang:{
                 [LOCALES.ENGLISH]:
                     {
@@ -31,7 +31,7 @@ const MainSlider = ({currentLocale}) => {
             },
 
         },
-        {image:"../image/slider/slider_img-2.jpg",
+        {image:"/image/slider/slider_img-2.jpg",
             lang:{
                 [LOCALES.ENGLISH]:
                     {
@@ -50,7 +50,7 @@ const MainSlider = ({currentLocale}) => {
                     },
             }
         },
-        {image:"../image/slider/slider_img-3.jpg",
+        {image:"/image/slider/slider_img-3.jpg",
             lang:{
                 [LOCALES.ENGLISH]:
                     {

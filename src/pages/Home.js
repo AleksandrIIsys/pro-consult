@@ -9,6 +9,7 @@ function Home({currentLocale,handleChangeLocale}) {
             <Header currentLocale={currentLocale} handleChangeLocale={handleChangeLocale}></Header>
             <MainSlider currentLocale={currentLocale}></MainSlider>
             <Outlet></Outlet>
+
         </div>
     );
 }

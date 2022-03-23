@@ -5,7 +5,7 @@ import News from "../pages/News";
 import Admin from "../pages/Admin";
 import AdminNews from "./AdminNews/AdminNews";
 import {Context} from "../index";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes,Navigate} from "react-router-dom";
 import WhereWeWork from "../pages/WhereWeWork";
 import MainPage from "../pages/MainPage";
 import {fetchClients, fetchNews, fetchPartners, fetchTestimonials} from "../http/Api";
@@ -17,6 +17,27 @@ import Careers from "../pages/Careers";
 import Education from "../pages/Education";
 import Services from "../pages/Services";
 import Sectors from "../pages/Sectors";
+import NewServices from "../pages/NewServices";
+import NewSectors from "../pages/NewSectors";
+import SectorsText from "./Sectors/SectorsText";
+import WaterText from "./WaterText";
+import TransportText from "./Sectors/TransportText";
+import ServicesText from "./Services/ServicesText";
+import InitiationText from "./Services/InitiationText";
+import PlanText from "./Services/PlanText";
+import DesignText from "./Services/DesignText";
+import ProcurementText from "./Services/ProcurementText";
+import DeliverText from "./Services/DeliverText";
+import DecommissionText from "./Services/DecommissionText";
+import EnergyText from "./Sectors/EnergyText";
+import TelecommunicationText from "./Sectors/TelecommunicationText";
+import Contacts from "../pages/Contacts";
+import NewAbout from "../pages/NewAbout";
+import NewsCard from "../pages/NewsCard";
+import EducationCard from "../pages/EducationCard";
+import About from "./EducationCard/about";
+import Teachers from "./EducationCard/Teachers";
+import Feedback from "./EducationCard/Feedback";
 
 const AppRouter = ({currentLocale,handleChangeLocale}) => {
     const {news,testimonials,partners,clients} = useContext(Context)
@@ -57,14 +78,36 @@ const AppRouter = ({currentLocale,handleChangeLocale}) => {
             <Route exact path={HOME_ROUTER} element={<Home currentLocale={currentLocale} handleChangeLocale={handleChangeLocale}/>}>
                 <Route path={MAIN_ROUTER} element={<MainPage/>}/>
                 <Route  path={NEWS_ROUTER} element={<News/>}/>
+                <Route path={NEWS_ROUTER+"/:id"} element={<NewsCard/>}/>
                 <Route  path={WHEREWEWORK_ROUTER} element={<WhereWeWork/>}/>
-                <Route path={ABOUTUS} element={<AboutUs/>}/>
+                <Route path={ABOUTUS} element={<NewAbout/>}/>
                 <Route path={"careers"} element={<Careers/>}/>
+                <Route path={"*"} element={<Navigate to={"/"}/>}/>
                 <Route path={"what-we-do"}>
                     <Route path={"education"} element={<Education/>}/>
-                    <Route path={"services"} element={<Services/>}/>
-                    <Route path={"sectors"} element={<Sectors/>}/>
+                    <Route path={"education/:id"} element={<EducationCard/>}>
+                        <Route index element={<About/>}/>
+                        <Route path={"teachers"} element={<Teachers/>}/>
+                        <Route path={"feedback"} element={<Feedback/>}/>
+                    </Route>
+                    <Route path={"services"} element={<NewServices/>}>
+                        <Route index element={<ServicesText/>}/>
+                        <Route path={"initiation-and-conception"} element={<InitiationText/>}/>
+                        <Route path={"plan"} element={<PlanText/>}/>
+                        <Route path={"design"} element={<DesignText/>}/>
+                        <Route path={"procurement"} element={<ProcurementText/>}/>
+                        <Route path={"deliver"} element={<DeliverText/>}/>
+                        <Route path={"decommission"} element={<DecommissionText/>}/>
+                    </Route>
+                    <Route path={"sectors"} element={<NewSectors/>}>
+                        <Route index element={<SectorsText/>} />
+                        <Route path={"waterandenvironment"} element={<WaterText/>} />
+                        <Route path={"energyandresouces"} element={<EnergyText/>} />
+                        <Route path={"transport"} element={<TransportText/>} />
+                        <Route path={"telecommunication"} element={<TelecommunicationText/>} />
+                    </Route>
                 </Route>
+                <Route path={"contacts"} element={<Contacts/>}/>
             </Route>
 
             <Route  path={ADMIN_ROUTER} element={<Admin/>}>

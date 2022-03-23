@@ -18,7 +18,7 @@ const Header = ({currentLocale,handleChangeLocale}) => {
                     <div className="header__inner">
                         <div className="header__content-logo">
                             <NavLink to={'/'}>
-                                <img src="../image/logo.png" alt=""/>
+                                <img src="/image/logo.png" alt=""/>
                             </NavLink>
                         </div>
                         <nav>
@@ -42,31 +42,29 @@ const Header = ({currentLocale,handleChangeLocale}) => {
                                     <ul className="submenu">
                                         <li><a href="/what-we-do/sectors"><FormattedMessage id={"sectors"}/></a>
                                             <ul className="submenu">
-                                                <li><Link to={"/what-we-do/sectors#water-environment"}><FormattedMessage id={"water_and_environment"}/></Link></li>
-                                                <li><Link to={"/what-we-do/sectors#energy"}><FormattedMessage id={"energy_and_resources"}/></Link></li>
-                                                <li><Link to={"/what-we-do/sectors#transport"}><FormattedMessage id={"transport"}/></Link></li>
-                                                <li><Link to={"/what-we-do/sectors#telecommunication"}><FormattedMessage id={"telecommunication"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors/waterandenvironment"}><FormattedMessage id={"water_and_environment"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors/energyandresouces"}><FormattedMessage id={"energy_and_resources"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors/transport"}><FormattedMessage id={"transport"}/></Link></li>
+                                                <li><Link to={"/what-we-do/sectors/telecommunication"}><FormattedMessage id={"telecommunication"}/></Link></li>
                                             </ul>
                                         </li>
                                         <li><a href="/what-we-do/services"><FormattedMessage id={"services"}/></a>
                                             <ul className="submenu">
-                                                <li><Link to={"/what-we-do/services#plan"}><FormattedMessage id={"plan"}/></Link></li>
-                                                <li><Link to={"/what-we-do/services#design"}><FormattedMessage id={"design"}/></Link></li>
-                                                <li><Link to={"/what-we-do/services#delivery"}><FormattedMessage id={"deliver"}/></Link></li>
-                                                <li><Link to={"/what-we-do/services#manage"}><FormattedMessage id={"manage"}/></Link></li>
-                                                <li><Link to={"/what-we-do/services#decommission"}><FormattedMessage id={"decommission"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services/initiation-and-conception"}>Initiation & Conception</Link></li>
+                                                <li><Link to={"/what-we-do/services/plan"}><FormattedMessage id={"plan"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services/design"}><FormattedMessage id={"design"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services/procurement"}>Procurement</Link></li>
+                                                <li><Link to={"/what-we-do/services/delivery"}><FormattedMessage id={"deliver"}/></Link></li>
+                                                <li><Link to={"/what-we-do/services/decommission"}><FormattedMessage id={"decommission"}/></Link></li>
                                             </ul>
                                         </li>
                                         <li><a href="/what-we-do/education"><FormattedMessage id={"education"}/></a>
                                         </li>
                                     </ul>
                                 </li>
-
-                                <li><a href={"/where-we-work"}><FormattedMessage id={"where_we_work"}/><span className="fa fa-angle-down"></span></a>
-                                </li>
                                 <li><a href="/news"><FormattedMessage id={"news"}/><span className="fa fa-angle-down"></span></a></li>
-                                <li><a href=""><FormattedMessage id={"careers"}/><span className="fa fa-angle-down"></span></a></li>
-                                <li><a href=""><FormattedMessage id={"contact"}/> <span className="fa fa-angle-down"></span></a></li>
+                                <li><a href="/careers"><FormattedMessage id={"careers"}/><span className="fa fa-angle-down"></span></a></li>
+                                <li><a href="/contacts"><FormattedMessage id={"contact"}/> <span className="fa fa-angle-down"></span></a></li>
                             </ul>
                         </nav>
                     </div>

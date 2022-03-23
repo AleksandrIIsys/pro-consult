@@ -1,0 +1,206 @@
+.menu__choose{
+    display: flex;
+    justify-content: space-around;
+    font-size: 22px;
+    margin: 0 230px 0 230px;
+}
+.menu__choose .choosing_element{
+    width: 210px;
+    height: 100%;
+    display: flex;
+    font-family: Raleway;
+    justify-content: center;
+    align-items: center;
+}
+.active_menu_choose div{
+    color: rgba(21,51,126,0.5);
+}
+.menu__choose .choosing_element:hover{
+    color: rgba(21,51,126,0.5);
+}
+.menu__choose a{
+    color:#15337e;
+    font-weight: 600;
+    text-align: center;
+}
+.services_main_text{
+    font-weight: 600;
+}
+.services_main_title{
+    font-family: SansSerifBold;
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.courses__item__btn:hover{
+    background-color: #15337eed;
+}
+.courses__item__btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    color: #15337e;
+}
+.courses__item__btn a:hover{
+    color: white;
+}
+.courses__item__btn{
+    border: 2px solid #15337eed;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}
+.course__button{
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #15337e;
+}
+.course__table__body tr td{
+    margin: 5px;
+}
+.course__button:hover{
+    cursor: pointer;
+
+}
+.course__table{
+    margin-top:40px;
+}
+
+.services_main, .services_menu,.course__table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.services_main{
+    margin-bottom: 60px;
+}
+.by_sectors_menu{
+    background-color:rgba(51,51,51,0.1);
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.image_sectors_container,.image_service_container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:20px
+}
+.block__text{
+    margin-bottom: 40px;
+}
+.block__text .headtext{
+    font-family: SansSerifBold;
+}
+.block__text p{
+    text-align: justify;
+    font-family: "Verdana";
+    font-size: 18px;
+}
+.image_sectors_container  div,
+.image_service_container  div{
+    position: relative;
+}
+.image_sectors_container div :hover,
+.image_service_container div :hover{
+    cursor: pointer;
+
+}
+.inner_text:hover{
+    background-color: rgba(0,0,0,0.2);
+
+}
+.image_service_container div img{
+    width: 260px;
+    height: 169px;
+}
+.image_sectors_container div img{
+    width: 365px;
+    height: 200px;
+}
+
+.image_sectors_container div .inner_image:before,
+.image_service_container div .inner_image:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+.title_sectors_container,.course__table__title,.title_service_container{
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.image_sectors_container div .inner_text,
+.image_service_container div .inner_text{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left:0;
+
+}
+.image_sectors_container div .inner_text span,
+.image_service_container div .inner_text span{
+    color: white;
+    background-color: rgba(0,0,0,0);
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.5;
+
+}
+.services_menu{
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom:1px solid #15337e;
+    border-top:1px solid #15337e;
+}
+.projects__item__btn:hover{
+    background-color: white;
+}
+.projects__item__btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    color: white;
+}
+.projects__item__btn a:hover{
+    color: #15337eed;
+}
+
+.projects__item__btn{
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+
+}

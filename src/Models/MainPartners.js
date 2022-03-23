@@ -21,7 +21,6 @@ const MainPartners = observer(() => {
                     <FormattedMessage id={"our_partners"}/>
                 </div>
                 <Swiper
-
                     navigation={true}
                     pagination={true}
                     mousewheel={false}

@@ -70,11 +70,6 @@ img {
     vertical-align: top;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: 400;
-}
-
 /*--------------------*/
 body {
     background-color: rgb(240, 240, 240, 0.9);
@@ -210,8 +205,9 @@ main {
 
 .header__inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+
 }
 
 .header__content-logo img {
@@ -751,7 +747,29 @@ ul.breadcrumb li a:hover {
     justify-content: space-between;
     align-items: center;
 }
+.slide_partner div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.slide_partner{
+    display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr 3fr;
+    background: white;
+    height: 80px !important;
+}
+.slide_news div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide_news{
+    display: grid !important;
+    grid-template-columns: 1fr 11fr 3fr 2fr;
+    background: white;
+    height: 60px !important;
+}
 .clients__item, .partners__item {
     display: flex;
     justify-content: center;
@@ -813,7 +831,7 @@ ul.breadcrumb li a:hover {
     border-radius: 10px;
 }
 
-.capabilities__item__btn a:hover, .capabilities__item__btn:hover {
+.capabilities__item__btn a:hover{
     background-color: #15337eed;
     color: white;
 }
@@ -1090,7 +1108,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px;
+    margin-bottom: 20px;
     text-indent: 0;
     flex-wrap: wrap;
     font-size: 26px;
@@ -1193,21 +1211,21 @@ footer {
 }
 
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
+/*.swiper-slide {*/
+/*    text-align: center;*/
+/*    font-size: 18px;*/
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
+/*    !* Center slide text vertically *!*/
+/*    display: -webkit-box;*/
+/*    display: -ms-flexbox;*/
+/*    display: -webkit-flex;*/
+/*    display: flex;*/
+/*    -webkit-box-pack: center;*/
+/*    -ms-flex-pack: center;*/
+/*    -webkit-justify-content: center;*/
+/*    justify-content: center;*/
+/*    -webkit-box-align: center;*/
+/*    -ms-flex-align: center;*/
+/*    -webkit-align-items: center;*/
+/*    align-items: center;*/
+/*}*/
