@@ -7,15 +7,19 @@ import "../css/style.css"
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
 import FooterTest from "../Models/FooterTest";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
 const News = observer((props) => {
     const {news, locale} = useContext(Context)
+    const breadcrumbs = useBreadcrumbs()
     return (
         <div>
-            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center', paddingTop: "30px"}}>
+            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
                 <div className={"container"}>
+                    <Breadcrumbs/>
                     <h4 style={{fontWeight: "600"}}>COMPANY NEWS</h4>
                     <div className={"slide_news"}>
                         <div>№</div>

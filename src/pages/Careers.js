@@ -7,13 +7,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "../css/style.css"
 import {observer} from "mobx-react-lite";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import {NavLink} from "react-router-dom";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const Careers = observer(() => {
     const {news} = useContext(Context)
+    const breadcrumbs = useBreadcrumbs();
     return (
         <div>
-            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center', paddingTop: "30px"}}>
+            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
                 <div className={"container"}>
+                    <Breadcrumbs/>
+
                     <span style={{fontSize: "30px", fontWeight: "600"}}>OPEN POSITION</span>
                     <Swiper
                         grid={{rows: 3}}

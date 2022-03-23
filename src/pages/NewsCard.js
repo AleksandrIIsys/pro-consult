@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useDebugValue} from 'react';
 import {useParams} from "react-router";
 import FooterTest from "../Models/FooterTest";
 import {Grid, Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const NewsCard = () => {
     const {id} = useParams();
+    const breadcrumbs = useBreadcrumbs();
     console.log(id);
     return (
         <div>
-            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center', paddingTop: "30px",flexDirection:"column"}}>
+            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center',flexDirection:"column"}}>
                 <div className={"container"}>
+                    <Breadcrumbs/>
                     <div style={{display: 'flex', flexDirection: 'row'}}>
                         <div style={{
                             display: "flex",

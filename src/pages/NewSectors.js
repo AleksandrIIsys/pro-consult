@@ -6,8 +6,12 @@ import InitiationText from "../components/Services/InitiationText";
 import {NavLink, Outlet} from "react-router-dom";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Grid, Pagination} from "swiper";
+import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const NewSectors = () => {
+    const breadcrumbs = useBreadcrumbs();
     const courses = [
         { name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",date: "4 apr- 15apr 2022", link: ""},
         { name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",date: "4 apr- 15apr 2022", link: ""},
@@ -31,14 +35,22 @@ const NewSectors = () => {
         {text: "Decommission", image: "/image/services/decommission.png", link: "/what-we-do/services/decommission"},
     ]
     return (
-        <div>
-            <div className={"services_menu"}>
+        <div style={{
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: 'center',
+            flexDirection: "column"
+        }}>
+            <div className={"container"}>
+                <Breadcrumbs/>
+                <div className={"services_menu"}>
                 <div className={"menu__choose"}>
                     {SectorsData.map((value, key) =>
                         <NavLink to={value.link} className={({isActive}) => (isActive ? 'active_menu_choose' : '')}>
                             <div key={key} className={"choosing_element"}> {value.title}  </div>
                         </NavLink>)}
                 </div>
+            </div>
             </div>
             <div className={"services_main"}>
                 <div className={"container"}>
@@ -95,7 +107,7 @@ const NewSectors = () => {
                                 </div>
                             </SwiperSlide>))}
                     </Swiper>
-                <div className="courses__item__btn"><a href="/what-we-do/education">all course</a></div>
+                <div className="courses__item__btn"><a href="/education">all course</a></div>
             </div>
         </div>
 </div>

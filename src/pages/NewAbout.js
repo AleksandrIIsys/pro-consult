@@ -5,8 +5,13 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination, Grid} from "swiper";
 import "swiper/css/grid";
 import "swiper/css/pagination";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
+import {NavLink} from "react-router-dom";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const NewAbout = () => {
+    const breadcrumbs = useReactRouterBreadcrumbs();
     const courses = [
         {
             name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",
@@ -56,7 +61,8 @@ const NewAbout = () => {
             flexDirection: "column"
         }}>
             <div className={"container"}>
-            <div className={"services_menu"}>
+                <Breadcrumbs/>
+                <div className={"services_menu"}>
                 <div className={"menu__choose"}>
                     {AboutData.map((value, key) =>
                         <HashLink to={"#" + value.link}>
@@ -263,7 +269,7 @@ const NewAbout = () => {
                                 </div>
                             </SwiperSlide>))}
                     </Swiper>
-                    <div className="courses__item__btn"><a href="/what-we-do/education">all course</a></div>
+                    <div className="courses__item__btn"><a href="/education">all course</a></div>
                 </div>
             </div>
         </div>

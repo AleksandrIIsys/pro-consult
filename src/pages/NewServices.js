@@ -5,8 +5,11 @@ import {Table} from "react-bootstrap";
 import {NavLink,Outlet} from "react-router-dom";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Grid, Pagination} from "swiper";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const NewServices = () => {
+    const breadcrumbs = useBreadcrumbs();
     const ServiceData = [
         {title:"Initiation & Conception",link:"initiation-and-conception"},
         {title:"Plan",link:"plan"},
@@ -22,8 +25,15 @@ const NewServices = () => {
         {text:"Telecommunication",image:"/image/services/telecom.jpg",link: "/what-we-do/sectors/telecommunication"},
     ]
     return (
-        <div>
-            <div className={"services_menu"}>
+        <div style={{
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: 'center',
+            flexDirection: "column"
+        }}>
+            <div className={"container"}>
+                <Breadcrumbs/>
+                <div className={"services_menu"}>
                 <div className={"menu__choose"}>
                     {ServiceData.map((value, key) =>
                         <NavLink to={value.link} className={({isActive}) => (isActive ? 'active_menu_choose' : '')}>
@@ -31,6 +41,8 @@ const NewServices = () => {
                         </NavLink>)}
                 </div>
             </div>
+            </div>
+
             <div className={"services_main"}>
                 <div className={"container"}>
                    <Outlet></Outlet>
@@ -86,7 +98,7 @@ const NewServices = () => {
                                 </div>
                             </SwiperSlide>))}
                     </Swiper>
-                    <div className="courses__item__btn"><a href="/what-we-do/education">all course</a></div>
+                    <div className="courses__item__btn"><a href="/education">all course</a></div>
                     </div>
             </div>
             <FooterTest></FooterTest>

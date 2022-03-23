@@ -1,10 +1,23 @@
 import React from 'react';
 import {Map, Placemark, YMaps} from "react-yandex-maps";
+import {NavLink} from "react-router-dom";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import FooterTest from "../Models/FooterTest";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const Contacts = () => {
+    const breadcrumbs = useBreadcrumbs();
     return (
         <div>
-            <div className="location">
+        <div style={{
+            display: 'flex',
+            alignItems: "center",
+            justifyContent: 'center',
+            flexDirection: "column"
+        }}>
+            <div className="container">
+                <Breadcrumbs/>
+                <div className="location">
                 <div className="textLocation">
                     <p>г. Ташкент, ул. Буюк Ипак Йули 114/3 (ориентир - гостиница "Саёхат")</p>
                     <p>+998 (90) 788-66-47</p>
@@ -26,6 +39,10 @@ const Contacts = () => {
 
                 </div>
             </div>
+            </div>
+        </div>
+            <FooterTest></FooterTest>
+
         </div>
     );
 };

@@ -77,13 +77,12 @@ const AppRouter = ({currentLocale,handleChangeLocale}) => {
         <Routes>
             <Route exact path={HOME_ROUTER} element={<Home currentLocale={currentLocale} handleChangeLocale={handleChangeLocale}/>}>
                 <Route path={MAIN_ROUTER} element={<MainPage/>}/>
-                <Route  path={NEWS_ROUTER} element={<News/>}/>
+                <Route path={NEWS_ROUTER} element={<News/>}/>
                 <Route path={NEWS_ROUTER+"/:id"} element={<NewsCard/>}/>
                 <Route  path={WHEREWEWORK_ROUTER} element={<WhereWeWork/>}/>
                 <Route path={ABOUTUS} element={<NewAbout/>}/>
                 <Route path={"careers"} element={<Careers/>}/>
                 <Route path={"*"} element={<Navigate to={"/"}/>}/>
-                <Route path={"what-we-do"}>
                     <Route path={"education"} element={<Education/>}/>
                     <Route path={"education/:id"} element={<EducationCard/>}>
                         <Route index element={<About/>}/>
@@ -106,7 +105,6 @@ const AppRouter = ({currentLocale,handleChangeLocale}) => {
                         <Route path={"transport"} element={<TransportText/>} />
                         <Route path={"telecommunication"} element={<TelecommunicationText/>} />
                     </Route>
-                </Route>
                 <Route path={"contacts"} element={<Contacts/>}/>
             </Route>
 

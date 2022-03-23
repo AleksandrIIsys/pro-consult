@@ -763,8 +763,10 @@ ul.breadcrumb li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .slide_news{
+    font-family: "Verdana";
     display: grid !important;
     grid-template-columns: 1fr 11fr 3fr 2fr;
     background: white;
@@ -1198,7 +1200,6 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: justify;
-    margin: 2em 6em;
 }
 .textLocation{
     margin: auto;

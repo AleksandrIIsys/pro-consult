@@ -1,9 +1,11 @@
 import React from 'react';
 import FooterTest from "../Models/FooterTest";
 import {HashLink} from "react-router-hash-link";
-import {Link, Outlet} from "react-router-dom";
+import {Link, NavLink, Outlet} from "react-router-dom";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Grid, Pagination} from "swiper";
+import useBreadcrumbs from "use-react-router-breadcrumbs";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const EducationCard = () => {
     const EducationPages = [
@@ -11,6 +13,7 @@ const EducationCard = () => {
         {title: "Teachers", link: "teachers"},
         {title: "Feedbacks", link: "feedback"},
     ]
+    const breadcrumbs = useBreadcrumbs();
     return (
         <div>
             <div style={{
@@ -21,6 +24,7 @@ const EducationCard = () => {
                 flexDirection: "column"
             }}>
                 <div className="container">
+                    <Breadcrumbs/>
                     <h4>Trainings, seminars, courses of the Center for Education of Engineers Consultants</h4>
                     <h4>Course name: <b>"The practice of investment projects in the Republic of Uzbekistan."</b></h4>
                 <div style={{width: "100%", borderTop: "1px solid #15337e", borderBottom: "1px solid #15337e"}}>
