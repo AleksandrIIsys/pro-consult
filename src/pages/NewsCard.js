@@ -109,7 +109,6 @@ const NewsCard = () => {
                 </div>
                 </div>
             </div>
-            <FooterTest/>
         </div>
     );
 };

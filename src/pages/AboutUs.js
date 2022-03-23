@@ -157,7 +157,6 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <FooterTest/>
         </div>
     );
 };

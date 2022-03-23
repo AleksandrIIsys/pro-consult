@@ -27,14 +27,13 @@ const FooterTest = () => {
 
                     <div className={"copyright__block"}>
                         <div className="footer__sitemap">
-                            <a href="">Who we are</a>
-                            <a href="">Sectors</a>
-                            <a href="">Service</a>
-                            <a href="">Education</a>
-                            <a href="/where-we-work">Where we work</a>
+                            <a href="/about-us">Who we are</a>
+                            <a href="/sectors">Sectors</a>
+                            <a href="/service">Service</a>
+                            <a href="/education">Education</a>
                             <a href="/news">News</a>
-                            <a href="">Careers</a>
-                            <a href="">Contact</a>
+                            <a href="/careers">Careers</a>
+                            <a href="/contacts">Contact</a>
                         </div>
                         <div className={"copyright__text"}>
 

@@ -19,10 +19,10 @@ const NewServices = () => {
         {title:"Decommission",link:"decommission"},
     ]
     const image = [
-        {text:"Water and Environment",image:"/image/services/water.jpg",link:"/what-we-do/sectors/waterandenvironment"},
-        {text:"Energy and Resources",image:"/image/services/energy.jpg",link: "/what-we-do/sectors/energyandresouces"},
-        {text:"Transport",image:"/image/services/transport.jpg",link: "/what-we-do/sectors/transport"},
-        {text:"Telecommunication",image:"/image/services/telecom.jpg",link: "/what-we-do/sectors/telecommunication"},
+        {text:"Water and Environment",image:"/image/services/water.jpg",link:"/sectors/waterandenvironment"},
+        {text:"Energy and Resources",image:"/image/services/energy.jpg",link: "/sectors/energyandresouces"},
+        {text:"Transport",image:"/image/services/transport.jpg",link: "/sectors/transport"},
+        {text:"Telecommunication",image:"/image/services/telecom.jpg",link: "/sectors/telecommunication"},
     ]
     return (
         <div style={{
@@ -94,14 +94,13 @@ const NewServices = () => {
                                         height: '100%',
                                         borderRadius: "10px",
                                         background: "#15337e"
-                                    }}><a style={{color: "white"}} href={`/what-we-do/education/${key}`}>read news</a></div>
+                                    }}><a style={{color: "white"}} href={`/education/${key}`}>read news</a></div>
                                 </div>
                             </SwiperSlide>))}
                     </Swiper>
                     <div className="courses__item__btn"><a href="/education">all course</a></div>
                     </div>
             </div>
-            <FooterTest></FooterTest>
         </div>
     );
 };

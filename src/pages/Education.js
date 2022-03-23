@@ -63,7 +63,6 @@ const Education = () => {
                    </div>
                </div>
             </div>
-            <FooterTest/>
         </div>
     );
 };

@@ -41,8 +41,6 @@ const Contacts = () => {
             </div>
             </div>
         </div>
-            <FooterTest></FooterTest>
-
         </div>
     );
 };

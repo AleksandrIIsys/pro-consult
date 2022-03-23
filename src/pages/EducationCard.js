@@ -24,7 +24,7 @@ const EducationCard = () => {
                 flexDirection: "column"
             }}>
                 <div className="container">
-                    <Breadcrumbs/>
+                    <Breadcrumbs/>к
                     <h4>Trainings, seminars, courses of the Center for Education of Engineers Consultants</h4>
                     <h4>Course name: <b>"The practice of investment projects in the Republic of Uzbekistan."</b></h4>
                 <div style={{width: "100%", borderTop: "1px solid #15337e", borderBottom: "1px solid #15337e"}}>
@@ -67,14 +67,13 @@ const EducationCard = () => {
                                             height: '100%',
                                             borderRadius: "10px",
                                             background: "#15337e"
-                                        }}><a style={{color: "white"}} href={`/what-we-do/education/${key}`}>read news</a></div>
+                                        }}><a style={{color: "white"}} href={`/education/${key}`}>read news</a></div>
                                     </div>
                                 </SwiperSlide>))}
                         </Swiper>
                     </div>
                 </div>
             </div>
-            <FooterTest/>
         </div>
     );
 };

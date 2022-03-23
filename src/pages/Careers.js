@@ -82,7 +82,6 @@ const Careers = observer(() => {
                     </Swiper>
                 </div>
                 </div>
-                <FooterTest/>
             </div>
             );
             });

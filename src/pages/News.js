@@ -44,7 +44,7 @@ const News = observer((props) => {
                     </Swiper>
                 </div>
             </div>
-            <FooterTest/>
+
         </div>
     );
 });

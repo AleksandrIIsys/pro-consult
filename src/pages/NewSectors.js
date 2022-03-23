@@ -27,12 +27,12 @@ const NewSectors = () => {
 
     ]
     const image = [
-        {text: "Initiation & Conception", image: "/image/services/in.jpg",link: "/what-we-do/services/initiation-and-conception"},
-        {text: "Plan", image: "/image/services/Plan.jpg", link: "/what-we-do/services/plan"},
-        {text: "Design", image: "/image/services/design.png", link: "/what-we-do/services/design"},
-        {text: "Procurement", image: "/image/services/procurement.png", link: "/what-we-do/services/procurement"},
-        {text: "Delivery", image: "/image/services/deliver.png", link: "/what-we-do/services/deliver"},
-        {text: "Decommission", image: "/image/services/decommission.png", link: "/what-we-do/services/decommission"},
+        {text: "Initiation & Conception", image: "/image/services/in.jpg",link: "services/initiation-and-conception"},
+        {text: "Plan", image: "/image/services/Plan.jpg", link: "services/plan"},
+        {text: "Design", image: "/image/services/design.png", link: "services/design"},
+        {text: "Procurement", image: "/image/services/procurement.png", link: "services/procurement"},
+        {text: "Delivery", image: "/image/services/deliver.png", link: "/services/deliver"},
+        {text: "Decommission", image: "/image/services/decommission.png", link: "/services/decommission"},
     ]
     return (
         <div style={{
@@ -103,7 +103,7 @@ const NewSectors = () => {
                                         height: '100%',
                                         borderRadius: "10px",
                                         background: "#15337e"
-                                    }}><a style={{color: "white"}} href={`/what-we-do/education/${key}`}>read news</a></div>
+                                    }}><a style={{color: "white"}} href={`/education/${key}`}>read news</a></div>
                                 </div>
                             </SwiperSlide>))}
                     </Swiper>
