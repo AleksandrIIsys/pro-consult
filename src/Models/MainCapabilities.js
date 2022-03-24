@@ -56,7 +56,7 @@ const MainCapabilities = () => {
                                 <FormattedMessage id={"capabilities_item_text_education"}/>                            </div>
                     </div>
                 </div>
-                <div className=" capabilities__item__btn"><a href=""><FormattedMessage id={'read_more_capabilities'}/></a>
+                <div className=" capabilities__item__btn"><a href="/services"><FormattedMessage id={'read_more_capabilities'}/></a>
                 </div>
             </div>
         </div>

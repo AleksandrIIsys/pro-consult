@@ -25,7 +25,7 @@ const MainAbout = () => {
                                 <div className="about__item-text">
                                     <FormattedMessage id={'about_item_text_services'}/>
                                 </div>
-                                <div className="about__item__btn"><a href="">more info</a></div>
+                                <div className="about__item__btn"><a href="/services">more info</a></div>
                             </div>
                             <div className="about__item">
                                 <div className="about-img"><img src="../image/about/about-2.png" alt=""/></div>
@@ -35,7 +35,7 @@ const MainAbout = () => {
                                 <div className="about__item-text">
                                     <FormattedMessage id={'about_item_text_sectors'}/>
                                 </div>
-                                <div className="about__item__btn"><a href="">more info</a></div>
+                                <div className="about__item__btn"><a href="/sectors">more info</a></div>
                             </div>
                             <div className="about__item">
                                 <div className="about-img"><img src="../image/about/about-3.png" alt=""/></div>
@@ -45,7 +45,7 @@ const MainAbout = () => {
                                 <div className="about__item-text">
                                     <FormattedMessage id={'about_item_text_education'}/>
                                 </div>
-                                <div className="about__item__btn"><a href="">more info</a></div>
+                                <div className="about__item__btn"><a href="/education">more info</a></div>
                             </div>
                         </div>
                     </div>

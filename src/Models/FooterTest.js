@@ -29,7 +29,7 @@ const FooterTest = () => {
                         <div className="footer__sitemap">
                             <a href="/about-us">Who we are</a>
                             <a href="/sectors">Sectors</a>
-                            <a href="/service">Service</a>
+                            <a href="/services">Service</a>
                             <a href="/education">Education</a>
                             <a href="/news">News</a>
                             <a href="/careers">Careers</a>
