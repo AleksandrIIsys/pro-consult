@@ -17,9 +17,9 @@ import {Context} from "./index";
 function App() {
     const {locale} = useContext(Context)
     function getInitialLocale() {
-        const savedLocale = localStorage.getItem('locale');
+        const savedLocale = localStorage.getItem('locale')|| LOCALES.ENGLISH;
         locale.setLocale(savedLocale)
-        return savedLocale || LOCALES.ENGLISH
+        return savedLocale
     }
     const [currentLocale, setCurrentLocale] = useState(getInitialLocale())
     const handleChange = ({ target: { value } }) => {
