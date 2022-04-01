@@ -1,15 +1,18 @@
-import React, {useContext} from 'react';
-import {Context} from "../index";
-import {observer} from "mobx-react-lite";
+import React, { useContext } from "react";
+import { Context } from "../index";
+import { observer } from "mobx-react-lite";
 
 const TestimonialsElement = observer((props) => {
-    const {locale} = useContext(Context)
+    const { locale } = useContext(Context);
     return (
         <div className="testimonials__items">
             <div className="testimonials__text">
                 <div>
-                    <span className="quote">" </span> <div className={"testimonials__text__main"}>{props.testimonials.text[locale.getLocale()]}</div>
-                    <img src={props.testimonials.image} alt=""/>
+                    <span className="quote">" </span>
+                    <div className={"testimonials__text__main"}>
+                        {props.testimonials.text[locale.getLocale()]}
+                    </div>
+                    <img src={props.testimonials.image} alt="" />
                     <div className="testimonials__name">
                         {props.testimonials.name[locale.getLocale()]}
                     </div>
@@ -18,7 +21,6 @@ const TestimonialsElement = observer((props) => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 });

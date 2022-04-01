@@ -1,46 +1,66 @@
-import React from 'react';
-import {Map, Placemark, YMaps} from "react-yandex-maps";
-import {NavLink} from "react-router-dom";
+import React from "react";
+import { Map, Placemark, YMaps } from "react-yandex-maps";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
-import FooterTest from "../Models/FooterTest";
 import Breadcrumbs from "../components/Breadcrumbs";
+import {FaMapMarkerAlt} from "react-icons/fa";
+import {useMediaQuery} from "react-responsive";
 
 const Contacts = () => {
-    const breadcrumbs = useBreadcrumbs();
+    const isMobile = useMediaQuery({query:'(max-width:480px)'})
     return (
         <div>
-        <div style={{
-            display: 'flex',
-            alignItems: "center",
-            justifyContent: 'center',
-            flexDirection: "column"
-        }}>
-            <div className="container">
-                <Breadcrumbs/>
-                <div className="location">
-                <div className="textLocation">
-                    <p>г. Ташкент, ул. Буюк Ипак Йули 114/3 (ориентир - гостиница "Саёхат")</p>
-                    <p>+998 (90) 788-66-47</p>
-                    <p>+998 (90) 926-89-93</p>
-                    <p>info@pro-consult.uz</p>
-                </div>
-                <div className="mapLocation">
-                    <YMaps>
-                        <Map
-                            defaultState={{
-                                center: [41.327289, 69.333528],
-                                zoom: 16,
-                            }}
-                            width={800}
-                            height={320}>
-                            <Placemark geometry={[41.327289, 69.333528]}/>
-                        </Map>
-                    </YMaps>
-
+            <img src={"/image/banner.png"} style={{width:"100%"}}></img>
+            <div
+                className={"center_container"}
+            >
+                <div className="container">
+                    <Breadcrumbs />
+                    <span
+                        className={"about__title"}
+                    >
+                        CONTACTS
+                    </span>
+                    <div className="location">
+                        <div className="textLocation">
+                            <p>
+                                <FaMapMarkerAlt style={{paddingRight:'6px'}}></FaMapMarkerAlt>
+                                г. Ташкент, ул. Буюк Ипак Йули 114/3
+                            </p>
+                            <p>
+                                <div className="header__phone">
+                                    +998 (71) 123-45-67
+                                </div>
+                            </p>
+                            <p>
+                                <div className="header__mobile">
+                                    +998 (90) 123-45-67
+                                </div>
+                            </p>
+                            <p>
+                                <div className="header__emaiL">
+                                    info@pro-consult.uz
+                                </div>
+                            </p>
+                        </div>
+                        <div className="mapLocation">
+                            <YMaps>
+                                <Map
+                                    defaultState={{
+                                        center: [41.327289, 69.333528],
+                                        zoom: 16,
+                                    }}
+                                    height={isMobile ? 150 : 260}
+                                    width={isMobile ? 310 : 660}
+                                >
+                                    <Placemark
+                                        geometry={[41.327289, 69.333528]}
+                                    />
+                                </Map>
+                            </YMaps>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         </div>
     );
 };

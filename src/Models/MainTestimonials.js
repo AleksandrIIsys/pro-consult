@@ -16,7 +16,7 @@ const MainTestimonials = observer(() => {
                     </div>
                     <div className="testimonials__slider">{
                         testimonials.getTestimonials().map((o,key) => <TestimonialsElement testimonials={o} key={key}/>)}
-                    </div>
+                        </div>
                 </div>
                     : <></>
             }

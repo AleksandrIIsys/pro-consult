@@ -10,6 +10,8 @@ import FooterTest from "../Models/FooterTest";
 import {Link, NavLink} from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import Breadcrumbs from "../components/Breadcrumbs";
+import NewsTable from "../components/NewsTable";
+import MainSlider from "../Models/MainSlider";
 
 
 const News = observer((props) => {
@@ -17,31 +19,12 @@ const News = observer((props) => {
     const breadcrumbs = useBreadcrumbs()
     return (
         <div>
-            <div style={{display: 'flex', alignItems: "center", justifyContent: 'center'}}>
+            <MainSlider/>
+            <div className={"center_container"}>
                 <div className={"container"}>
                     <Breadcrumbs/>
-                    <h4 style={{fontWeight: "600"}}>COMPANY NEWS</h4>
-                    <div className={"slide_news"}>
-                        <div>№</div>
-                        <div>Name of news</div>
-                        <div>Date of news</div>
-                    </div>
-                    <Swiper
-                        style={{height: "550px",marginTop:"15px"}}
-                        spaceBetween={5}
-                        grid={{rows: 8,}}
-                        pagination={{clickable: true}}
-                        modules={[Grid, Pagination]}
-                    >
-                        {['', '', '', '', '', '','', '', '', '', '', ''].map(((value, key) =>
-                            <SwiperSlide className={"slide_news"}>
-                                <div>{key+1}</div>
-                                <div>Advanced training course "The practice of investment projects in the Republic of Uzbekistan.</div>
-                                <div>15 aprel  2022</div>
-                                <div style={{padding:"10px 5px 10px 5px"}}><div style={{width:'100%',height:'100%',borderRadius:"10px",background:"#15337e"}}><a style={{color:"white"}} href={`/news/${key}`}>read news</a></div>
-                                </div>
-                            </SwiperSlide>))}
-                    </Swiper>
+                    <div className={"about__title"}>COMPANY NEWS</div>
+                    <NewsTable row={5}/>
                 </div>
             </div>
 

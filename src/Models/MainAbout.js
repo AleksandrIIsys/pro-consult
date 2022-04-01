@@ -1,7 +1,9 @@
 import React from 'react';
 import {FormattedMessage} from "react-intl";
+import {useMediaQuery} from "react-responsive";
 
 const MainAbout = () => {
+    const isMobile = useMediaQuery({ query: "(max-width:480px)" });
     return (
             <div>
                 <div className="about__content">
@@ -12,7 +14,7 @@ const MainAbout = () => {
                         <div className="about__text">
                             <FormattedMessage id={"about_text"}/>
                         </div>
-                        <a className="about__link" href=""><FormattedMessage id={"more_info"}/></a>
+                        <a className="about__link" href="/about-us"><FormattedMessage id={"more_info"}/></a>
                         <div className="about__title-sphera">
                             <FormattedMessage id={'about_title_sphera'}/>
                         </div>

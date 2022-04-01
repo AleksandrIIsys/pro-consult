@@ -20,7 +20,7 @@ import Sectors from "../pages/Sectors";
 import NewServices from "../pages/NewServices";
 import NewSectors from "../pages/NewSectors";
 import SectorsText from "./Sectors/SectorsText";
-import WaterText from "./WaterText";
+import WaterText from "./Sectors/WaterText";
 import TransportText from "./Sectors/TransportText";
 import ServicesText from "./Services/ServicesText";
 import InitiationText from "./Services/InitiationText";
@@ -40,7 +40,7 @@ import Teachers from "./EducationCard/Teachers";
 import Feedback from "./EducationCard/Feedback";
 
 const AppRouter = ({currentLocale,handleChangeLocale}) => {
-    const {news,testimonials,partners,clients} = useContext(Context)
+    const {news,testimonials,partners,clients,courses} = useContext(Context)
     useEffect(() => {
         let isMounted = true;
         fetchNews().then((data)=>{
@@ -85,9 +85,10 @@ const AppRouter = ({currentLocale,handleChangeLocale}) => {
                 <Route path={"*"} element={<Navigate to={"/"}/>}/>
                     <Route path={"education"} element={<Education/>}/>
                     <Route path={"education/:id"} element={<EducationCard/>}>
-                        <Route index element={<About/>}/>
+                        <Route path={"about"} element={<About/>}/>
                         <Route path={"teachers"} element={<Teachers/>}/>
                         <Route path={"feedback"} element={<Feedback/>}/>
+                        <Route path={""} element={<Navigate to={"about"}/>}/>
                     </Route>
                     <Route path={"services"} element={<NewServices/>}>
                         <Route index element={<ServicesText/>}/>
