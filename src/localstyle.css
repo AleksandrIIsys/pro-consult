@@ -549,7 +549,6 @@ align-items: center;
     font-weight: 900;
 }
 .main{
-    padding-top: 90px;
     min-Height: calc(100vh - 200px);
 }
 @media screen and (max-width: 480px) {
@@ -557,7 +556,9 @@ align-items: center;
         font-size: 18px;
         font-family: SansSerifBold;
     }
-
+    .main{
+        padding-top: 90px;
+    }
     .feedback__slide {
         height: 30%;
         border-radius: 10px;
@@ -938,6 +939,8 @@ align-items: center;
     {
         position: fixed;
         width: 300px;
+        overflow-x: hidden;
+        height: 100vh;
         box-shadow: 0 0 10px #85888C;
         margin: -50px 0 0 -230px;
         padding: 20px;

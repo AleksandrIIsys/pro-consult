@@ -41,7 +41,7 @@ export const MessageHeader = {
         services:`Услуги`,
         sectors:`Сектора`,
         plan:`План`,
-        design:`Дезайн`,
+        design:`Дизайн`,
         deliver:`Доставка`,
         manage:`Управлять`,
         decommission:`Вывод из эксплуатации`,

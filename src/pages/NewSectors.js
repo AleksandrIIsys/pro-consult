@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "../localstyle.css"
 import {Table} from "react-bootstrap";
 import SectorsText from "../components/Sectors/SectorsText";
@@ -13,34 +13,38 @@ import EducationTable from "../components/EducationTable";
 import NavMenu from "../components/NavMenu";
 import MainSlider from "../Models/MainSlider";
 import {useMediaQuery} from "react-responsive";
+import {MessageHeader} from "../i18n/MessageHeader";
+import {LOCALES} from "../i18n/Locale";
+import {Context} from "../index";
+import {observer} from "mobx-react-lite";
+import {FormattedMessage, IntlProvider} from "react-intl";
+import {messageSectors} from "../i18n/MessageSectors";
 
-const NewSectors = () => {
-    const breadcrumbs = useBreadcrumbs();
-    const courses = [
-        { name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",date: "4 apr- 15apr 2022", link: ""},
-        { name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",date: "4 apr- 15apr 2022", link: ""},
-        { name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",date: "4 apr- 15apr 2022", link: ""},
-        { name: "Advanced training course The practice of investment projects in the Republic of Uzbekistan",date: "4 apr- 15apr 2022", link: ""},
-
-    ]
+const NewSectors = observer(() => {
     const SectorsData = [
-        { title: "Water and Environment",link: "waterandenvironment" },
-        {title: "Energy and Resources",link: "energyandresouces"},
-        {title: "Transport",link: "transport"},
-        { title: "Telecommunication", link: "telecommunication"},
+        { title: <FormattedMessage id={"water_and_environment_title"}/>,link: "waterandenvironment" },
+        {title: <FormattedMessage id={"energy_and_resources_title"}/>,link: "energyandresouces"},
+        {title: <FormattedMessage id={"transport_title"}/>,link: "transport"},
+        { title: <FormattedMessage id={"telecommunication_title"}/>, link: "telecommunication"},
 
     ]
     const image = [
-        {text: "Initiation & Conception", image: "/image/services/in.jpg",link: "/services/initiation-and-conception"},
-        {text: "Plan", image: "/image/services/Plan.jpg", link: "/services/plan"},
-        {text: "Design", image: "/image/services/design.png", link: "/services/design"},
-        {text: "Procurement", image: "/image/services/procurement.png", link: "/services/procurement"},
-        {text: "Delivery", image: "/image/services/deliver.png", link: "/services/deliver"},
-        {text: "Decommission", image: "/image/services/decommission.png", link: "/services/decommission"},
+        {text: <FormattedMessage id={"initiation"}/>, image: "/image/services/in.jpg",link: "/services/initiation-and-conception"},
+        {text: <FormattedMessage id={"plan"}/>, image: "/image/services/Plan.jpg", link: "/services/plan"},
+        {text: <FormattedMessage id={"design"}/>, image: "/image/services/design.png", link: "/services/design"},
+        {text: <FormattedMessage id={"procurement"}/>, image: "/image/services/procurement.png", link: "/services/procurement"},
+        {text: <FormattedMessage id={"deliver"}/>, image: "/image/services/deliver.png", link: "/services/deliver"},
+        {text: <FormattedMessage id={"decommission"}/>, image: "/image/services/decommission.png", link: "/services/decommission"},
     ]
     const isMobile = useMediaQuery({query:'(max-width:480px)'})
+    const {locale} = useContext(Context)
     return (
         <div>
+            <IntlProvider
+                messages={messageSectors[locale.getLocale()]}
+                locale={locale.getLocale()}
+                defaultLocale={LOCALES.ENGLISH}
+            >
             <MainSlider></MainSlider>
             <div className={"center_container"}>
                 <div className={"container"}>
@@ -89,20 +93,6 @@ const NewSectors = () => {
                     <div className={"course__table"}>
                     <EducationTable
                     row={4}
-                    data={[
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ]}
                     />
                     <div className="courses__item__btn">
                     <a href="/education">all course</a>
@@ -112,9 +102,9 @@ const NewSectors = () => {
                     </div>}
 
             </div>
-
+            </IntlProvider>
         </div>
     );
-};
+});
 
 export default NewSectors;

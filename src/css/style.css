@@ -1542,7 +1542,12 @@ footer {
         grid-row-start: 1;
         grid-row-end: 3;
     }
-
+    .clients__item img, .partners__item img {
+    width: 85px;
+    }
+    .about__item-text{
+        font-size:9px;
+    }
 }
 .mapLocation{
     margin: 1em 1em;

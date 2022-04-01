@@ -1,10 +1,14 @@
-import React from 'react';
-import {FormattedMessage} from "react-intl";
-import {HashLink as Link} from "react-router-hash-link";
-import {NavLink} from "react-router-dom";
+import React from "react";
+import { FormattedMessage, IntlProvider } from "react-intl";
+import { HashLink as Link } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 import LangSelector from "./LangSelector";
+import { observer } from "mobx-react-lite";
+import { MessageHeader } from "../i18n/MessageHeader";
+import { LOCALES } from "../i18n/Locale";
+import InitiationText from "./Services/InitiationText";
 
-const MobileHeader = ({ currentLocale, handleChangeLocale }) => {
+const MobileHeader = observer(({ currentLocale, handleChangeLocale }) => {
     return (
         <div className={"header__content"}>
             <div className="header__content-logo">
@@ -12,24 +16,57 @@ const MobileHeader = ({ currentLocale, handleChangeLocale }) => {
                     <img src="/image/logo.png" alt="" />
                 </NavLink>
             </div>
-                    <div id="menuToggle">
-                        <input type="checkbox" />
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <ul id="menu">
-                            <li><a href="/about-us">About</a></li>
-                            <li><a href="/sectors">Sectors</a></li>
-                            <li><a href="/service">Service</a></li>
-                            <li><a href="/education">Education</a></li>
-                            <li><a href="/news">News</a></li>
-                            <li><a href="/careers">Careers</a></li>
-                            <li><a href="/contacts">Contacts</a></li>
-                            <li><LangSelector handleChangeLocale={handleChangeLocale} currentLocale={currentLocale}></LangSelector></li>
-                        </ul>
-                    </div>
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <li>
+                        <a href="/about-us">
+                            <FormattedMessage id={"about_us"} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/sectors">
+                            <FormattedMessage id={"sectors"} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/service" id={"services"}>
+                            <FormattedMessage id={"services"} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/education">
+                            <FormattedMessage id={"education"} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/news">
+                            <FormattedMessage id={"news"} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/careers" >
+                            <FormattedMessage id={"careers"} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contacts">
+                            <FormattedMessage id={"contact"} />
+                        </a>
+                    </li>
+                    <li>
+                        <LangSelector
+                            handleChangeLocale={handleChangeLocale}
+                            currentLocale={currentLocale}
+                        ></LangSelector>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
-};
+});
 
 export default MobileHeader;

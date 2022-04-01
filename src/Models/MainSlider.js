@@ -10,11 +10,11 @@ import { Autoplay, EffectFade, Pagination } from "swiper";
 import { IntlProvider } from "react-intl";
 import { Context } from "../index";
 import {useMediaQuery} from "react-responsive";
+import {observer} from "mobx-react-lite";
 
-const MainSlider = () => {
+const MainSlider = observer(() => {
     const { locale } = useContext(Context);
     const isMobile = useMediaQuery({ query: "(max-width:480px)" });
-
     console.log(locale);
     const [slides, setSlides] = useState([
         {
@@ -93,6 +93,6 @@ const MainSlider = () => {
             ))}
         </Swiper>
     );
-};
+});
 
 export default MainSlider;

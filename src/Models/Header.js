@@ -10,11 +10,6 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
 
     return (
         <div className="header__content">
-            <IntlProvider
-                messages={MessageHeader[currentLocale]}
-                locale={currentLocale}
-                defaultLocale={LOCALES.ENGLISH}
-            >
                 <div className="container">
                     <div className="header__inner">
                         <div className="header__content-logo">
@@ -215,7 +210,6 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
                                 <li>
                                     <a href="/news">
                                         <FormattedMessage id={"news"} />
-                                        <span className="fa fa-angle-down"></span>
                                     </a>
                                 </li>
                                 <li>
@@ -230,13 +224,14 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
                                         <span className="fa fa-angle-down"></span>
                                     </a>
                                 </li>
-
                             </ul>
                         </nav>
-                        <LangSelector handleChangeLocale={handleChangeLocale} currentLocale={currentLocale}></LangSelector>
+                        <LangSelector
+                            handleChangeLocale={handleChangeLocale}
+                            currentLocale={currentLocale}
+                        ></LangSelector>
                     </div>
                 </div>
-            </IntlProvider>
         </div>
     );
 };

@@ -120,21 +120,64 @@ Pro consult company является разработчиком авторски
     },
     [LOCALES.UZBEK]: {
         about_title: `Pro consult company`,
-        about_text: `Pro Consult company ko'p sanoat muhandislik, boshqaruv va rivojlantirish
-                        maslaxat, kim
-                        mijozlar va hamkorlar uchun tasdiqlangan va maxsus echimlar beradi,.
-                        PCC maslahat beradi, uning mutaxassislari keng tajriba va amaliyotini foydalanish va
-                        muhandislik
-                        loyiha hayot aylanishi bo'ylab xizmatlar: boshlash, texnik-iqtisodiy tadqiqotlar va tadqiqotlar,
-                        dizayn,
-                        xaridlari, qurilish, ekspluatatsiya, operatsiya va texnik.
-                        PCC sifat, samaradorlik va innovativlikni birinchi o'ringa qo'yadi, milliy bilimlarni birlashtiradi
-                        xalqaro tajriba va maqsadga muvofiq va barqaror ishlashga sodiqdir
-                        yechimlar.
-                        PCC o'z ustunligini ko'rsatish uchun raqobatni o'rnatmaydi, aksincha PCC bilan hamkorlik qiladi
-                        rahbarlari
-                        mijozlar va mijozlar uchun eng yaxshi natijani taqdim etish oqilona bo'lsa, maydonning bir qismi
-                        haqiqiy recieve
-                        tan olish.`,
+        about_text: `Pro Consult Company is a multi-industrial engineering, management and development
+                            consultancy, who
+                            delivers verified and tailored solutions for the clients and partners.
+                            Using extensive experience and practice of its experts PCC provides consultancy and
+                            engineering
+                            services across the project lifecycle: initiation, feasibility studies and researches,
+                            design,
+                            procurement, construction, comissioning, operation and maintenance.
+                            PCC prioritizes quality, efficiency and innovativeness, integrates national knowledge with
+                            international experience and is committed to deliver fit for purpose and sustainable
+                            solutions.
+                            PCC does not set competition to show its superiority, instead PCC cooperates with the
+                            leaders of the
+                            piece of area when it is wise to provide the best result for customers and clients and
+                            recieve true
+                            recognition.`,
+        more_info: `More info`,
+        about_title_sphera: `Core areas`,
+        about_item_title_services: `Services`,
+        about_item_text_services: `The company focuses on providing engineering and consulting services to improve the energy efficiency of industrial enterprises and buildings, the development of innovative products`,
+        about_item_title_sectors: `Sectors`,
+        about_item_text_sectors: `The company provides services in various industries, such as energy, civil
+                                    engineering,
+                                    heavy and light industry, as well as services related to the implementation of
+                                    investment
+                                    projects.`,
+        about_item_title_education: `Education`,
+        about_item_text_education: `Courses to improve the qualifications of engineers and also individual consultants.
+                                    Pro consult company is a developer of author's training courses and periodically
+                                    conducts
+                                    seminars...`,
+        news_title: `Current news`,
+        all_news: "Read all news",
+        capabilities_title: `Our capabilities`,
+        capabilities_item_title_plan: "Plan & design",
+        capabilities_item_title_consulting: "Consulting",
+        capabilities_item_title_procurement: "Procurement",
+        capabilities_item_title_project_supervision: "Project supervision",
+        capabilities_item_title_education: "Education",
+        capabilities_item_text_plan: `Our company provides services for the design and development stage of feasibility
+                                studies,
+                                including the development of feasibility studies, business plans and more`,
+        capabilities_item_text_consulting: ` We advise on the implementation of investment projects, from the development of a
+                                feasibility study to the signing of the act of commissioning
+              `,
+        capabilities_item_text_procurement: `                 Our company provides services for the development of tender documents and universal
+                                provisions of the company for procurement procedures
+              `,
+        capabilities_item_text_project_supervision: `We provide supervision of the project both during the construction period and for the
+                                entire
+                                period of the project
+               `,
+        capabilities_item_text_education: `Our company provides quality training courses for engineers, recognized by leading
+                                companies
+                                and ministries`,
+        read_more_capabilities: `Read more about our capabilities`,
+        our_clients: `Our Clients`,
+        our_partners: `Our Partners`,
+        testimonials_title: `What Our Clients Say`,
     },
 };

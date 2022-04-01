@@ -23,7 +23,6 @@ const MainClients = observer(() => {
             </div>
                 <Swiper
                     pagination={true}
-                    style={{height:'170px'}}
                     slidesPerView={isMobile? 3:6}
                     modules={[Pagination]}>{
                     clients.getClients().map((clElem,key) =>

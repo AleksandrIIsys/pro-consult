@@ -25,7 +25,6 @@ const MainPartners = observer(() => {
                     <FormattedMessage id={"our_partners"}/>
                 </div>
                 <Swiper
-                    style={{height:'170px'}}
                     pagination={true}
                     slidesPerView={isMobile ? 3 : 6}
                     modules={[Pagination]}>{
