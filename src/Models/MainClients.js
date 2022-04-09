@@ -10,20 +10,20 @@ import {useMediaQuery} from "react-responsive";
 
 const MainClients = observer(() => {
     const {clients} = useContext(Context);
-    const isMobile = useMediaQuery({ query: "(max-width:480px)" });
+    const isMobile = useMediaQuery({ query: "(max-width:768px)" });
+    const isTablet = useMediaQuery({ query: "(max-width:1080px)" });
     return (
         <div className={"clients"}>
             <div className={"container"}>
-
             {
-                clients.getClients().length > 3 ?
+                clients.getClients().length !== 0 ?
             <div>
             <div className="clients__title">
                 <FormattedMessage id={"our_clients"}/>
             </div>
                 <Swiper
                     pagination={true}
-                    slidesPerView={isMobile? 3:6}
+                    slidesPerView={isMobile? 3: isTablet ? 4 : 6}
                     modules={[Pagination]}>{
                     clients.getClients().map((clElem,key) =>
                         <SwiperSlide key={key} className="clients__item">

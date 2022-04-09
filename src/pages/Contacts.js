@@ -1,14 +1,25 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Map, Placemark, YMaps } from "react-yandex-maps";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import Breadcrumbs from "../components/Breadcrumbs";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import {useMediaQuery} from "react-responsive";
+import {messageTable} from "../i18n/MessageTable";
+import {LOCALES} from "../i18n/Locale";
+import {messageContacts} from "../i18n/MessageContacts";
+import {FormattedMessage, IntlProvider} from "react-intl";
+import {Context} from "../index";
 
 const Contacts = () => {
-    const isMobile = useMediaQuery({query:'(max-width:480px)'})
+    const isMobile = useMediaQuery({query:'(max-width:768px)'})
+    const {locale} = useContext(Context)
     return (
         <div>
+            <IntlProvider
+                messages={messageContacts[locale.getLocale()]}
+                locale={locale.getLocale()}
+                defaultLocale={LOCALES.ENGLISH}
+            >
             <img src={"/image/banner.png"} style={{width:"100%"}}></img>
             <div
                 className={"center_container"}
@@ -18,13 +29,13 @@ const Contacts = () => {
                     <span
                         className={"about__title"}
                     >
-                        CONTACTS
+                        <FormattedMessage id={"contacts"}/>
                     </span>
                     <div className="location">
                         <div className="textLocation">
                             <p>
                                 <FaMapMarkerAlt style={{paddingRight:'6px'}}></FaMapMarkerAlt>
-                                г. Ташкент, ул. Буюк Ипак Йули 114/3
+                                <FormattedMessage id={"address"}/>
                             </p>
                             <p>
                                 <div className="header__phone">
@@ -61,6 +72,7 @@ const Contacts = () => {
                     </div>
                 </div>
             </div>
+            </IntlProvider>
         </div>
     );
 };

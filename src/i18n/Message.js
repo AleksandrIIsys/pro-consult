@@ -75,7 +75,7 @@ export const messages = {
                         международным опытом и стремится предоставлять подходящие для целей и устойчивые
                         решения.
                          PCC не устанавливает конкуренцию, чтобы показать свое превосходство, вместо этого PCC сотрудничает`,
-        more_info: `More info`,
+        more_info: `Узнать больше`,
         about_title_sphera: `Основные области`,
         about_item_title_services: `Услуги`,
         about_item_text_services: `Мы предоставляем услуги в таких областях, как управление национальными и
@@ -113,7 +113,7 @@ Pro consult company является разработчиком авторски
         capabilities_item_text_education: `Наша компания предоставляет качественные учебные курсы для инженеров, признанные ведущими
 компании
 и министерства`,
-        read_more_capabilities: `Read more about our capabilities`,
+        read_more_capabilities: `Узнайте больше о наших возможностях`,
         our_clients: `Наши клиенты`,
         our_partners: `Наши партнёры`,
         testimonials_title: `Что говорят наши клиенты`,

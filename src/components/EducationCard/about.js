@@ -164,7 +164,7 @@ const About = () => {
                             margin: "5px",
                         }}
                     >
-                        <a href={""} style={{ width: "auto" }}>
+                        <a href={"/contact"} style={{ width: "auto" }}>
                             contact us
                         </a>
                     </div>

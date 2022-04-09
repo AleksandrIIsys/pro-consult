@@ -26,6 +26,11 @@ export const messageSectors = {
         roads_and_highways_title:"Roads and Highways",
         bridges_and_tunnels_title:"Bridges and Tunnels",
         traffic_and_transport_planning_title:"Traffic and Transport Planning",
+        services:"Related Services",
+        upcoming_related_courses:"Upcoming Related Courses",
+        all_course:"all course",
+        see_also:"See also",
+        all_services:"All Services",
         //------------------------------------
         dams_and_reservoirs:"PCC provides jointly with its leading international partners dams and reservoirs advisory services including but not limited to  design, project management, construction supervision, safety management. Through our international and local teams of dams and reservoirs specialists, we deliver to our clients and partners the best solutions resulting in effective, proven and environmentally friendly implementation of projects.",
         environment_planning_and_assessment:`PCC pays great importance to environment and is committed to bring solutions which will benefit both environment and the project. Through environmental assessment and management, environmental planning and monitoring we bring environmentally sustainable solutions. Environment planning and assessment services can be provided independently, or in conjunction with other sectors including transport, water, mining and energy.`,
@@ -52,6 +57,10 @@ export const messageSectors = {
         bridges_and_tunnels:"Urban development, economic, social and environmental demands urges to use modern approach of using above-/undergraund space to help deliver efficient, safe and resilient solutions. Using innovative, safe, effective and resilient solutions PCC delivers implementation that satisfies challenges of modern society.",
         traffic_and_transport_planning:"PCC provides jointly with its leading international partners traffic and transport planning services. Through our international and local teams of transport specialists and traffic engineers, we deliver to our clients and partners tailored and the best solutions. ",
         telecommunication:"PCC provides jointly with its leading international partners Telecommunication advisory services combining but not limited to engineering design, construction, operation and maintenance. Through our international and local teams of telecommunication professionals, we deliver the best solutions resulting in effective implementation of telecommunication projects.",
+        sectors_part1:"Pro-consult Company professionally delivers full scope of engineering and consulting services, including but not limited to initiation, plan, design, procurement, delivery and commission of the project.",
+        sectors_part2:"PCC's expertise cover all main sectors of Uzbekistan economy thriving to develop, such as Water and Environment, Energy and Resources, Transport and Telecommunication.",
+        sectors_part3:"PCC is committed to deliver tailored, effective and sustainable solutions resulting in successful project implementation and outcomes.",
+        sectors_part4:"PCC is addicted to modern, innovative and practical solutions at task performing.",
         //------------------------------
         water_and_environment_title:`Water and Environment`,
         energy_and_resources_title:`Energy and Resources`,
@@ -62,7 +71,7 @@ export const messageSectors = {
         deliver:`Deliver`,
         decommission:`Decommission`,
         initiation:"Initiation & Conception",
-        procurement:"Procurement"
+        procurement:"Procurement",
     },
     [LOCALES.RUSSIAN]:{
         dams_and_reservoirs_title:"Dams and Reservoirs",
@@ -89,7 +98,15 @@ export const messageSectors = {
         roads_and_highways_title:"Roads and Highways",
         bridges_and_tunnels_title:"Bridges and Tunnels",
         traffic_and_transport_planning_title:"Traffic and Transport Planning",
+        services:"Услуги",
+        sectors_title:"Сектора",
+        see_also:"Смотреть также",
+        all_services:"Сервисы",
         //------------------------------------
+        sectors_part1:"Pro-consult Company профессионально предоставляет полный спектр инженерных и консультационных услуг, включая, но не ограничиваясь этим, инициирование, планирование, проектирование, закупку, доставку и ввод в эксплуатацию проекта.",
+        sectors_part2:"Опыт PCC охватывает все основные отрасли экономики Узбекистана, которые процветают и развиваются, такие как Водоснабжение и охрана окружающей среды, Энергетика и ресурсы, Транспорт и Телекоммуникации.\n",
+        sectors_part3:"PCC стремится предоставлять индивидуальные, эффективные и устойчивые решения, приводящие к успешной реализации проектов и получению результатов.",
+        sectors_part4:"PCC стремится к современным, инновационным и практичным решениям при выполнении задач.",
         dams_and_reservoirs:"PCC совместно со своими ведущими международными партнерами оказывает консультационные услуги по возведению плотин и водохранилищ, включая, но не ограничиваясь проектированием, управлением проектом, надзором за строительством, управлением безопасностью. Благодаря нашим международным и местным специалистам по плотинам и водохранилищам, мы предлагаем нашим клиентам и партнерам лучшие решения, приводящие к эффективной и экологически безопасной реализации проектов. ",
         environment_planning_and_assessment:"PCC придает большое значение окружающей среде и стремится предложить решения, которые принесут пользу как окружающей среде, так и проекту. Благодаря экологической оценке и управлению, экологическому планированию и мониторингу мы предоставляем экологически устойчивые решения. Услуги по экологическому планированию и оценке могут быть предоставлены как отдельно, так и с услугами по другим секторам, включая транспорт, водные ресурсы, горнодобывающая промышленность и энергетика.",
         irrigation_and_melioration:"Сельское хозяйство является одним из важнейших секторов экономики и почти полностью зависит от качественного и своевременного орошения и мелиорации. PCC предлагает качественные, инновационные и устойчивые решения в области ирригации и мелиорации, основанные на передовом международном опыте. PCC сотрудничает с министерствами и ведомствами, чтобы развить и сделать отрасль более эффективной. ",
@@ -115,6 +132,9 @@ export const messageSectors = {
         bridges_and_tunnels:"Развитие городов, экономические, социальные и экологические требования требуют применения современных подходов при использовании над-/подповерхностного пространства для обеспечения эффективных, безопасных и устойчивых решений. Используя инновационные, безопасные, эффективные и устойчивые решения, компания PCC обеспечивает реализацию, отвечающую вызовам современного общества.",
         traffic_and_transport_planning:"PCC совместно с ведущими международными партнерами предоставляет услуги в области дорожного движения и транспортного планирования. Благодаря нашим международным и местным командам специалистов по транспорту и инженеров по организации дорожного движения, мы предлагаем нашим клиентам и партнерам индивидуальные и наилучшие решения. ",
         telecommunication:"PCC совместно с ведущими международными партнерами предоставляет консультационные услуги в области телекоммуникаций, включая, но не ограничиваясь, инженерным проектированием, строительством, эксплуатацией и техническим обслуживанием. Благодаря нашим международным и местным командам профессионалов в области телекоммуникаций, мы предлагаем лучшие решения, приводящие к эффективной реализации телекоммуникационных проектов.",
+        upcoming_related_courses:"Предстоящие курсы",
+        all_course:"Все курсы",
+
         //------------------------
         telecommunication_title:"Телекоммуникации",
         water_and_environment_title:`Вода и окружающая среда`,
@@ -152,6 +172,12 @@ export const messageSectors = {
         roads_and_highways_title:"Roads and Highways",
         bridges_and_tunnels_title:"Bridges and Tunnels",
         traffic_and_transport_planning_title:"Traffic and Transport Planning",
+        services:"Related Services",
+        upcoming_related_courses:"Предстоящие курсы",
+        all_course:"Все курсы",
+
+        see_also:"Смотреть также",
+        all_services:"Все курсы",
         //------------------------------------
         dams_and_reservoirs:"PCC етакчи халқаро шериклар билан биргаликда тўғон ва сув омборларини қуриш бўйича консалтинг хизматларини кўрсатади, шу жумладан, лекин бу билан чекланмаган холда  лойиҳалаштириш, лойиҳаларни бошқариш, қурилишни назорат қилиш, хавфсизликни бошқариш ишларини амалга оширишда хизмат кўрсатади. Тўғонлар ва сув омборларини қуриш йўналишидаги халқаро ва маҳаллий мутахассисларимиз ёрдамида биз мижозларимизга ва шерикларимизга лойиҳаларни самарали ва экологик хавфсиз амалга оширишга олиб келадиган энг яхши ечимларни кўрсатиб берамиз.",
         environment_planning_and_assessment:"PCC атроф-муҳитга катта аҳамият беради ва шунинг учун экологик хавфсиз, шу билан бирга лойиҳани самарадорлигини юқори даражада амалга оширишга олиб келадиган ечимларни таклиф қилади. Экологик баҳолаш ва бошқариш, экологик вазиятни режалаштириш ва мониторинг қилиш орқали биз экологик барқарор ечимларни таклиф қиламиз. Экологик режалаштириш ва баҳолаш хизматлари алоҳида ёки транспорт, сув ресурслари, тоғ-кон саноати ва энергетика каби бошқа соҳалардаги хизматлар билан биргаликда бажарилиши мумкин.",
@@ -183,6 +209,10 @@ export const messageSectors = {
             "Инновацион, хавфсиз, самарали ва барқарор ечимларни қўллаган ҳолда,  PCC замонавий жамият муаммоларини ечишга қаратилган хизматларни кўрсатади.",
         traffic_and_transport_planning:"PCC етакчи халқаро шериклари билан биргаликда йўл ҳаракати ва транспортни режалаштириш хизматларини тақдим этади. Халқаро ва маҳаллий транспорт мутахассисларидан ва йўл ҳаракати муҳандисларидан ташкил топган жамоаларимиз, мижозларимизга ва шерикларимизга индивидуал ва энг илғор ечимларни таклиф қилади.",
         telecommunication:"PCC етакчи халқаро шериклари билан биргаликда телекоммуникация соҳасида консалтинг хизматларини, шунингдек, лекин бу билан чегараланмаган ҳолда муҳандислик лойиҳалаштириш, қурилиши, фойдаланиш ва техник хизмат кўрсатиш каби хизматларни кўрсатади. Халқаро ва маҳаллий телекоммуникация мутахассисларидан ташкил топган жамоаларимиз орқали телекоммуникация лойиҳаларини самарали амалга оширишга олиб келадиган энг илғор ечимларни тақдим этамиз.",
+        sectors_part1:"Pro-consult Company professionally delivers full scope of engineering and consulting services, including but not limited to initiation, plan, design, procurement, delivery and commission of the project.",
+        sectors_part2:"PCC's expertise cover all main sectors of Uzbekistan economy thriving to develop, such as Water and Environment, Energy and Resources, Transport and Telecommunication.",
+        sectors_part3:"PCC is committed to deliver tailored, effective and sustainable solutions resulting in successful project implementation and outcomes.",
+        sectors_part4:"PCC is addicted to modern, innovative and practical solutions at task performing.",
         //------------------------------
         water_and_environment_title:`Water and Environment`,
         energy_and_resources_title:`Energy and Resources`,

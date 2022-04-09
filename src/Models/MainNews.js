@@ -9,6 +9,8 @@ import {useMediaQuery} from "react-responsive";
 const MainNews = observer(() => {
     const {news,locale} = useContext(Context)
     const isMobile = useMediaQuery({ query: "(max-width:480px)" });
+    const isTablet = useMediaQuery({ query: "(max-width:1080px)" });
+
     return (
         <div className="news">
             {
@@ -17,7 +19,7 @@ const MainNews = observer(() => {
 
                 {isMobile ? <div className="news__title">
                         <FormattedMessage id={"news_title"}/>
-                        <a href={"/news"}>All news</a>
+                        <a href={"/news"}><FormattedMessage id={"all_news"}/></a>
                     </div>
                     :
                     <div className="news__title">
@@ -26,8 +28,9 @@ const MainNews = observer(() => {
 
                 <Swiper
                     modules={[Navigation, Pagination, Mousewheel]}
-                    pagination={true}
-                    slidesPerView={isMobile ? 1 : 4}>
+                    pagination={{clickable:true}}
+                    slidesPerView={isMobile ? 1 : isTablet ? 2 : 4}>
+
                     {
                     news.getNews().map((news_element,key)=>
                         <SwiperSlide  key={key}>

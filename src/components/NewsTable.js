@@ -5,6 +5,9 @@ import { Context } from "../index";
 import { useMediaQuery } from "react-responsive";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {messageTable} from "../i18n/MessageTable";
+import {LOCALES} from "../i18n/Locale";
+import {FormattedMessage, IntlProvider} from "react-intl";
 
 const NewsTable = ({ row, data }) => {
     const { courses, locale } = useContext(Context);
@@ -28,6 +31,11 @@ const NewsTable = ({ row, data }) => {
     const isMobile = useMediaQuery({ query: "(max-width:480px)" });
     return (
         <div>
+            <IntlProvider
+                messages={messageTable[locale.getLocale()]}
+                locale={locale.getLocale()}
+                defaultLocale={LOCALES.ENGLISH}
+            >
             {isMobile ? (
                 <div>
                     <div className={"slide_news"}>
@@ -69,7 +77,7 @@ const NewsTable = ({ row, data }) => {
                         <input
                             type={"text"}
                             onChange={(e) => handleFilterName(e)}
-                            placeholder={"Enter name of course"}
+                            placeholder={messageTable[locale.getLocale()].enon}
                         />
                         <DatePicker
                             selected={date}
@@ -78,7 +86,7 @@ const NewsTable = ({ row, data }) => {
                             dateFormat={"dd.MM.yyyy"}
                             closeOnScroll={true}
                             isClearable
-                            placeholderText="Enter date of news!"
+                            placeholderText={messageTable[locale.getLocale()].edon}
                         />
                     </div>
                     <Swiper
@@ -103,7 +111,7 @@ const NewsTable = ({ row, data }) => {
                                         className={"slide_button"}
                                         href={`/news/${key}`}
                                     >
-                                        <div>read news</div>
+                                        <div><FormattedMessage id={"btn_news"}/></div>
                                     </a>
                                 </div>
                             </SwiperSlide>
@@ -111,7 +119,10 @@ const NewsTable = ({ row, data }) => {
                     </Swiper>
                 </div>
             )}
-        </div>
+            </IntlProvider>
+            </div>
+
+
     );
 };
 

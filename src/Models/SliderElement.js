@@ -15,7 +15,7 @@ const SliderElement = (props) => {
                     <div className="slider__text">
                         <FormattedMessage id={"text"}/>
                     </div>
-                    <div className="slider__btn"><a href="">more info</a>
+                    <div className="slider__btn"><a href={props.slide.url}><FormattedMessage id={"moreinfo"}/></a>
                     </div>
                 </div>
             </div>

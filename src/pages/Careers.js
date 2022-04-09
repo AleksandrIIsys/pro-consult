@@ -13,7 +13,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import {useMediaQuery} from "react-responsive";
 
 const Careers = observer(() => {
-    const isMobile = useMediaQuery({query:"(max-width:480px)"})
+    const isMobile = useMediaQuery({query:"(max-width:768px)"})
     return (
         <div>
             <img src={"/image/banner.png"} style={{ width: "100%" }} />

@@ -1,8 +1,8 @@
 import './App.css';
-import "./css/media.css"
 import "./css/fonts.css";
 import "./css/style.css";
 import "./css/normalize.css";
+import "./css/media.css"
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

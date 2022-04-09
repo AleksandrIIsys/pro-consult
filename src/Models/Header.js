@@ -148,7 +148,7 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
                                                             "services/initiation-and-conception"
                                                         }
                                                     >
-                                                        Initiation & Conception
+                                                        <FormattedMessage id={"initiation"}></FormattedMessage>
                                                     </Link>
                                                 </li>
                                                 <li>

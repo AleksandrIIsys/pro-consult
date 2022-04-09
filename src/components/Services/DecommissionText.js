@@ -1,21 +1,29 @@
-import React from 'react';
+import React from "react";
+import { FormattedMessage } from "react-intl";
 
 const DecommissionText = () => {
     return (
         <div className={"block__text"}>
-            <div className={"services_main_title"}>Decommission</div>
-            <div className={"part_block_text"}>
-            <div className="headtext">Decommissioning and closure</div>
-            <p>When an asset’s useful life comes to an end, PCC provides assistance to bring the project to a successful
-                close with decommissioning and closure services. PCC provides assistance in development of
-                decommissioning plan and closure framework.
-            </p>
+            <div className={"services_main_title"}>
+                <FormattedMessage id={"decommission_title"} />
             </div>
             <div className={"part_block_text"}>
-            <div className="headtext">Rehabilitation, modernization and reconstruction</div>
-            <p>Whether it is rehabilitation, modernization or reconstruction, PCC and its team of experienced experts
-                will offer our clients the best way of implementation through effective, innivative and sustainable
-                solutions.</p>
+                <div className="headtext">
+                    <FormattedMessage
+                        id={"decommissioning_and_closure_title"}
+                    />
+                </div>
+                <p>
+                    <FormattedMessage id={"decommissioning_and_closure"} />
+                </p>
+            </div>
+            <div className={"part_block_text"}>
+                <div className="headtext">
+                    <FormattedMessage id={"rehabilitation_title"} />
+                </div>
+                <p>
+                    <FormattedMessage id={"rehabilitation"} />
+                </p>
             </div>
         </div>
     );

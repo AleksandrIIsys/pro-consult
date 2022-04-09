@@ -11,90 +11,75 @@ import useBreadcrumbs from "use-react-router-breadcrumbs";
 import Breadcrumbs from "../components/Breadcrumbs";
 import EducationTable from "../components/EducationTable";
 import MainSlider from "../Models/MainSlider";
+import { FormattedMessage, IntlProvider } from "react-intl";
+import { messageAbout } from "../i18n/MessageAbout";
+import { LOCALES } from "../i18n/Locale";
+import { messageEducation } from "../i18n/MessageEducation";
 
 const Education = () => {
-    const { news } = useContext(Context);
-    const breadcrumbs = useBreadcrumbs();
+    const { news, locale } = useContext(Context);
+
     return (
         <div>
-            <MainSlider></MainSlider>
-            <div className={"center_container"}>
-                <div className={"container"}>
-                    <Breadcrumbs />
-                    <div className={"about__title"}>Education</div>
-                    <div className={"education__title"}>
-                        <div className={"education__logo"}>
-                            <div>
-                                CE EC
+            <IntlProvider
+                messages={messageEducation[locale.getLocale()]}
+                locale={locale.getLocale()}
+                defaultLocale={LOCALES.ENGLISH}
+            >
+                {" "}
+                <MainSlider></MainSlider>
+                <div className={"center_container"}>
+                    <div className={"container"}>
+                        <Breadcrumbs />
+                        <div className={"about__title"}>
+                            <FormattedMessage id={"education"} />
+                        </div>
+                        <div className={"education__title"}>
+                            <div className={"education__logo"}>
+                                <div>CE EC</div>
+                                <div>
+                                    Centre for Education of Engineers and
+                                    Consultants
+                                </div>
                             </div>
-                            <div>
-                                Centre for Education of Engineers and
-                                Consultants
+                            <div className={"education__text"}>
+                                <span style={{ color: "#15337e" }}>
+                                    <FormattedMessage id={"education_q"} />
+                                </span>
+                                <div style={{ lineHeight: "normal" }}>
+                                    <FormattedMessage id={"education_1"} />
+                                    <br />
+                                    <FormattedMessage id={"education_2"} />
+                                    <br />
+                                    <FormattedMessage id={"education_3"} />
+                                </div>
+                                <span style={{ color: "#15337e" }}>
+                                    <FormattedMessage id={"education_4"} />
+                                </span>
                             </div>
                         </div>
-                        <div className={"education__text"}>
-                            <span style={{ color: "#15337e" }}>
-                                "An investment in knowledge pays the best
-                                interest" (B.Franklin)
-                            </span>
-                            <div style={{ lineHeight: "normal" }}>
-                                PCC believes that each specialist must have an
-                                opportunity to get advanced studies and to
-                                develop further skills and experience.
-                                <br /> Therefore, PCC has created the "Centre
-                                for Education of Engineers and Consultants"
-                                (CEEC) where young specilists and specialists
-                                with background can expand their knowledge,
-                                skills and experience.
-                                <br /> CEEC develops and provides its own
-                                Certified courses and trainings, organizes
-                                seminars, Forums and Conferences in
-                                collaboration with international organizations,
-                                NGOs' and companies.
-                            </div>
-                            <span style={{ color: "#15337e" }}>
-                                “CEEC opens the door, but you must enter by
-                                yourself”!
-                            </span>
+                        <div style={{ marginTop: "20px" }}>
+                            <EducationTable
+                                row={5}
+                                data={[
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                ]}
+                            />
                         </div>
-                    </div>
-                    <div style={{ marginTop: "20px" }}>
-                        <EducationTable
-                            row={5}
-                            data={[
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                                "",
-                            ]}
-                        />
-                        {/*<Swiper*/}
-                        {/*    style={{height: "450px",marginTop:"10px"}}*/}
-                        {/*    spaceBetween={10}*/}
-                        {/*    grid={{rows: 6,}}*/}
-                        {/*    pagination={{clickable: true}}*/}
-                        {/*    modules={[Grid, Pagination]}*/}
-                        {/*>*/}
-                        {/*    {.map(((value, key) =>*/}
-                        {/*        <SwiperSlide className={"slide_news"}>*/}
-                        {/*            <div>{key+1}</div>*/}
-                        {/*            <div>Advanced training course "The practice of investment projects in the Republic of Uzbekistan.</div>*/}
-                        {/*            <div>4 apr- 15apr 2022</div>*/}
-                        {/*            <div style={{padding:"10px 5px 10px 5px"}}><div style={{width:'100%',height:'100%',borderRadius:"10px",background:"#15337e"}}><a style={{color:"white"}} href={`/education/${key}`}>apply</a></div>*/}
-                        {/*            </div>*/}
-                        {/*        </SwiperSlide>))}*/}
-                        {/*</Swiper>*/}
                     </div>
                 </div>
-            </div>
+            </IntlProvider>
         </div>
     );
 };

@@ -13,7 +13,6 @@ import {observer} from "mobx-react-lite";
 
 const Home =observer(({ currentLocale, handleChangeLocale }) => {
     const breadcrumbs = useBreadcrumbs();
-    console.log(breadcrumbs);
     const isMobile = useMediaQuery({ query: "(max-width:768px)" });
     return (
         <div>
