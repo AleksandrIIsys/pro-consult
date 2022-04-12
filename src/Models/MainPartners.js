@@ -11,11 +11,6 @@ const MainPartners = observer(() => {
     const {partners} = useContext(Context);
     const isMobile = useMediaQuery({ query: "(max-width:768px)" });
     const isTablet = useMediaQuery({ query: "(max-width:1080px)" });
-    useEffect(()=>{
-        let isMounted = true;
-        fetchPartners().then((data)=>partners.setPartners(data))
-        return () => { isMounted = false };
-    },[])
     return (
         <div className={"partners"}>
             <div className={"container"}>
@@ -32,7 +27,6 @@ const MainPartners = observer(() => {
                     partners.getPartners().map((prElem,key) =>
                         <SwiperSlide key={key} className="clients__item">
                             <img src={prElem.image} alt=""/>
-                            {/*<img src={"/image/parners/partners-1.jpg"}/>*/}
                         </SwiperSlide>)
                 }
                 </Swiper>

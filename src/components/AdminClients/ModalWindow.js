@@ -1,20 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Button, Modal } from "react-bootstrap";
 import CreatePanel from "./CreatePanel";
 import { LOCALES } from "../../i18n/Locale";
-import { createNews, editNews, fetchNews } from "../../http/Api";
+import {createClient, editClient, fetchClients} from "../../http/Api";
 import { Context } from "../../index";
-import { observer } from "mobx-react-lite";
 
-const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setIsLoad  }) => {
-    const { news } = useContext(Context);
+const ModalWindow = ({ show, handleClose, type, defaultData,isLoad,setIsLoad  }) => {
+    const { clients, locale } = useContext(Context);
     const [data, setData] = useState({
-        title: {
+        name: {
             [LOCALES.ENGLISH]: "",
             [LOCALES.RUSSIAN]: "",
             [LOCALES.UZBEK]: "",
         },
-        text: {
+        description: {
+            [LOCALES.ENGLISH]: "",
+            [LOCALES.RUSSIAN]: "",
+            [LOCALES.UZBEK]: "",
+        },
+        country: {
             [LOCALES.ENGLISH]: "",
             [LOCALES.RUSSIAN]: "",
             [LOCALES.UZBEK]: "",
@@ -22,22 +26,26 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
         date: "",
         image: "",
     });
-    useEffect(() => {
-        if (!isLoad) {
-            fetchNews().then((data) => {
-                news.setNews(data);
-            });
+    useEffect(()=>{
+        if(!isLoad){
+            fetchClients().then((data)=>{
+                clients.setClients(data)
+            })
         }
-    }, [isLoad]);
-
+    },[isLoad])
     const clearData = () => {
         setData({
-            title: {
+            name: {
                 [LOCALES.ENGLISH]: "",
                 [LOCALES.RUSSIAN]: "",
                 [LOCALES.UZBEK]: "",
             },
-            text: {
+            description: {
+                [LOCALES.ENGLISH]: "",
+                [LOCALES.RUSSIAN]: "",
+                [LOCALES.UZBEK]: "",
+            },
+            country: {
                 [LOCALES.ENGLISH]: "",
                 [LOCALES.RUSSIAN]: "",
                 [LOCALES.UZBEK]: "",
@@ -51,29 +59,31 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
     const handleClick = (event) => {
         const fd = new FormData();
         const obj = data;
-        obj.date = new Date().toLocaleString("ru-RU");
+        obj.date = new Date().toLocaleString(locale);
         fd.append("picture", image);
         event.target.disabled = true;
-        setIsLoad(true);
+        setIsLoad(true)
         switch (type) {
             case "update":
-                fd.append("data", JSON.stringify(defaultData));
-                editNews(fd).then((res) => {
-                    setIsLoad(false);
+                fd.append(
+                    "data",
+                    JSON.stringify(defaultData)
+                );
+                editClient(fd).then((res) => {
+                    setIsLoad(false)
                 });
                 break;
             case "create":
                 fd.append("data", JSON.stringify(obj));
-                createNews(fd).then((res) => {
-                    console.log(2);
+                createClient(fd).then((ns) => {
                     setIsLoad(false);
-                    event.target.disabled = false;
+                        event.target.disabled = false;
                 });
                 break;
         }
         clearData();
         handleClose();
-    };
+    }
     return (
         <>
             <Modal show={show} onHide={handleClose} animation={false}>
@@ -93,7 +103,7 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
                     <Button
                         variant="primary"
                         onClick={handleClick}
-                        disabled={image === null && defaultData === null}
+                        disabled={image === null && defaultData === undefined}
                     >
                         Save
                     </Button>
@@ -101,6 +111,6 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
             </Modal>
         </>
     );
-});
+};
 
 export default ModalWindow;

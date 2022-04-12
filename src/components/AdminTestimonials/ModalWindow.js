@@ -2,14 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import CreatePanel from "./CreatePanel";
 import { LOCALES } from "../../i18n/Locale";
-import { createNews, editNews, fetchNews } from "../../http/Api";
+import {createTestimonial, editTestimonial, fetchNews, fetchTestimonials} from "../../http/Api";
 import { Context } from "../../index";
-import { observer } from "mobx-react-lite";
 
-const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setIsLoad  }) => {
-    const { news } = useContext(Context);
+const ModalWindow = ({ show, handleClose, type, defaultData,isLoad,setIsLoad }) => {
+    const { testimonials, locale } = useContext(Context);
     const [data, setData] = useState({
-        title: {
+        name: {
             [LOCALES.ENGLISH]: "",
             [LOCALES.RUSSIAN]: "",
             [LOCALES.UZBEK]: "",
@@ -19,25 +18,34 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
             [LOCALES.RUSSIAN]: "",
             [LOCALES.UZBEK]: "",
         },
+        position: {
+            [LOCALES.ENGLISH]: "",
+            [LOCALES.RUSSIAN]: "",
+            [LOCALES.UZBEK]: "",
+        },
         date: "",
         image: "",
     });
     useEffect(() => {
         if (!isLoad) {
-            fetchNews().then((data) => {
-                news.setNews(data);
-            });
+            fetchTestimonials().then((data)=>{
+                testimonials.setTestimonials(data);
+            })
         }
     }, [isLoad]);
-
     const clearData = () => {
         setData({
-            title: {
+            name: {
                 [LOCALES.ENGLISH]: "",
                 [LOCALES.RUSSIAN]: "",
                 [LOCALES.UZBEK]: "",
             },
             text: {
+                [LOCALES.ENGLISH]: "",
+                [LOCALES.RUSSIAN]: "",
+                [LOCALES.UZBEK]: "",
+            },
+            position: {
                 [LOCALES.ENGLISH]: "",
                 [LOCALES.RUSSIAN]: "",
                 [LOCALES.UZBEK]: "",
@@ -51,23 +59,22 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
     const handleClick = (event) => {
         const fd = new FormData();
         const obj = data;
-        obj.date = new Date().toLocaleString("ru-RU");
+        obj.date = new Date().toLocaleString(locale);
         fd.append("picture", image);
         event.target.disabled = true;
-        setIsLoad(true);
+        setIsLoad(true)
         switch (type) {
             case "update":
                 fd.append("data", JSON.stringify(defaultData));
-                editNews(fd).then((res) => {
+                editTestimonial(fd).then((res) => {
                     setIsLoad(false);
                 });
                 break;
             case "create":
                 fd.append("data", JSON.stringify(obj));
-                createNews(fd).then((res) => {
-                    console.log(2);
-                    setIsLoad(false);
-                    event.target.disabled = false;
+                createTestimonial(fd).then((res) => {
+                        setIsLoad(false);
+                        event.target.disabled = false;
                 });
                 break;
         }
@@ -93,7 +100,7 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
                     <Button
                         variant="primary"
                         onClick={handleClick}
-                        disabled={image === null && defaultData === null}
+                        disabled={image === null && defaultData === undefined}
                     >
                         Save
                     </Button>
@@ -101,6 +108,6 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
             </Modal>
         </>
     );
-});
+};
 
 export default ModalWindow;

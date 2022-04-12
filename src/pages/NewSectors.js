@@ -1,19 +1,11 @@
 import React, { useContext } from "react";
 import "../localstyle.css";
-import { Table } from "react-bootstrap";
-import SectorsText from "../components/Sectors/SectorsText";
-import InitiationText from "../components/Services/InitiationText";
-import { NavLink, Outlet } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Pagination } from "swiper";
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
+import { Outlet } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import EducationTable from "../components/EducationTable";
 import NavMenu from "../components/NavMenu";
 import MainSlider from "../Models/MainSlider";
 import { useMediaQuery } from "react-responsive";
-import { MessageHeader } from "../i18n/MessageHeader";
 import { LOCALES } from "../i18n/Locale";
 import { Context } from "../index";
 import { observer } from "mobx-react-lite";
@@ -80,22 +72,24 @@ const NewSectors = observer(() => {
                 locale={locale.getLocale()}
                 defaultLocale={LOCALES.ENGLISH}
             >
-                <MainSlider></MainSlider>
+                <MainSlider/>
                 <div className={"center_container"}>
                     <div className={"container"}>
                         <Breadcrumbs />
-                        <NavMenu data={SectorsData}></NavMenu>
+                        <NavMenu data={SectorsData}/>
                     </div>
                     <div className={"services_main"}>
                         <div className={"container"}>
-                            <Outlet></Outlet>
+                            <Outlet/>
                         </div>
                     </div>
                     {isMobile ? (
                         <div className={"container"}>
-                            <div className="about__main__title">See also</div>
+                            <div className="about__main__title"><FormattedMessage id={"see_also"}/></div>
                             <div className={"mobile__button"}>
-                                <a href={"/services"}><FormattedMessage id={"services"} /></a>
+                                <a href={"/services"}>
+                                    <FormattedMessage id={"services"} />
+                                </a>
                             </div>
                             <div className={"mobile__button"}>
                                 <a href={"/education"}>
@@ -114,7 +108,7 @@ const NewSectors = observer(() => {
                                     </div>
                                     <div className={"image_sectors_container"}>
                                         {image.map((value, key) => (
-                                            <div>
+                                            <div key={key}>
                                                 <a href={value.link}>
                                                     <div
                                                         className={

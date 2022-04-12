@@ -1,24 +1,20 @@
 import React, { useContext } from "react";
 import { HashLink } from "react-router-hash-link";
-import { Table } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Grid } from "swiper";
+import { Grid, Pagination } from "swiper";
 import "swiper/css/grid";
 import "swiper/css/pagination";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
-import useReactRouterBreadcrumbs from "use-react-router-breadcrumbs";
-import { NavLink } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import EducationTable from "../components/EducationTable";
 import MainSlider from "../Models/MainSlider";
 import { useMediaQuery } from "react-responsive";
-import { messageService } from "../i18n/MessageService";
 import { LOCALES } from "../i18n/Locale";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import { Context } from "../index";
 import { messageAbout } from "../i18n/MessageAbout";
+import { observer } from "mobx-react-lite";
 
-const NewAbout = () => {
+const NewAbout = observer(() => {
     const AboutData = [
         {
             title: <FormattedMessage id={"foundation_title"} />,
@@ -69,7 +65,7 @@ const NewAbout = () => {
     ];
     const isMobile = useMediaQuery({ query: "(max-width:768px)" });
     const isTablet = useMediaQuery({ query: "(max-width:1080px)" });
-    const { locale } = useContext(Context);
+    const { locale, clients, partners } = useContext(Context);
     return (
         <div>
             <IntlProvider
@@ -133,34 +129,40 @@ const NewAbout = () => {
                                         pagination={{ clickable: true }}
                                         modules={[Pagination]}
                                     >
-                                        {["", "", "", "", "", ""].map(
-                                            (value, key) => (
+                                        {partners
+                                            .getPartners()
+                                            .map((value, key) => (
                                                 <SwiperSlide
                                                     className={"slide_partner"}
                                                 >
-                                                    <div>
+                                                    <div key={key}>
                                                         <img
-                                                            src={
-                                                                "/image/parners/partners-1.jpg"
-                                                            }
+                                                            src={value.image}
                                                         />
                                                     </div>
-                                                    <div>SKB COMPANY LLC</div>
-                                                    <div>Uzbekistan</div>
                                                     <div>
-                                                        The company focuses on
-                                                        providing engineering
-                                                        and consulting services
-                                                        to improve the energy
-                                                        efficiency of industrial
-                                                        enterprises and
-                                                        buildings, the
-                                                        development of
-                                                        innovative products
+                                                        {
+                                                            value.name[
+                                                                locale.getLocale()
+                                                            ]
+                                                        }
+                                                    </div>
+                                                    <div>
+                                                        {
+                                                            value.country[
+                                                                locale.getLocale()
+                                                            ]
+                                                        }
+                                                    </div>
+                                                    <div>
+                                                        {
+                                                            value.description[
+                                                                locale.getLocale()
+                                                            ]
+                                                        }
                                                     </div>
                                                 </SwiperSlide>
-                                            )
-                                        )}
+                                            ))}
                                     </Swiper>
                                 ) : (
                                     <div>
@@ -196,44 +198,50 @@ const NewAbout = () => {
                                             pagination={{ clickable: true }}
                                             modules={[Grid, Pagination]}
                                         >
-                                            {["", "", "", "", "", ""].map(
-                                                (value, key) => (
+                                            {partners
+                                                .getPartners()
+                                                .map((value, key) => (
                                                     <SwiperSlide
                                                         className={
                                                             "slide_partner"
                                                         }
+                                                        key={key}
                                                     >
                                                         <div>
                                                             <img
                                                                 src={
-                                                                    "/image/parners/partners-1.jpg"
+                                                                    value.image
                                                                 }
                                                             />
                                                         </div>
                                                         <div>
-                                                            SKB COMPANY LLC
+                                                            {
+                                                                value.name[
+                                                                    locale.getLocale()
+                                                                ]
+                                                            }
                                                         </div>
-                                                        <div>Uzbekistan</div>
+                                                        <div>
+                                                            {
+                                                                value.country[
+                                                                    locale.getLocale()
+                                                                ]
+                                                            }
+                                                        </div>
                                                         <div
                                                             className={
                                                                 "slide_partner_text"
                                                             }
                                                         >
-                                                            The company focuses
-                                                            on providing
-                                                            engineering and
-                                                            consulting services
-                                                            to improve the
-                                                            energy efficiency of
-                                                            industrial
-                                                            enterprises and
-                                                            buildings, the
-                                                            development of
-                                                            innovative products
+                                                            {
+                                                                value
+                                                                    .description[
+                                                                    locale.getLocale()
+                                                                ]
+                                                            }
                                                         </div>
                                                     </SwiperSlide>
-                                                )
-                                            )}
+                                                ))}
                                         </Swiper>
                                     </div>
                                 )}
@@ -254,34 +262,41 @@ const NewAbout = () => {
                                         pagination={{ clickable: true }}
                                         modules={[Pagination]}
                                     >
-                                        {["", "", "", "", "", ""].map(
-                                            (value, key) => (
+                                        {clients
+                                            .getClients()
+                                            .map((value, key) => (
                                                 <SwiperSlide
                                                     className={"slide_partner"}
+                                                    key={key}
                                                 >
                                                     <div>
                                                         <img
-                                                            src={
-                                                                "/image/parners/partners-1.jpg"
-                                                            }
+                                                            src={value.image}
                                                         />
                                                     </div>
-                                                    <div>SKB COMPANY LLC</div>
-                                                    <div>Uzbekistan</div>
                                                     <div>
-                                                        The company focuses on
-                                                        providing engineering
-                                                        and consulting services
-                                                        to improve the energy
-                                                        efficiency of industrial
-                                                        enterprises and
-                                                        buildings, the
-                                                        development of
-                                                        innovative products
+                                                        {
+                                                            value.name[
+                                                                locale.getLocale()
+                                                            ]
+                                                        }
+                                                    </div>
+                                                    <div>
+                                                        {
+                                                            value.country[
+                                                                locale.getLocale()
+                                                            ]
+                                                        }
+                                                    </div>
+                                                    <div>
+                                                        {
+                                                            value.description[
+                                                                locale.getLocale()
+                                                            ]
+                                                        }
                                                     </div>
                                                 </SwiperSlide>
-                                            )
-                                        )}
+                                            ))}
                                     </Swiper>
                                 ) : (
                                     <div>
@@ -293,7 +308,7 @@ const NewAbout = () => {
                                             </div>
                                             <div>
                                                 <FormattedMessage
-                                                    id={"members_title"}
+                                                    id={"member_table"}
                                                 />
                                             </div>
                                             <div>
@@ -317,50 +332,68 @@ const NewAbout = () => {
                                             pagination={{ clickable: true }}
                                             modules={[Grid, Pagination]}
                                         >
-                                            {["", "", "", "", "", ""].map(
-                                                (value, key) => (
-                                                    <SwiperSlide
-                                                        className={
-                                                            "slide_partner"
-                                                        }
-                                                    >
-                                                        <div>
-                                                            <img
-                                                                src={
-                                                                    "/image/parners/partners-1.jpg"
-                                                                }
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            SKB COMPANY LLC
-                                                        </div>
-                                                        <div>Uzbekistan</div>
-                                                        <div
+                                            {clients
+                                                .getClients()
+                                                .map((value, key) => {
+                                                    console.log(
+                                                        value.description[
+                                                            locale.getLocale()
+                                                        ]
+                                                    );
+                                                    return (
+                                                        <SwiperSlide
                                                             className={
-                                                                "slide_partner_text"
+                                                                "slide_partner"
                                                             }
+                                                            key={key}
                                                         >
-                                                            The company focuses
-                                                            on providing
-                                                            engineering and
-                                                            consulting services
-                                                            to improve the
-                                                            energy efficiency of
-                                                            industrial
-                                                            enterprises and
-                                                            buildings, the
-                                                            development of
-                                                            innovative products
-                                                        </div>
-                                                    </SwiperSlide>
-                                                )
-                                            )}
+                                                            <div>
+                                                                <img
+                                                                    src={
+                                                                        value.image
+                                                                    }
+                                                                />
+                                                            </div>
+                                                            <div>
+                                                                {
+                                                                    value.name[
+                                                                        locale.getLocale()
+                                                                    ]
+                                                                }
+                                                            </div>
+                                                            <div>
+                                                                {
+                                                                    value
+                                                                        .country[
+                                                                        locale.getLocale()
+                                                                    ]
+                                                                }
+                                                            </div>
+                                                            <div
+                                                                className={
+                                                                    "slide_partner_text"
+                                                                }
+                                                            >
+                                                                {
+                                                                    value
+                                                                        .description[
+                                                                        locale.getLocale()
+                                                                    ]
+                                                                }
+                                                            </div>
+                                                        </SwiperSlide>
+                                                    );
+                                                })}
                                         </Swiper>
                                     </div>
                                 )}
                             </div>
                         </div>
-                        <div id={"projects"} className={"container"}>
+                        <div
+                            id={"projects"}
+                            className={"container"}
+                            style={{ display: "none" }}
+                        >
                             <div className="block__text">
                                 <div className="about__main__title">
                                     <FormattedMessage id={"projects_title"} />
@@ -371,6 +404,7 @@ const NewAbout = () => {
                                         slidesPerView={1}
                                         pagination={{ clickable: true }}
                                         modules={[Pagination]}
+                                        spaceBetween={20}
                                     >
                                         {["", "", "", ""].map((value, key) => (
                                             <SwiperSlide
@@ -547,6 +581,6 @@ const NewAbout = () => {
             </IntlProvider>
         </div>
     );
-};
+});
 
 export default NewAbout;

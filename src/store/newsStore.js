@@ -8,10 +8,16 @@ export default class NewsStore{
         })
     }
     setNews(news){
+        news.reverse();
+        news.forEach((elem, index) => {
+            elem.id = index + 1;
+        });
         this._news.splice(0,this._news.length)
         for (const n of news) {
             this._news.push(n)
         }
+
+
     }
     AddNews(news){
         this._news.push(news)

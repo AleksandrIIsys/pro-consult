@@ -9,12 +9,10 @@ import { LOCALES } from "../i18n/Locale";
 import { Autoplay, EffectFade, Pagination } from "swiper";
 import { IntlProvider } from "react-intl";
 import { Context } from "../index";
-import {useMediaQuery} from "react-responsive";
 import {observer} from "mobx-react-lite";
 
 const MainSlider = observer(() => {
     const { locale } = useContext(Context);
-    const isMobile = useMediaQuery({ query: "(max-width:480px)" });
     const [slides, setSlides] = useState([
         {
             image: "/image/slider/slider_img-1.jpg",

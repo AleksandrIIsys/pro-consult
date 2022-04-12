@@ -1,19 +1,15 @@
-import React, { useContext } from "react";
-import { Context } from "../index";
-import { Grid, Mousewheel, Pagination } from "swiper";
-import FooterTest from "../Models/FooterTest";
+import React from "react";
+import { Grid, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../css/style.css";
 import { observer } from "mobx-react-lite";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
-import { NavLink } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 const Careers = observer(() => {
-    const isMobile = useMediaQuery({query:"(max-width:768px)"})
+    const isMobile = useMediaQuery({ query: "(max-width:768px)" });
     return (
         <div>
             <img src={"/image/banner.png"} style={{ width: "100%" }} />
@@ -24,7 +20,10 @@ const Careers = observer(() => {
                     <Swiper
                         grid={{ rows: 3 }}
                         spaceBetween={20}
-                        style={{ height: `${isMobile ? 830 :1300}px`, marginTop: "20px" }}
+                        style={{
+                            height: `${isMobile ? 830 : 1300}px`,
+                            marginTop: "20px",
+                        }}
                         pagination={{ clickable: true }}
                         modules={[Grid, Pagination]}
                     >

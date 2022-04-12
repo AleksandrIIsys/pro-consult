@@ -373,7 +373,6 @@
     display: flex;
     flex-direction: row;
 }
-
 .newscard_title div:first-child {
     display: flex;
     color: #15337e;
@@ -394,15 +393,17 @@
 }
 
 .newscard_text {
-    text-align: justify;
+    margin: 20px 0;
+    min-height: 300px;
+    /*text-align: justify;*/
     word-break: break-all;
 }
 
 .newscard_text img {
     width: 250px;
     height: 250px;
-    float: left;
-    margin: 10px 10px 10px 0;
+    float:left;
+    margin: 0 40px 10px 0;
 }
 
 .educationcard__text__about {
@@ -530,8 +531,8 @@
 .slide_button div {
     width: 100%;
     display: flex;
-align-items: center;
-
+    align-items: center;
+    text-align: center;
     height: 100%;
     border: 1px solid #15337e;
     border-Radius: 10px;
@@ -555,6 +556,12 @@ align-items: center;
 .main{
     min-Height: calc(100vh - 200px);
 }
+.topmenu_createmenu{
+    display: flex;
+    flex-direction: column;
+
+}
+
 @media screen and (max-width: 1080px) {
     
 }
@@ -678,8 +685,8 @@ align-items: center;
     }
 
     .newscard_text {
-        font-size: 11px;
-        line-height: 1.2;
+        /*font-size: 11px;*/
+        /*line-height: 1.2;*/
     }
 
     .newscard_text img {

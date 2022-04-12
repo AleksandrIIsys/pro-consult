@@ -40,7 +40,9 @@ const MainNews = observer(() => {
                                     {news_element.title[locale.getLocale()]}
                                 </div>
                                 <div className="news__item__text">
-                                    {news_element.text[locale.getLocale()]}
+                                    {
+                                        <div  dangerouslySetInnerHTML={{__html:news_element.text[locale.getLocale()]}}/>
+                                    }
                                 </div>
                             </div>
                         </SwiperSlide>

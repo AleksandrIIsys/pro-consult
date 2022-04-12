@@ -8,7 +8,7 @@ export const messageTable={
         btn_news:"read news",
         enon:"Enter name of news",
         edon:"Enter date of news",
-        company_news:"company news",
+        company_news:"Company news",
         other_news:"other news"
 
     },
@@ -23,13 +23,13 @@ export const messageTable={
         other_news:"Другие новости"
     },
     [LOCALES.UZBEK]:{
-        btn:"просмотреть",
-        enoc:"Enter name of course",
-        edoc:"Enter date of course",
+        btn:"apply",
+        enoc:"Курс номини киритинг",
+        edoc:"Курс санасини киритинг",
         btn_news:"read news",
-        enon:"Enter name of news",
-        edon:"Enter date of news",
-        company_news:"company news",
+        enon:"Курс номини янгиликлар",
+        edon:"Курс санасини янгиликлар",
+        company_news:"Company news",
         other_news:"other news"
     },
 

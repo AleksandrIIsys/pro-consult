@@ -1,65 +1,86 @@
-import React, {useCallback, useContext, useState} from 'react';
-import {observer} from "mobx-react-lite";
-import {Context} from "../../index";
-import {useDropzone} from "react-dropzone";
-import {createPartner} from "../../http/Api";
+import React, { useState } from "react";
+import { observer } from "mobx-react-lite";
 import PartnersTable from "../EditableTable/PartnersTable";
+import { Button, Form } from "react-bootstrap";
+import { LOCALES } from "../../i18n/Locale";
+import ModalWindow from "./ModalWindow";
 
 const AdminPartners = observer(() => {
-    const {partners} = useContext(Context)
-    const [newPartners,setNewPartners] = useState({
-        date: "",
-    })
-    const [haveIMG, setHAVE] = useState(false);
-    const [url, setURL] = useState('gray');
-    const [image, setImage] = useState('')
-    const onDrop = useCallback(async acceptedFiles => {
-        setHAVE(true);
-        setImage(acceptedFiles[0])
-        const filereader = new FileReader()
-        filereader.onload = file => {
-            setURL(file.target.result)
-        }
-        filereader.readAsDataURL(acceptedFiles[0])
-    }, [])
-    const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+    const [lang, setLang] = useState("en-US");
     const columns = [
-        {field: 'id', fieldName: '#'},
-        {field: 'image', fieldName: 'Image'},
-        {field: "date", fieldName: 'Date'},
+        { field: "id", fieldName: "#" },
+        { field: "image", fieldName: "Image" },
+        { field: "name", fieldName: "Name" },
+        { field: "country", fieldName: "Country" },
+        { field: "date", fieldName: "Date" },
     ];
+    let isChange = false;
+    const handleChangeLanguage = (e) => {
+        setLang(e.target.value);
+    };
+    const [show, setShow] = useState(false);
+    const handleShow = () => {
+        setShow(true);
+    };
+    const handleClose = () => {
+        setShow(false);
+    };
+    const [isLoad, setIsLoad] = useState(false);
     return (
         <div className={"admin_news"}>
             <div className={"top_panel"}>
-                <div style={{cursor: 'pointer'}} {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    {
-                        haveIMG ? <img src={url} className={'admin_create_news-image'}/> :
-                            isDragActive ?
-                                <p>Drop the files here ...</p> :
-                                <p>Drag 'n' drop some files here, or click to select files</p>
-                    }
-                </div>
-                <input type={"button"} value={"ok"} onClick={async () => {
-                    const fd = new FormData();
-                    const obj = newPartners
-                    obj.date = new Date().toLocaleString("ru-RU")
-                    fd.append('data', JSON.stringify(obj))
-                    fd.append('picture', image)
-                    createPartner(fd).then((ns) => {
-                        const promise = ns.json()
-                        promise.then((data)=>{
-                            data.id = partners.getPartners().length + 1
-                            partners.AddPartners(data)
-                        })
-                    })
+                <Form>
+                    <div
+                        className="lang"
+                        style={{ display: "flex", gap: "20px" }}
+                    >
+                        {Object.keys(LOCALES).map((language, key) => {
+                            return (
+                                <Form.Check
+                                    key={key}
+                                    type={"radio"}
+                                    name={"group1"}
+                                    label={language}
+                                    checked={LOCALES[language] === lang}
+                                    value={LOCALES[language]}
+                                    onClick={(e) => {
+                                        handleChangeLanguage(e);
+                                        isChange = !isChange;
+                                    }}
+                                />
+                            );
+                        })}
+                    </div>
+                </Form>
 
-                }}/>
-                {/*<CreatePanel language={lang} />*/}
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                    <div
+                        className="loader"
+                        style={{ display: isLoad ? "" : "none" }}
+                    />
+                    <Button
+                        variant="primary"
+                        onClick={handleShow}
+                        disabled={isLoad}
+                    >
+                        Create News
+                    </Button>
+                </div>
+                <ModalWindow
+                    show={show}
+                    type={"create"}
+                    isLoad={isLoad}
+                    setIsLoad={setIsLoad}
+                    handleClose={handleClose}
+                />
             </div>
             <div className={"news_panel"}>
                 <div>
-                    <PartnersTable columns={columns} actions/>
+                    <PartnersTable
+                        columns={columns}
+                        language={lang}
+                        setIsLoad={setIsLoad}
+                    />
                 </div>
             </div>
         </div>

@@ -3,7 +3,6 @@ import { Grid, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Context } from "../index";
 import { useMediaQuery } from "react-responsive";
-import {messageAbout} from "../i18n/MessageAbout";
 import {LOCALES} from "../i18n/Locale";
 import {FormattedMessage, IntlProvider} from "react-intl";
 import DatePicker from "react-datepicker";

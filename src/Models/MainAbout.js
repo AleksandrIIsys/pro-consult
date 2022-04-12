@@ -1,9 +1,7 @@
 import React from 'react';
 import {FormattedMessage} from "react-intl";
-import {useMediaQuery} from "react-responsive";
 
 const MainAbout = () => {
-    const isMobile = useMediaQuery({ query: "(max-width:480px)" });
     return (
             <div>
                 <div className="about__content">

@@ -8,8 +8,8 @@ const SideBar = () => {
             <ul className={"SidebarList"}>
             {
                 AdminSideBarData.map((val,key)=>
-                    <NavLink to={val.link} className={({isActive})=>(isActive ? 'active_sidebar' : '')}>
-                    <li key={key}  className={'row'}> {" "}
+                    <NavLink key={key} to={val.link} className={({isActive})=>(isActive ? 'active_sidebar' : '')}>
+                    <li className={'row'}> {" "}
                         <div>{val.title}</div>
                     </li>
                     </NavLink>

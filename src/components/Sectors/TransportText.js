@@ -5,7 +5,7 @@ const TransportText = () => {
     return (
         <div className={"block__text"}>
             <div className={"services_main_title"}>
-                <FormattedMessage id={"transport"} />
+                <FormattedMessage id={"transport_title"} />
             </div>
             <div className={"part_block_text"}>
                 <div className={"headtext"}>

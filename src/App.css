@@ -11,7 +11,20 @@
     margin: 0 auto;
     z-index: 99;
 }
+.loader {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    animation: spin 2s linear infinite;
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 .header__top {
     width: 100%;
     height: 30px;
@@ -76,7 +89,7 @@
     position: static;
     height: 100vh;
     background: #757575;
-    width: 15vw;
+    width: 12vw;
 }
 
 .SidebarList {
@@ -95,9 +108,10 @@
 .top_panel{
     width: 100%;
     height: 20vh;
+    padding: 10px 30px;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 ::-webkit-input-placeholder{
@@ -111,11 +125,13 @@
     width: 100%;
     background: #444444;
 }
-.news_panel div{
-    display: flex;
-    justify-content: center;
+.news_panel > div{
     overflow-y:scroll;
     max-height: 100%;
+}
+.icon_td{
+    position: relative;
+    min-width: 95px;
 }
 .news_table {
     width: 97%;
@@ -183,11 +199,12 @@
     padding-left: 10px;
     padding-right: 10px;
     height: 100%;
-    width: 100%;
+
 }
 
 .admin_create_news-image {
     width: 150px;
+    min-height: 100px;
     margin-left: 5%;
     border: 3px solid #5a5959;
     border-radius: 7%;
@@ -197,9 +214,9 @@
     float: right;
 }
 .admin_create_news div {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*align-content: space-between;*/
     height: 100%;
 }
 
@@ -208,10 +225,9 @@
     border-radius: 10px 10px 10px 10px;
     resize: none;
     border: 3px solid #5a5959;
-    box-shadow: #4e4e4e;
     height: 200px;
-    width: 85%;
-    float: left;
+    text-align: justify;
+    width: 100%;
 }
 
 .admin_create_news {
@@ -354,14 +370,7 @@
     line-height: 150%;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+
 .textNews{
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
@@ -387,4 +396,24 @@
 .swiper {
     width: 100%;
     height: 100%;
+}
+.popup-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    border: 1px solid black;
+    background: white;
+    overflow-y:hidden !important;
+    position: absolute;
+    bottom: 65%;
+    right: 10%;
+}
+
+.delete_block{
+    display: flex;
+    flex-direction: column;
+    align-items:self-end;
 }

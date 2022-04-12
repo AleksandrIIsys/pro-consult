@@ -6,8 +6,8 @@ const Breadcrumbs = () => {
     const breadcrumbs = useBreadcrumbs();
     return (
         <div className={"breadcrumb__react"}>
-            {breadcrumbs.map(({match,breadcrumb,key})=>
-                <span>
+            {breadcrumbs.map(({match,breadcrumb,key},index)=>
+                <span key={index}>
                             {key === '/' ?
                                 <NavLink to={key}>{breadcrumb}</NavLink>
                                 :

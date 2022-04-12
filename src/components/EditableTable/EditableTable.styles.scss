@@ -1,9 +1,12 @@
 table {
+  overflow:visible;
   td {
     vertical-align: middle;
+    max-width: 250px;
+    min-width: 20px;
     span{
-      max-width: 400px;
       display: -webkit-box;
+      word-break: break-all;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       overflow: hidden;
@@ -19,11 +22,16 @@ table {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.custom-table__action-btn:hover{
+  -webkit-filter: brightness(70%);
+
+}
 .custom-table__action-btn {
   cursor: pointer;
   border: 1px solid #eee;
   background: none;
   margin-right: 5px;
+  position: relative;
   svg {
     pointer-events: none;
     padding: 5px;

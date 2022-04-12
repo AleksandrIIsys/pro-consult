@@ -10,6 +10,10 @@ export default class ClientsStore{
         for (const n of clients) {
             this._clients.push(n)
         }
+        this._clients.reverse();
+        this._clients.forEach((elem, index) => {
+            elem.id = index + 1;
+        });
     }
     AddClients(clients){
         this._clients.push(clients)
@@ -18,7 +22,6 @@ export default class ClientsStore{
         this._clients[this._clients.map(elem=>{return elem._id}).indexOf(edit._id)] = edit
     }
     getClients(){
-        console.log(this._clients);
         return this._clients;
     }
 }

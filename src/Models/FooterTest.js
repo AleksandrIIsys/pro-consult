@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import {messageSectors} from "../i18n/MessageSectors";
 import {LOCALES} from "../i18n/Locale";
 import {FormattedMessage, IntlProvider} from "react-intl";
 import {messageFooter} from "../i18n/MessageFooter";

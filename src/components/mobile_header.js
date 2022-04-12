@@ -1,12 +1,8 @@
 import React from "react";
-import { FormattedMessage, IntlProvider } from "react-intl";
-import { HashLink as Link } from "react-router-hash-link";
+import { FormattedMessage } from "react-intl";
 import { NavLink } from "react-router-dom";
 import LangSelector from "./LangSelector";
 import { observer } from "mobx-react-lite";
-import { MessageHeader } from "../i18n/MessageHeader";
-import { LOCALES } from "../i18n/Locale";
-import InitiationText from "./Services/InitiationText";
 
 const MobileHeader = observer(({ currentLocale, handleChangeLocale }) => {
     return (
@@ -48,7 +44,7 @@ const MobileHeader = observer(({ currentLocale, handleChangeLocale }) => {
                         </a>
                     </li>
                     <li>
-                        <a href="/careers" >
+                        <a href="/careers">
                             <FormattedMessage id={"careers"} />
                         </a>
                     </li>

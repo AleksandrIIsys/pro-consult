@@ -1,22 +1,22 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import { LOCALES } from "../../i18n/Locale";
 import { useDropzone } from "react-dropzone";
 import { Form } from "react-bootstrap";
-import Editor from "../Editor";
 
 const CreatePanel = (props) => {
-    const [newNews, setNewNews] = useState(props.data);
+    const [newPartner, setNewPartner] = useState(props.data);
     useEffect(() => {
-        setNewNews(props.data);
+        setNewPartner(props.data);
     }, [props.data]);
-    const [language, setLang] = useState("ru-RU");
+    const [language, setLang] = useState("en-US");
     const [haveIMG, setHAVE] = useState(props.data.image !== "");
     const [url, setURL] = useState(
         props.data.image !== "" ? props.data.image : ""
     );
     const setImage = props.setImage;
-    const [titleEdit, setTitleEdit] = useState("");
-    const [textEdit, setTextEdit] = useState(props.data.text[language]);
+    const [nameEdit, setNameEdit] = useState("");
+    const [descriptionEdit, setDescriptionEdit] = useState("");
+    const [countryEdit, setCountryEdit] = useState("");
     const [isChange, setChange] = useState(true);
     const onDrop = useCallback(async (acceptedFiles) => {
         setHAVE(true);
@@ -28,24 +28,31 @@ const CreatePanel = (props) => {
         filereader.readAsDataURL(acceptedFiles[0]);
     }, []);
     useEffect(() => {
-        setTitleEdit(newNews.title[language]);
-        setTextEdit(newNews.text[language]);
-    }, [language, isChange]);
+        setDescriptionEdit(newPartner.description[language]);
+        setNameEdit(newPartner.name[language]);
+        setCountryEdit(newPartner.country[language]);
+    }, [language,isChange]);
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
-        accept: "image/jpeg,image/png,image/jpg",
+        accept:"image/jpeg,image/png,image/jpg"
     });
-    useEffect(() => {
-        let object = newNews;
-        newNews.text[language] = textEdit;
-        setNewNews(object);
-    }, [textEdit]);
-    const handleChangeTitle = (e) => {
+    const handleChangeText = (e) => {
         const { name: fieldName, value } = e.target;
-        let obj = newNews;
+        let obj = newPartner;
+        switch (fieldName)
+        {
+            case "name":
+                setNameEdit(value)
+                break;
+            case "country":
+                setCountryEdit(value)
+                break;
+            case "description":
+                setDescriptionEdit(value);
+                break;
+        }
         obj[fieldName][language] = value;
-        setNewNews(obj);
-        setChange(!isChange);
+        setNewPartner(obj);
     };
     const handleChangeLanguage = (e) => {
         setLang(e.target.value);
@@ -105,19 +112,39 @@ const CreatePanel = (props) => {
                                 );
                             })}
                         </div>
+
                         <input
                             type={"text"}
                             className={"text_title_send"}
-                            value={titleEdit}
-                            name={"title"}
-                            placeholder={"Title news"}
+                            value={nameEdit}
+                            name={"name"}
+                            placeholder={"Name of member"}
                             onChange={(e) => {
-                                handleChangeTitle(e);
+                                handleChangeText(e);
+                            }}
+                        />
+                        <input
+                            type={"text"}
+                            className={"text_title_send"}
+                            value={countryEdit}
+                            name={"country"}
+                            placeholder={"country"}
+                            onChange={(e) => {
+                                handleChangeText(e);
+                            }}
+                        />
+                        <textarea
+                            className={"text_area_news"}
+                            placeholder={"Status member"}
+                            name={"description"}
+                            value={descriptionEdit}
+                            onChange={(e) => {
+                                handleChangeText(e);
                             }}
                         />
                     </div>
+
                 </div>
-                <Editor textDefault={textEdit} setTextEdit={setTextEdit} />
             </div>
         </div>
     );

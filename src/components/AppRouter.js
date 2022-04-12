@@ -45,6 +45,8 @@ import EducationCard from "../pages/EducationCard";
 import About from "./EducationCard/about";
 import Teachers from "./EducationCard/Teachers";
 import Feedback from "./EducationCard/Feedback";
+import LoginAdmin from "../pages/LoginAdmin";
+import AdminMain from "./AdminMain";
 
 const AppRouter = ({ currentLocale, handleChangeLocale }) => {
     const { news, testimonials, partners, clients, courses } =
@@ -52,27 +54,15 @@ const AppRouter = ({ currentLocale, handleChangeLocale }) => {
     useEffect(() => {
         let isMounted = true;
         fetchNews().then((data) => {
-            data.forEach((elem, index) => {
-                elem.id = index + 1;
-            });
             news.setNews(data);
         });
         fetchTestimonials().then((data) => {
-            data.forEach((elem, index) => {
-                elem.id = index + 1;
-            });
             testimonials.setTestimonials(data);
         });
         fetchClients().then((data) => {
-            data.forEach((elem, index) => {
-                elem.id = index + 1;
-            });
             clients.setClients(data);
         });
         fetchPartners().then((data) => {
-            data.forEach((elem, index) => {
-                elem.id = index + 1;
-            });
             partners.setPartners(data);
         });
 
@@ -141,13 +131,11 @@ const AppRouter = ({ currentLocale, handleChangeLocale }) => {
             </Route>
 
             <Route path={ADMIN_ROUTER} element={<Admin />}>
-                <Route exact path={"news"} element={<AdminNews />}></Route>
-                <Route path={"clients"} element={<AdminClients />}></Route>
-                <Route path={"partners"} element={<AdminPartners />}></Route>
-                <Route
-                    path={"testimonials"}
-                    element={<AdminTestimonials />}
-                ></Route>
+                <Route index element={<AdminMain />} />
+                <Route exact path={"news"} element={<AdminNews />} />
+                <Route path={"clients"} element={<AdminClients />} />
+                <Route path={"partners"} element={<AdminPartners />} />
+                <Route path={"testimonials"} element={<AdminTestimonials />} />
             </Route>
             <Route path={HOME_ROUTER} element={<Home />}></Route>
         </Routes>

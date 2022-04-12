@@ -8,23 +8,25 @@ import "react-datepicker/dist/react-datepicker.css";
 import {messageTable} from "../i18n/MessageTable";
 import {LOCALES} from "../i18n/Locale";
 import {FormattedMessage, IntlProvider} from "react-intl";
+import {observer} from "mobx-react-lite";
+import {HashLink} from "react-router-hash-link";
 
-const NewsTable = ({ row, data }) => {
-    const { courses, locale } = useContext(Context);
-    const [filter, setFilter] = useState(courses);
+const NewsTable = observer(({ row, data }) => {
+    const { news, locale } = useContext(Context);
+    const currentLocale = locale.getLocale()
+    const [filter, setFilter] = useState(news.getNews());
     const handleFilterName = (e) => {
-        console.log(courses);
         const { value } = e.target;
-        setFilter(courses.filter((i) => i.name.toLowerCase().includes(value)));
-        console.log(data.filter((i) => i.name.toLowerCase().includes(value)));
+        setFilter(news.getNews().filter((i) => i.title[locale.getLocale()].toLowerCase().includes(value)));
+        console.log(data.filter((i) => i.name[locale.getLocale()].toLowerCase().includes(value)));
     };
     const [date, setDate] = useState(null);
     const handleFilterDate = (e) => {
         setDate(e)
         if(e){
-            setFilter(courses.filter((i) => i.date.getTime() === e.getTime()));
+            setFilter(news.getNews().filter((i) => new Date(i.date).getTime() === e.getTime()));
         }else {
-            setFilter(courses)
+            setFilter(news.getNews())
         }
 
     };
@@ -53,19 +55,19 @@ const NewsTable = ({ row, data }) => {
                             <SwiperSlide
                                 style={{ height: "40px", width: "320px" }}
                             >
-                                <a
-                                    href={`/news/${key}`}
+                                <HashLink
+                                    to={`/news/${key}#tut`}
                                     className={"slide_activity"}
                                 >
                                     <div className={"slide_news"}>
                                         <div id={"date"}>
-                                            {value.date.toLocaleDateString(
+                                            {new Date(value.date).toLocaleDateString(
                                                 locale
                                             )}
                                         </div>
-                                        <div>{value.name}</div>
+                                        <div> <span>{value.title[currentLocale]}</span></div>
                                     </div>
-                                </a>
+                                </HashLink>
                             </SwiperSlide>
                         ))}
                     </Swiper>
@@ -77,7 +79,7 @@ const NewsTable = ({ row, data }) => {
                         <input
                             type={"text"}
                             onChange={(e) => handleFilterName(e)}
-                            placeholder={messageTable[locale.getLocale()].enon}
+                            placeholder={messageTable[currentLocale].enon}
                         />
                         <DatePicker
                             selected={date}
@@ -86,7 +88,7 @@ const NewsTable = ({ row, data }) => {
                             dateFormat={"dd.MM.yyyy"}
                             closeOnScroll={true}
                             isClearable
-                            placeholderText={messageTable[locale.getLocale()].edon}
+                            placeholderText={messageTable[currentLocale].edon}
                         />
                     </div>
                     <Swiper
@@ -102,17 +104,17 @@ const NewsTable = ({ row, data }) => {
                         {filter.map((value, key) => (
                             <SwiperSlide className={"slide_news"}>
                                 <div id={"number"}>{key + 1}</div>
-                                <div>{value.name}</div>
+                                <div><span>{value.title[currentLocale]}</span></div>
                                 <div id={"date"}>
-                                    {value.date.toLocaleDateString(locale)}
+                                    {new Date(value.date).toLocaleDateString(currentLocale)}
                                 </div>
                                 <div style={{ padding: "10px 5px 10px 5px" }}>
-                                    <a
+                                    <HashLink
                                         className={"slide_button"}
-                                        href={`/news/${key}`}
+                                        to={`/news/${key}#tut`}
                                     >
                                         <div><FormattedMessage id={"btn_news"}/></div>
-                                    </a>
+                                    </HashLink>
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -124,6 +126,6 @@ const NewsTable = ({ row, data }) => {
 
 
     );
-};
+});
 
 export default NewsTable;

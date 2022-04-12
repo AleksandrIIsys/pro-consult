@@ -7,9 +7,14 @@ export default class TestimonialsStore{
     }
     setTestimonials(testimonials){
         this._testimonials.splice(0,this._testimonials.length)
+        this._testimonials.reverse()
+        testimonials.forEach((elem, index) => {
+            elem.id = index + 1;
+        });
         for (const n of testimonials) {
             this._testimonials.push(n)
         }
+
     }
     AddTestimonials(testimonials){
         this._testimonials.push(testimonials)

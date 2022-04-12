@@ -1,139 +1,130 @@
-import React, {useContext, useState} from 'react';
-import {observer} from "mobx-react-lite";
-import {Context} from "../../index";
-import {deleteClient, editClient} from "../../http/Api";
-import {Table} from "react-bootstrap";
-import {PencilFill, Save, Trash, XSquare} from "react-bootstrap-icons";
+import React, { useContext, useState } from "react";
+import { observer } from "mobx-react-lite";
+import { Context } from "../../index";
+import { deleteClient, editClient } from "../../http/Api";
+import { Button, Table } from "react-bootstrap";
+import { PencilFill, Save, Trash, XSquare } from "react-bootstrap-icons";
+import ModalWindow from "../AdminClients/ModalWindow";
 
-const ClientsTable = observer(({columns, language, actions}) => {
-    const {clients} = useContext(Context);
-    const [isEditMode, setIsEditMode] = useState(false);
-    const [rowIDToEdit, setRowIDToEdit] = useState(undefined);
+const ClientsTable = observer(({ columns, language, setIsLoad }) => {
+    const { clients } = useContext(Context);
     const [rowsState, setRowsState] = useState(clients.getClients());
     const [editedRow, setEditedRow] = useState();
-    const [file, setFile] = useState(null);
     const handleEdit = (rowID) => {
-        setIsEditMode(true);
-        setFile(null)
-        setEditedRow(clients.getClients().filter(row => row.id === rowID)[0]);
-        setRowIDToEdit(rowID);
-    }
+        setEditedRow(clients.getClients().filter((row) => row.id === rowID)[0]);
+        setShow(true);
+    };
+    const handleClose = () => {
+        setShow(false);
+    };
+    const [deletModal, setDeletModal] = useState(false);
+
+    const deleteModalOpen = (rowID) => {
+        setDeletModal(true);
+        setEditedRow(clients.getClients().filter((row) => row.id === rowID)[0]);
+    };
+    const deleteModalClose = () => {
+        setDeletModal(false);
+    };
+    const [show, setShow] = useState(false);
     const handleRemoveRow = async (rowID) => {
-        const newData = rowsState.filter(row => {
-            return row.id !== rowID ? row : null
+        const newData = rowsState.filter((row) => {
+            return row.id !== rowID ? row : null;
         });
-        const deleteData = rowsState.filter(row => {
-            return row.id === rowID ? row : null
+        const deleteData = rowsState.filter((row) => {
+            return row.id === rowID ? row : null;
         })[0];
         newData.forEach((elem, index) => {
-            elem.id = (index + 1)
-        })
-        const fd = new FormData()
+            elem.id = index + 1;
+        });
+        const fd = new FormData();
         fd.append("data", JSON.stringify(deleteData));
-        deleteClient(fd).then((res) => {
-            if (res.status === 200) {
-                clients.setClients(newData);
-            }
-        }).catch((e) => {
-            console.log(e);
-        })
-    }
-    const handleOnChangeImage = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            setFile(e.target.files[0])
-            const filereader = new FileReader()
-            filereader.onload = file => {
-                let obj = editedRow
-                obj.image = file.target.result
-                setEditedRow(obj)
-            }
-            filereader.readAsDataURL(e.target.files[0])
-        }
-    }
-    const handleCancelEditing = () => {
-        setIsEditMode(false);
-        setEditedRow(undefined);
-    }
-    const handleSaveRowChanges = () => {
-        setTimeout(async () => {
-            setIsEditMode(false);
-            const fd = new FormData()
-            if (file !== null)
-                fd.append('image', file);
-            editClient(fd).then((res) => {
+        deleteClient(fd)
+            .then((res) => {
                 if (res.status === 200) {
-                    const promise = res.json()
-                    promise.then((data) => {
-                        clients.EditClients(data)
-                    })
+                    clients.setClients(newData);
                 }
             })
-            setFile(null)
-            setEditedRow(undefined)
-        }, 1000)
-    }
-
+            .catch((e) => {
+                console.log(e);
+            });
+    };
     return (
-        <Table striped bordered hover>
-            <thead>
-            <tr>
-                {columns.map((column) => {
-                    return <th key={column.field}>{column.fieldName}</th>
-                })}
-            </tr>
-            </thead>
-            <tbody>
-            {rowsState.map((row) => {
-                return <tr key={row.id}>
-                    <td>
-                        {row.id}
-                    </td>
-                    <td>
-                        {isEditMode && rowIDToEdit === row.id
-                            ?
-                            <div style={{overflowX: "hidden", overflowY: "hidden"}}>
-                                <label htmlFor={"file-input"} style={{cursor: 'pointer'}}>
-                                    <img src={editedRow ? editedRow.image : row.image} style={{width: "100px"}} alt={""}/>
-                                </label>
-                                <input type={"file"} onChange={(e) => {
-                                    handleOnChangeImage(e);
-                                }} id="file-input" style={{display: "none", width: "100px"}} autoComplete={"off"}
-                                />
-                            </div>
-                            : <span><img src={row.image} style={{width: "100px"}} alt={""}/></span>
-                        }
-                    </td>
-                    <td>
-                        {
-                            row.date
-                        }
-                    </td>
-                    {actions &&
-                        <td>
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <button onClick={() => handleSaveRowChanges()} className='custom-table__action-btn'
-                                          disabled={!editedRow}>
-                                    <Save/>
-                                </button>
-                                : <button onClick={() => handleEdit(row.id)} className='custom-table__action-btn'>
-                                    <PencilFill/>
-                                </button>
-                            }
-
-                            {isEditMode && rowIDToEdit === row.id
-                                ? <button onClick={() => handleCancelEditing()} className='custom-table__action-btn'>
-                                    <XSquare/>
-                                </button>
-                                : <button onClick={() => handleRemoveRow(row.id)} className='custom-table__action-btn'>
-                                    <Trash/>
-                                </button>
-                            }
-                        </td>
-                    }
-                </tr>
-            })}
-            </tbody>
-        </Table>
+        <div>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        {columns.map((column) => {
+                            return (
+                                <th key={column.field}>{column.fieldName}</th>
+                            );
+                        })}
+                    </tr>
+                </thead>
+                <tbody>
+                    {rowsState.map((row) => {
+                        return (
+                            <tr key={row.id}>
+                                <td>{row.id}</td>
+                                <td>
+                                    <span>
+                                        <img
+                                            src={row.image}
+                                            style={{ width: "100px" }}
+                                            alt={""}
+                                        />
+                                    </span>
+                                </td>
+                                <td>{row.name[language]}</td>
+                                <td>{row.country[language]}</td>
+                                <td>{row.date}</td>
+                                <td className={"icon_td"}>
+                                    {deletModal && row.id === editedRow.id ? (
+                                        <div className={"popup-menu"} id>
+                                            <Button
+                                                size={"sm"}
+                                                onClick={deleteModalClose}
+                                            >
+                                                cancel
+                                            </Button>
+                                            <Button
+                                                size={"sm"}
+                                                onClick={() =>
+                                                    handleRemoveRow(row.id)
+                                                }
+                                            >
+                                                ok
+                                            </Button>
+                                        </div>
+                                    ) : (
+                                        <></>
+                                    )}
+                                    <button
+                                        onClick={() => handleEdit(row.id)}
+                                        className="custom-table__action-btn"
+                                    >
+                                        <PencilFill />
+                                    </button>
+                                    <button
+                                        onClick={() => deleteModalOpen(row.id)}
+                                        className="custom-table__action-btn"
+                                    >
+                                        <Trash />
+                                    </button>
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </Table>
+            <ModalWindow
+                show={show}
+                handleClose={handleClose}
+                type={"update"}
+                setIsLoad={setIsLoad}
+                defaultData={editedRow}
+            />
+        </div>
     );
 });
 

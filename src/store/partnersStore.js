@@ -10,6 +10,10 @@ export default class PartnersStore{
         for (const n of partners) {
             this._partners.push(n)
         }
+        this._partners.reverse();
+        this._partners.forEach((elem, index) => {
+            elem.id = index + 1;
+        });
     }
     AddPartners(partners){
         this._partners.push(partners)

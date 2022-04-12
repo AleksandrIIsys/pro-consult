@@ -1,23 +1,17 @@
 import React, { useContext } from "react";
 import { Context } from "../index";
-import { Grid, Mousewheel, Pagination } from "swiper";
-import FooterTest from "../Models/FooterTest";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../css/style.css";
-import { NavLink } from "react-router-dom";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
 import Breadcrumbs from "../components/Breadcrumbs";
 import EducationTable from "../components/EducationTable";
 import MainSlider from "../Models/MainSlider";
 import { FormattedMessage, IntlProvider } from "react-intl";
-import { messageAbout } from "../i18n/MessageAbout";
 import { LOCALES } from "../i18n/Locale";
 import { messageEducation } from "../i18n/MessageEducation";
 
 const Education = () => {
-    const { news, locale } = useContext(Context);
+    const { locale } = useContext(Context);
 
     return (
         <div>
