@@ -116,7 +116,6 @@
 //     return resualt
 // }
 const uri = process.env.REACT_APP_API_URL;
-console.log(uri);
 export const fetchAuth = async (data) => {
     const resualt = await fetch(`${uri}/api/auth/`, {
         method: "POST",

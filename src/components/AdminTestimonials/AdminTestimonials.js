@@ -64,7 +64,7 @@ const AdminTestimonials = () => {
                         onClick={handleShow}
                         disabled={isLoad}
                     >
-                        Create News
+                        Create Testimonials
                     </Button>
                 </div>
                 <ModalWindow

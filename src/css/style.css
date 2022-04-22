@@ -929,7 +929,8 @@ nav li:hover > .submenu {
 
 .footer__short-menu, .footer__sitemap {
     display: flex;
-    gap: 5px;
+    column-gap: 30px;
+    row-gap: 5px;
     justify-self: self-start;
     flex-direction: column;
     flex-wrap: wrap;
@@ -1728,7 +1729,9 @@ footer {
         .container {
             width: 500px;
         }
-
+        .footer__sitemap{
+            column-gap: 10px;
+        }
     }
     @media screen and (max-width: 480px) {
 
@@ -1866,7 +1869,9 @@ footer {
                 margin-top: 10px;
                 height: 23px;
             }
-
+            .footer__sitemap{
+                column-gap: 5px;
+            }
 
             .footer__short-menu a, .footer__sitemap a {
                 font-size: 0.6rem;

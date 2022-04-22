@@ -63,7 +63,7 @@ const AdminPartners = observer(() => {
                         onClick={handleShow}
                         disabled={isLoad}
                     >
-                        Create News
+                        Create Partners
                     </Button>
                 </div>
                 <ModalWindow

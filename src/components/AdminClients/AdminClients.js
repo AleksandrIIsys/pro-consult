@@ -65,7 +65,7 @@ const AdminClients = observer(() => {
                         onClick={handleShow}
                         disabled={isLoad}
                     >
-                        Create News
+                        Create Clients
                     </Button>
                 </div>
                 <ModalWindow

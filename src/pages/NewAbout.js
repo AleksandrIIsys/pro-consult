@@ -13,6 +13,7 @@ import { FormattedMessage, IntlProvider } from "react-intl";
 import { Context } from "../index";
 import { messageAbout } from "../i18n/MessageAbout";
 import { observer } from "mobx-react-lite";
+import SlideAbout from "../components/About/SlideAbout";
 
 const NewAbout = observer(() => {
     const AboutData = [
@@ -66,6 +67,7 @@ const NewAbout = observer(() => {
     const isMobile = useMediaQuery({ query: "(max-width:768px)" });
     const isTablet = useMediaQuery({ query: "(max-width:1080px)" });
     const { locale, clients, partners } = useContext(Context);
+    const EmptySlide = (data) => {};
     return (
         <div>
             <IntlProvider
@@ -85,8 +87,7 @@ const NewAbout = observer(() => {
                                             key={key}
                                             className={"choosing_element"}
                                         >
-                                            {" "}
-                                            {value.title}{" "}
+                                            {value.title}
                                         </div>
                                     </HashLink>
                                 ))}
@@ -132,35 +133,12 @@ const NewAbout = observer(() => {
                                         {partners
                                             .getPartners()
                                             .map((value, key) => (
-                                                <SwiperSlide
-                                                    className={"slide_partner"}
-                                                >
-                                                    <div key={key}>
-                                                        <img
-                                                            src={value.image}
-                                                        />
-                                                    </div>
-                                                    <div>
-                                                        {
-                                                            value.name[
-                                                                locale.getLocale()
-                                                            ]
-                                                        }
-                                                    </div>
-                                                    <div>
-                                                        {
-                                                            value.country[
-                                                                locale.getLocale()
-                                                            ]
-                                                        }
-                                                    </div>
-                                                    <div>
-                                                        {
-                                                            value.description[
-                                                                locale.getLocale()
-                                                            ]
-                                                        }
-                                                    </div>
+                                                <SwiperSlide>
+                                                    <SlideAbout
+                                                        value={value}
+                                                        locale={locale}
+                                                        key={key}
+                                                    />
                                                 </SwiperSlide>
                                             ))}
                                     </Swiper>
@@ -205,42 +183,25 @@ const NewAbout = observer(() => {
                                                         className={
                                                             "slide_partner"
                                                         }
-                                                        key={key}
                                                     >
-                                                        <div>
-                                                            <img
-                                                                src={
-                                                                    value.image
-                                                                }
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            {
-                                                                value.name[
-                                                                    locale.getLocale()
-                                                                ]
-                                                            }
-                                                        </div>
-                                                        <div>
-                                                            {
-                                                                value.country[
-                                                                    locale.getLocale()
-                                                                ]
-                                                            }
-                                                        </div>
-                                                        <div
-                                                            className={
-                                                                "slide_partner_text"
-                                                            }
-                                                        >
-                                                            {
-                                                                value
-                                                                    .description[
-                                                                    locale.getLocale()
-                                                                ]
-                                                            }
-                                                        </div>
+                                                        <SlideAbout
+                                                            value={value}
+                                                            locale={locale}
+                                                            key={key}
+                                                        />
                                                     </SwiperSlide>
+                                                ))}
+                                            {new Array(
+                                                clients.getClients().length % 5
+                                            )
+                                                .fill("")
+                                                .map((value, key) => (
+                                                    <SwiperSlide
+                                                        className={
+                                                            "slide_partner"
+                                                        }
+                                                        key={key}
+                                                    ></SwiperSlide>
                                                 ))}
                                         </Swiper>
                                     </div>
@@ -265,36 +226,12 @@ const NewAbout = observer(() => {
                                         {clients
                                             .getClients()
                                             .map((value, key) => (
-                                                <SwiperSlide
-                                                    className={"slide_partner"}
-                                                    key={key}
-                                                >
-                                                    <div>
-                                                        <img
-                                                            src={value.image}
-                                                        />
-                                                    </div>
-                                                    <div>
-                                                        {
-                                                            value.name[
-                                                                locale.getLocale()
-                                                            ]
-                                                        }
-                                                    </div>
-                                                    <div>
-                                                        {
-                                                            value.country[
-                                                                locale.getLocale()
-                                                            ]
-                                                        }
-                                                    </div>
-                                                    <div>
-                                                        {
-                                                            value.description[
-                                                                locale.getLocale()
-                                                            ]
-                                                        }
-                                                    </div>
+                                                <SwiperSlide>
+                                                    <SlideAbout
+                                                        value={value}
+                                                        key={key}
+                                                        locale={locale}
+                                                    />
                                                 </SwiperSlide>
                                             ))}
                                     </Swiper>
@@ -335,55 +272,21 @@ const NewAbout = observer(() => {
                                             {clients
                                                 .getClients()
                                                 .map((value, key) => {
-                                                    console.log(
-                                                        value.description[
-                                                            locale.getLocale()
-                                                        ]
-                                                    );
                                                     return (
-                                                        <SwiperSlide
-                                                            className={
-                                                                "slide_partner"
-                                                            }
-                                                            key={key}
-                                                        >
-                                                            <div>
-                                                                <img
-                                                                    src={
-                                                                        value.image
-                                                                    }
-                                                                />
-                                                            </div>
-                                                            <div>
-                                                                {
-                                                                    value.name[
-                                                                        locale.getLocale()
-                                                                    ]
-                                                                }
-                                                            </div>
-                                                            <div>
-                                                                {
-                                                                    value
-                                                                        .country[
-                                                                        locale.getLocale()
-                                                                    ]
-                                                                }
-                                                            </div>
-                                                            <div
-                                                                className={
-                                                                    "slide_partner_text"
-                                                                }
-                                                            >
-                                                                {
-                                                                    value
-                                                                        .description[
-                                                                        locale.getLocale()
-                                                                    ]
-                                                                }
-                                                            </div>
+                                                        <SwiperSlide>
+                                                            <SlideAbout
+                                                                value={value}
+                                                                locale={locale}
+                                                                key={key}
+                                                            />
                                                         </SwiperSlide>
                                                     );
                                                 })}
+                                            {new Array(3).map((value) => (
+                                                <SwiperSlide
+                                                    className={"slide_partner"}
+                                                />
+                                            ))}
                                         </Swiper>
                                     </div>
                                 )}

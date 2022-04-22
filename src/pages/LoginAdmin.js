@@ -17,7 +17,6 @@ const LoginAdmin = ({ setKey }) => {
             .then((res) => {
                 return res;
             });
-        console.log(result);
         if (result.result) {
             setKey(result.key);
             setCorrect(true)

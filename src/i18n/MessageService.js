@@ -52,7 +52,7 @@ export const messageService = {
         testing_and_commissioning:"PCC provides services to help its Clients to conduct testing and commissioning of the project. PCC supports its Client through successful testing and commissioning.",
         decommissioning_and_closure:"When an asset’s useful life comes to an end, PCC provides assistance to bring the project to a successful close with decommissioning and closure services. PCC provides assistance in development of decommissioning plan and closure framework.",
         rehabilitation:"Whether it is rehabilitation, modernization or reconstruction, PCC and its team of experienced experts will offer our clients the best way of implementation through effective, innovative and sustainable solutions.",
-        services_tile:"Services",
+        services_title:"Services",
         services_part1:"Pro-consult company offers comrehensive engineering and consulting services across all main sectors of economy delivering tailored, effective and sustainable outcomes.",
         services_part2:"Using modern, innovative and practical solutions, PCC delivers reliable performance to a range of industry sectors, including Water and Environment, Energy and Resources, Transport and Telecommunication.",
         services_part3:"Depending on Clients role, PCC can act as an owner's, contractor's and/or lender's Engineer for the implementation of a project.",
