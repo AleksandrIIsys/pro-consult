@@ -18,7 +18,6 @@ const Contacts = () => {
                 locale={locale.getLocale()}
                 defaultLocale={LOCALES.ENGLISH}
             >
-                <img src={"/image/banner.png"} style={{ width: "100%" }}></img>
                 <div className={"center_container"}>
                     <div className="container">
                         <Breadcrumbs />
@@ -35,12 +34,12 @@ const Contacts = () => {
                                 </p>
                                 <p>
                                     <div className="header__phone">
-                                        +998 (71) 123-45-67
+                                        +998 (90) 788-66-47
                                     </div>
                                 </p>
                                 <p>
                                     <div className="header__mobile">
-                                        +998 (90) 123-45-67
+                                        +998 (90) 999-44-73
                                     </div>
                                 </p>
                                 <p>

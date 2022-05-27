@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "../localstyle.css";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import EducationTable from "../components/EducationTable";
 import NavMenu from "../components/NavMenu";
@@ -72,7 +72,6 @@ const NewSectors = observer(() => {
                 locale={locale.getLocale()}
                 defaultLocale={LOCALES.ENGLISH}
             >
-                <MainSlider/>
                 <div className={"center_container"}>
                     <div className={"container"}>
                         <Breadcrumbs />
@@ -87,16 +86,16 @@ const NewSectors = observer(() => {
                         <div className={"container"}>
                             <div className="about__main__title"><FormattedMessage id={"see_also"}/></div>
                             <div className={"mobile__button"}>
-                                <a href={"/services"}>
+                                <NavLink to={"/services"}>
                                     <FormattedMessage id={"services"} />
-                                </a>
+                                </NavLink>
                             </div>
                             <div className={"mobile__button"}>
-                                <a href={"/education"}>
+                                <NavLink to={"/education"}>
                                     <FormattedMessage
                                         id={"upcoming_related_courses"}
                                     />
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
                     ) : (
@@ -109,7 +108,7 @@ const NewSectors = observer(() => {
                                     <div className={"image_sectors_container"}>
                                         {image.map((value, key) => (
                                             <div key={key}>
-                                                <a href={value.link}>
+                                                <NavLink to={value.link}>
                                                     <div
                                                         className={
                                                             "inner_image"
@@ -126,7 +125,7 @@ const NewSectors = observer(() => {
                                                             {value.text}
                                                         </span>
                                                     </div>
-                                                </a>
+                                                </NavLink>
                                             </div>
                                         ))}
                                     </div>
@@ -141,11 +140,11 @@ const NewSectors = observer(() => {
                                 <div className={"course__table"}>
                                     <EducationTable row={4} />
                                     <div className="courses__item__btn">
-                                        <a href="/education">
+                                        <NavLink to="/education">
                                             <FormattedMessage
                                                 id={"all_course"}
                                             />
-                                        </a>
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>

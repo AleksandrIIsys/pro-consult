@@ -10,7 +10,12 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
             <div className="container">
                 <div className="header__inner">
                     <div className="header__content-logo">
-                        <NavLink to={"/"}>
+                        <NavLink
+                            to={{
+                                pathname: "/",
+                                state: { fromDashboard: true },
+                            }}
+                        >
                             <img src="/image/logo.png" alt="" />
                         </NavLink>
                     </div>
@@ -68,9 +73,9 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
                                 </div>
                                 <ul className="submenu">
                                     <li>
-                                        <a href="/sectors">
+                                        <NavLink to={"/sectors"}>
                                             <FormattedMessage id={"sectors"} />
-                                        </a>
+                                        </NavLink>
                                         <ul className="submenu">
                                             <li>
                                                 <Link
@@ -119,9 +124,9 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="/services">
+                                        <NavLink to={"/services"}>
                                             <FormattedMessage id={"services"} />
-                                        </a>
+                                        </NavLink>
                                         <ul className="submenu">
                                             <li>
                                                 <Link
@@ -174,30 +179,30 @@ const Header = ({ currentLocale, handleChangeLocale }) => {
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="/education">
+                                        <NavLink to={"/education"}>
                                             <FormattedMessage
                                                 id={"education"}
                                             />
-                                        </a>
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="/news">
+                                <NavLink to={"/news"}>
                                     <FormattedMessage id={"news"} />
-                                </a>
+                                </NavLink>
                             </li>
                             <li>
-                                <a href="/careers">
+                                <NavLink to={"/careers"}>
                                     <FormattedMessage id={"careers"} />
                                     <span className="fa fa-angle-down"></span>
-                                </a>
+                                </NavLink>
                             </li>
                             <li>
-                                <a href="/contacts">
+                                <NavLink to={"/contacts"}>
                                     <FormattedMessage id={"contact"} />{" "}
                                     <span className="fa fa-angle-down"></span>
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>

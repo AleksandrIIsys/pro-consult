@@ -2,9 +2,13 @@ import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Grid, Pagination} from "swiper";
 import {useMediaQuery} from "react-responsive";
+import { useOutletContext } from "react-router";
 
 const Feedback = () => {
     const isMobile = useMediaQuery({query:"(max-width:480px)"})
+    const [value,locale] = useOutletContext()
+    if(value === null)
+        return <></>
     return (
         <div className={"container"}>
             <Swiper
@@ -15,27 +19,17 @@ const Feedback = () => {
                 modules={[Grid, Pagination]}
 
             >
-                {['', '', '', ''].map(((value, index) =>
+                {value.feedback.map(((value, index) =>
                     <SwiperSlide className={"feedback__slide"} key={index}>
                         <div className={"feedback__box"}>
                             <div>{index+1}
                             </div>
-                            <span>18.03.2022</span>
+                            <span>{new Date(value.date).toLocaleDateString(locale.getLocale())}</span>
                         </div>
                         <div className={"feedback__text"}>
-                            <q>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an
-                                unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It
-                                has
-                                survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the
-                                release of
-                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.</q>
-                            <div >Akhmedova Guzal</div>
-                            <div >Director abra cadabra ltd</div>
+                            <q>{value.text[locale.getLocale()]}</q>
+                            <div >{value.name[locale.getLocale()]}</div>
+                            <div >{value.position[locale.getLocale()]}</div>
 
                         </div>
                     </SwiperSlide>))}

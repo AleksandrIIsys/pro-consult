@@ -20,7 +20,6 @@ const NewsCard = observer(() => {
                 locale={locale.getLocale()}
                 defaultLocale={LOCALES.ENGLISH}
             >
-                <MainSlider />
                 <div className={"center_container"}>
                     <div className={"container"}>
                         <Breadcrumbs />

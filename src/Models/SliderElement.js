@@ -1,5 +1,6 @@
 import React from 'react';
 import {FormattedMessage} from "react-intl";
+import { NavLink } from "react-router-dom";
 
 const SliderElement = (props) => {
     return (
@@ -15,7 +16,7 @@ const SliderElement = (props) => {
                     <div className="slider__text">
                         <FormattedMessage id={"text"}/>
                     </div>
-                    <div className="slider__btn"><a href={props.slide.url}><FormattedMessage id={"moreinfo"}/></a>
+                    <div className="slider__btn"><NavLink to={props.slide.url}><FormattedMessage id={"moreinfo"}/></NavLink>
                     </div>
                 </div>
             </div>

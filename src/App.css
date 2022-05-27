@@ -196,41 +196,29 @@
 .text_title_send {
     border: 3px solid #5a5959;
     border-radius: 10px 10px 10px 10px;
-    margin-bottom: 10px;
+    margin: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    height: 100%;
-
+    width: 100%;
 }
 
 .admin_create_news-image {
     width: 150px;
     min-height: 100px;
-    margin-left: 5%;
+    /*margin-left: 5%;*/
     border: 3px solid #5a5959;
     border-radius: 7%;
     resize: none;
     padding: 5px 5px 5px 5px;
     text-align: justify;
-    float: right;
+    /*float: right;*/
 }
-.admin_create_news div {
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*align-content: space-between;*/
+.admin_create_news > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
     height: 100%;
 }
-
-.admin_create_news textarea {
-    padding: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    resize: none;
-    border: 3px solid #5a5959;
-    height: 200px;
-    text-align: justify;
-    width: 100%;
-}
-
 .admin_create_news {
     border: #4e4e4e 3px;
     margin: 10px 10px 10px 10px;

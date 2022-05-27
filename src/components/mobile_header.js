@@ -19,39 +19,39 @@ const MobileHeader = observer(({ currentLocale, handleChangeLocale }) => {
                 <span></span>
                 <ul id="menu">
                     <li>
-                        <a href="/about-us">
+                        <NavLink to="/about-us">
                             <FormattedMessage id={"about_us"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="/sectors">
+                        <NavLink to="/sectors">
                             <FormattedMessage id={"sectors"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="/service" id={"services"}>
+                        <NavLink to="/service" id={"services"}>
                             <FormattedMessage id={"services"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="/education">
+                        <NavLink to="/education">
                             <FormattedMessage id={"education"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="/news">
+                        <NavLink to="/news">
                             <FormattedMessage id={"news"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="/careers">
+                        <NavLink to="/careers">
                             <FormattedMessage id={"careers"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="/contacts">
+                        <NavLink to="/contacts">
                             <FormattedMessage id={"contact"} />
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
                         <LangSelector

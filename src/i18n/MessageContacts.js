@@ -10,7 +10,7 @@ export const messageContacts = {
         address:"г. Ташкент, ул. Буюк Ипак Йули 114/3"
     },
     [LOCALES.UZBEK]:{
-        contacts:"Contacts",
-        address:"Tashkent st. Buyuk Ipak Yuli 114/3"
+        contacts:"Контактлар",
+        address:"г. Ташкент, ул. Буюк Ипак Йули 114/3"
     },
 }

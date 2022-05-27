@@ -1,5 +1,6 @@
 import React from 'react';
 import {FormattedMessage} from "react-intl";
+import { NavLink } from "react-router-dom";
 
 const MainAbout = () => {
     return (
@@ -12,7 +13,7 @@ const MainAbout = () => {
                         <div className="about__text">
                             <FormattedMessage id={"about_text"}/>
                         </div>
-                        <a className="about__link" href="/about-us"><FormattedMessage id={"more_info"}/></a>
+                        <NavLink className="about__link" to="/about-us"><FormattedMessage id={"more_info"}/></NavLink>
                         <div className="about__title-sphera">
                             <FormattedMessage id={'about_title_sphera'}/>
                         </div>
@@ -25,7 +26,7 @@ const MainAbout = () => {
                                 <div className="about__item-text">
                                     <FormattedMessage id={'about_item_text_services'}/>
                                 </div>
-                                <div className="about__item__btn"><a href="/services"><FormattedMessage id={"more_info"}/></a></div>
+                                <div className="about__item__btn"><NavLink to="/services"><FormattedMessage id={"more_info"}/></NavLink></div>
                             </div>
                             <div className="about__item">
                                 <div className="about-img"><img src="../image/about/about-2.png" alt=""/></div>
@@ -35,7 +36,7 @@ const MainAbout = () => {
                                 <div className="about__item-text">
                                     <FormattedMessage id={'about_item_text_sectors'}/>
                                 </div>
-                                <div className="about__item__btn"><a href="/sectors"><FormattedMessage id={"more_info"}/></a></div>
+                                <div className="about__item__btn"><NavLink to="/sectors"><FormattedMessage id={"more_info"}/></NavLink></div>
                             </div>
                             <div className="about__item">
                                 <div className="about-img"><img src="../image/about/about-3.svg" alt=""/></div>
@@ -45,7 +46,7 @@ const MainAbout = () => {
                                 <div className="about__item-text">
                                     <FormattedMessage id={'about_item_text_education'}/>
                                 </div>
-                                <div className="about__item__btn"><a href="/education"><FormattedMessage id={"more_info"}/></a></div>
+                                <div className="about__item__btn"><NavLink to="/education"><FormattedMessage id={"more_info"}/></NavLink></div>
                             </div>
                         </div>
                     </div>

@@ -14,9 +14,12 @@ import { Context } from "../index";
 import { Navigate, Route, Routes } from "react-router-dom";
 import MainPage from "../pages/MainPage";
 import {
+    fetchCareers,
     fetchClients,
+    fetchCourse,
     fetchNews,
     fetchPartners,
+    fetchProject, fetchSlider,
     fetchTestimonials,
 } from "../http/Api";
 import AdminTestimonials from "./AdminTestimonials/AdminTestimonials";
@@ -47,14 +50,37 @@ import Teachers from "./EducationCard/Teachers";
 import Feedback from "./EducationCard/Feedback";
 import LoginAdmin from "../pages/LoginAdmin";
 import AdminMain from "./AdminMain";
+import AdminCourses from "./AdminCourses/AdminCourses";
+import AdminProjects from "./AdminProjects/AdminProjects";
+import AdminCareers from "./AdminCareers/AdminCareers";
+import ScrollToTop from "./ScrollToTop";
+import ProjectCard from "../pages/ProjectCard";
+import AdminSlider from "./AdminSlider/AdminSlider";
 
 const AppRouter = ({ currentLocale, handleChangeLocale }) => {
-    const { news, testimonials, partners, clients, courses } =
-        useContext(Context);
+    const {
+        news,
+        testimonials,
+        partners,
+        clients,
+        courses,
+        careers,
+        project,
+        slider,
+    } = useContext(Context);
     useEffect(() => {
         let isMounted = true;
         fetchNews().then((data) => {
             news.setNews(data);
+        });
+        fetchProject().then((data) => {
+            project.setProject(data);
+        });
+        fetchCourse().then((data) => {
+            courses.setCourse(data);
+        });
+        fetchCareers().then((data) => {
+            careers.setCareers(data);
         });
         fetchTestimonials().then((data) => {
             testimonials.setTestimonials(data);
@@ -65,7 +91,9 @@ const AppRouter = ({ currentLocale, handleChangeLocale }) => {
         fetchPartners().then((data) => {
             partners.setPartners(data);
         });
-
+        fetchSlider().then((data) => {
+            slider.setSlider(data);
+        });
         return () => {
             isMounted = false;
         };
@@ -87,6 +115,7 @@ const AppRouter = ({ currentLocale, handleChangeLocale }) => {
                 <Route path={NEWS_ROUTER} element={<News />} />
                 <Route path={NEWS_ROUTER + "/:id"} element={<NewsCard />} />
                 <Route path={ABOUTUS} element={<NewAbout />} />
+                <Route path={"/project/:id"} element={<ProjectCard />} />
                 <Route path={"careers"} element={<Careers />} />
                 <Route path={"*"} element={<Navigate to={"/"} />} />
                 <Route path={"education"} element={<Education />} />
@@ -136,6 +165,10 @@ const AppRouter = ({ currentLocale, handleChangeLocale }) => {
                 <Route path={"clients"} element={<AdminClients />} />
                 <Route path={"partners"} element={<AdminPartners />} />
                 <Route path={"testimonials"} element={<AdminTestimonials />} />
+                <Route path={"courses"} element={<AdminCourses />} />
+                <Route path={"projects"} element={<AdminProjects />} />
+                <Route path={"careers"} element={<AdminCareers />} />
+                <Route path={"slider"} element={<AdminSlider />} />
             </Route>
             <Route path={HOME_ROUTER} element={<Home />}></Route>
         </Routes>

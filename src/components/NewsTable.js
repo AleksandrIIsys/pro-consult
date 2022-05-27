@@ -18,7 +18,7 @@ const NewsTable = observer(({ row, data }) => {
     const handleFilterName = (e) => {
         const { value } = e.target;
         setFilter(news.getNews().filter((i) => i.title[locale.getLocale()].toLowerCase().includes(value)));
-        console.log(data.filter((i) => i.name[locale.getLocale()].toLowerCase().includes(value)));
+
     };
     const [date, setDate] = useState(null);
     const handleFilterDate = (e) => {
@@ -70,6 +70,14 @@ const NewsTable = observer(({ row, data }) => {
                                 </HashLink>
                             </SwiperSlide>
                         ))}
+                        {new Array(row - (news.getNews().length % row))
+                            .fill("")
+                            .map((value, key) => (
+                                <SwiperSlide
+                                    className={"slide_news"}
+                                    key={key}
+                                ></SwiperSlide>
+                            ))}
                     </Swiper>
                 </div>
             ) : (
@@ -118,6 +126,14 @@ const NewsTable = observer(({ row, data }) => {
                                 </div>
                             </SwiperSlide>
                         ))}
+                        {new Array(row - (news.getNews().length % row))
+                            .fill("")
+                            .map((value, key) => (
+                                <SwiperSlide
+                                    className={"slide_news"}
+                                    key={key}
+                                ></SwiperSlide>
+                            ))}
                     </Swiper>
                 </div>
             )}

@@ -59,7 +59,6 @@ const NewServices = () => {
                 locale={locale.getLocale()}
                 defaultLocale={LOCALES.ENGLISH}
             >
-                <MainSlider />
                 <div className={"center_container"}>
                     <div className={"container"}>
                         <Breadcrumbs />
@@ -96,17 +95,17 @@ const NewServices = () => {
                                 <FormattedMessage id={"see_also"} />
                             </div>
                             <div className={"mobile__button"}>
-                                <a href={"/sectors"}>
+                                <NavLink to={"/sectors"}>
                                     {" "}
                                     <FormattedMessage id={"sectors"} />
-                                </a>
+                                </NavLink>
                             </div>
                             <div className={"mobile__button"}>
-                                <a href={"/education"}>
+                                <NavLink to={"/education"}>
                                     <FormattedMessage
                                         id={"upcoming_related_courses"}
                                     />
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
                     ) : (
@@ -119,7 +118,7 @@ const NewServices = () => {
                                     <div className={"image_service_container"}>
                                         {image.map((value, key) => (
                                             <div key={key}>
-                                                <a href={value.link}>
+                                                <NavLink to={value.link}>
                                                     <div
                                                         className={
                                                             "inner_image"
@@ -136,7 +135,7 @@ const NewServices = () => {
                                                             {value.text}
                                                         </span>
                                                     </div>
-                                                </a>
+                                                </NavLink>
                                             </div>
                                         ))}
                                     </div>
@@ -167,11 +166,11 @@ const NewServices = () => {
                                         ]}
                                     ></EducationTable>
                                     <div className="courses__item__btn">
-                                        <a href="/education">
+                                        <NavLink to="/education">
                                             <FormattedMessage
                                                 id={"all_course"}
                                             />
-                                        </a>
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>

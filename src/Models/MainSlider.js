@@ -31,7 +31,7 @@ const MainSlider = observer(() => {
                 [LOCALES.UZBEK]: {
                     title: "Tajriba Cheksiz Taxminlar",
                     text: "Sifatli xizmatlar xodimlarimiz va hamkorlarimiz tajribasi natijasidir",
-                    moreinfo:"more info"
+                    moreinfo:"батафсил маълумот"
                 },
 
             },
@@ -54,7 +54,7 @@ const MainSlider = observer(() => {
                 [LOCALES.UZBEK]: {
                     title: "PCC bilan o'zingizni rivojlantiring",
                     text: "Sizga muhandislik sohasida professional bo'lish imkoniyatini beradigan o'quv dasturlari",
-                    moreinfo:"more info"
+                    moreinfo:"батафсил маълумот"
                 },
             },
             url:"/education",
@@ -76,7 +76,7 @@ const MainSlider = observer(() => {
                 [LOCALES.UZBEK]: {
                     title: "Dizayn-Konsalting-Nazorat",
                     text: "Kompaniya O'zbekistonda loyihalarni boshqarish bo'yicha konsalting xizmatlarini ko'rsatadi",
-                    moreinfo:"more info"
+                    moreinfo:"батафсил маълумот"
                 },
             },
             url:"/services",

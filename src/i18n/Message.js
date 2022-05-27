@@ -2,38 +2,18 @@ import { LOCALES } from "./Locale";
 
 export const messages = {
     [LOCALES.ENGLISH]: {
+        open_position:"OPEN POSITION",
         about_title: `Pro consult company`,
-        about_text: `Pro Consult Company is a multi-industrial engineering, management and development
-                            consultancy, who
-                            delivers verified and tailored solutions for the clients and partners.
-                            Using extensive experience and practice of its experts PCC provides consultancy and
-                            engineering
-                            services across the project lifecycle: initiation, feasibility studies and researches,
-                            design,
-                            procurement, construction, comissioning, operation and maintenance.
-                            PCC prioritizes quality, efficiency and innovativeness, integrates national knowledge with
-                            international experience and is committed to deliver fit for purpose and sustainable
-                            solutions.
-                            PCC does not set competition to show its superiority, instead PCC cooperates with the
-                            leaders of the
-                            piece of area when it is wise to provide the best result for customers and clients and
-                            recieve true
-                            recognition.`,
+        about_text:"Pro Consult Company is a multi-industrial engineering, management and development consultancy, who delivers verified and tailored solutions for the clients and partners. Using extensive experience and practice of its experts PCC provides consultancy and engineering services across the project lifecycle: initiation, feasibility studies and researches, design, procurement, construction, commissioning, operation and maintenance. PCC prioritizes quality, efficiency and innovativeness, integrates national knowledge with international experience and is committed to deliver fit for purpose and sustainable solutions. PCC does not set competition to show its superiority, instead PCC cooperates with the leaders of the piece of area when it is wise to provide the best result for customers and clients and receive true recognition.",
         more_info: `More info`,
         about_title_sphera: `Core areas`,
         about_item_title_services: `Services`,
-        about_item_text_services: `The company focuses on providing engineering and consulting services to improve the energy efficiency of industrial enterprises and buildings, the development of innovative products`,
+        about_item_text_services: `PCC professionally delivers full scope of engineering and consulting services, including but not limited to initiation, plan, design, procurement, delivery and commission of the project.`,
         about_item_title_sectors: `Sectors`,
-        about_item_text_sectors: `The company provides services in various industries, such as energy, civil
-                                    engineering,
-                                    heavy and light industry, as well as services related to the implementation of
-                                    investment
-                                    projects.`,
+        about_item_text_sectors: `Our expertise cover all main sectors of economy, including but not limited to Water and Environment, Energy and Resources, Transport and Telecommunication. `,
         about_item_title_education: `Education`,
-        about_item_text_education: `Courses to improve the qualifications of engineers and also individual consultants.
-                                    Pro consult company is a developer of author's training courses and periodically
-                                    conducts
-                                    seminars...`,
+        about_item_text_education: `Each specialist must have an opportunity to get advanced studies and to develop further skills and experience.
+"Centre for Education of Engineers and Consultants" (CEEC) delivers holistic and advanced knowledge and is a platform where young specialists and specialists with background can expand further their knowledge, skills and experience.`,
         news_title: `Current news`,
         all_news: "Read all news",
         capabilities_title: `Our capabilities`,
@@ -42,135 +22,122 @@ export const messages = {
         capabilities_item_title_procurement: "Procurement",
         capabilities_item_title_project_supervision: "Project supervision",
         capabilities_item_title_education: "Education",
-        capabilities_item_text_plan: `Our company provides services for the design and development stage of feasibility
-                                studies,
-                                including the development of feasibility studies, business plans and more`,
-        capabilities_item_text_consulting: ` We advise on the implementation of investment projects, from the development of a
-                                feasibility study to the signing of the act of commissioning
-              `,
-        capabilities_item_text_procurement: `                 Our company provides services for the development of tender documents and universal
-                                provisions of the company for procurement procedures
-              `,
-        capabilities_item_text_project_supervision: `We provide supervision of the project both during the construction period and for the
-                                entire
-                                period of the project
-               `,
-        capabilities_item_text_education: `Our company provides quality training courses for engineers, recognized by leading
-                                companies
-                                and ministries`,
+        capabilities_item_text_plan: `We will support at any stage of project implementation from the very beginning with plan and design of the project, and further.  `,
+        capabilities_item_text_consulting: ` We provide consultancy throughout whole project implementation stages, from feasibility study development to project commissioning.  `,
+        capabilities_item_text_procurement: `We may offer you our procurement advisory services on a turn-key basis, including developmnet of tender documents and entity provisions for procurement procedures. `,
+        capabilities_item_text_project_supervision: `Project supervision services can be provided for a particular period, as well as during whole construction period and more for the entire project implementation period.`,
+        capabilities_item_text_education: `CEEC delivers holistic and advanced knowledge which will well work for your career development and to overcome new challenges. CEEC provides quality training courses for engineers and consultants, recognized by leading companies and ministries. `,
         read_more_capabilities: `Read more about our capabilities`,
         our_clients: `Our Clients`,
         our_partners: `Our Partners`,
         testimonials_title: `What Our Clients Say`,
+        contact_us:"contact us",
+        date:"Date",
+        place:"Place",
+        price:"Price",
+        pm:"Program manager",
+        rd:"Required documents",
+        license:"License" ,
+        other_courses:"OTHER COURSES",
+        about_the_event:"About the event",
+        teachers:"Teachers",
+        feedbacks:"Feedbacks",
+        title_ed:"Trainings, seminars, courses of the",
+        course_name:"Course name",
+        teachers_title:"COURSE TEACHERS/SPEAKERS",
     },
     [LOCALES.RUSSIAN]: {
+        open_position:"ДОСТУРНЫЕ ВАКАНСИИ",
         about_title: `Pro consult company`,
-        about_text: `Pro consult company - многопрофильная консалтинговая компания в области инжиниринга, управления и развития, предоставляющая надежные и индивидуальные решения для своих клиентов и партнеров. Используя обширный опыт и практику своих экспертов, PCC предоставляет консультационные и инжиниринговые услуги в период всего жизненного цикла проекта включая: инициирование проекта, в том числе подготовку технико-экономического обоснования и исследования рынков, проектирование, организацию процедур закупа, строительство, ввода в эксплуатацию, а также эксплуатацию и техническое обслуживание. 
+        about_text:`Pro consult company - многопрофильная консалтинговая компания в области инжиниринга, управления и развития, предоставляющая надежные и индивидуальные решения для своих клиентов и партнеров. Используя обширный опыт и практику своих экспертов, PCC предоставляет консультационные и инжиниринговые услуги в период всего жизненного цикла проекта включая: инициирование проекта, в том числе подготовку технико-экономического обоснования и исследования рынков, проектирование, организацию процедур закупа, строительство, ввода в эксплуатацию, а также эксплуатацию и техническое обслуживание. 
 PCC ставит приоритетом качество, эффективность и инновационность при решении поставленных задач, объединяя национальные знания с международным опытом направленных на предоставление устойчивых решений соответствующих целям. 
 Поэтому PCC не стремится конкурировать с компаниями, чтобы показать свое превосходство, вместо этого PCC осуществляет сотрудничество с компаниями -лидерами в своей области, на взаимовыгодных условиях, нацеленных на обеспечение наилучших результатов решения поставленных клиентами и заказчиками задач.`,
         more_info: `Узнать больше`,
-        about_title_sphera: `Основные области`,
+        about_title_sphera: `Основные сферы`,
         about_item_title_services: `Услуги`,
-        about_item_text_services: `Мы предоставляем услуги в таких областях, как управление национальными и
-международными проектами в Узбекистане, включая помощь в составлении контрактов,
-организация закупок...`,
+        about_item_text_services: `PCC профессионально предоставляет полный спектр инжиниринговых и консультационных услуг, включая, но не ограничиваясь инициированием, планированием, проектированием, закупом, доставкой и вводом в эксплуатацию проекта.`,
         about_item_title_sectors: `Секторы`,
-        about_item_text_sectors: `Компания предоставляет услуги в различных отраслях промышленности, таких как энергетика, гражданское
-машиностроение,
-тяжелая и легкая промышленность, а также услуги, связанные с реализацией
-инвестиционных
-проекты.`,
+        about_item_text_sectors: `Наш опыт охватывает все основные отрасли экономики, включая но не ограничиваясь такими как водоснабжение и охрана окружающей среды, энергетика и ресурсы, транспорт и телекоммуникации.`,
         about_item_title_education: `Образование`,
-        about_item_text_education: `Курсы повышения квалификации инженеров, а также индивидуальных консультантов.
-Pro consult company является разработчиком авторских обучающих курсов и периодически
-проводит
-семинары...`,
+        about_item_text_education: `Каждый специалист должен иметь возможность получить современное обучение и развить дополнительно навыки и опыт.
+"Центр обучения инженеров и консультантов" (CEEC) предоставляет объемное и передовое обучение и является платформой где молодые специалисты и специалисты с опытом работы смогут дополнительно расширить свои знания, навыки и опыт.`,
         news_title: `Текущие новости`,
         all_news: "Все новости",
         capabilities_title: `Наши возможности`,
-        capabilities_item_title_plan: "План и дизайн",
-        capabilities_item_title_consulting: "Консультирование",
-        capabilities_item_title_procurement: "Закупка",
-        capabilities_item_title_project_supervision: "Надзор за проектом",
+        capabilities_item_title_plan: "План&Проект",
+        capabilities_item_title_consulting: "Консалтинг",
+        capabilities_item_title_procurement: "Закуп",
+        capabilities_item_title_project_supervision: "Управление проектом",
         capabilities_item_title_education: "Образование",
-        capabilities_item_text_plan: `Наша компания предоставляет услуги на стадии проектирования и разработки технико-экономического обоснования
-исследования,
-включая разработку технико-экономических обоснований, бизнес-планов и многое другое`,
-        capabilities_item_text_consulting: ` Мы консультируем по вопросам реализации инвестиционных проектов, начиная с разработки
-технико-экономическое обоснование до подписания акта ввода в эксплуатацию`,
-        capabilities_item_text_procurement: `Наша компания предоставляет услуги по разработке тендерной документации и универсальных
-положения компании о процедурах закупок`,
-        capabilities_item_text_project_supervision: `Мы осуществляем надзор за проектом как в период строительства, так и в течение
-всего
-период реализации проекта`,
-        capabilities_item_text_education: `Наша компания предоставляет качественные учебные курсы для инженеров, признанные ведущими
-компании
-и министерства`,
-        read_more_capabilities: `Узнайте больше о наших возможностях`,
+        capabilities_item_text_plan: `Мы окажем поддержку на любом этапе реализации проекта, начиная с самого начала, с плана и дизайна проекта, и далее.`,
+        capabilities_item_text_consulting: `Мы предоставляем консультации на всех этапах реализации проекта, от разработки технико-экономического обоснования до ввода проекта в эксплуатацию.`,
+        capabilities_item_text_procurement: `Мы можем предложить вам наши консультационные услуги по закупкам "под ключ", включая разработку тендерной документации и положений о закупочных процедурах.`,
+        capabilities_item_text_project_supervision: `Услуги по управлению проектом могут быть предоставлены как на определенный период, так и на весь период строительства и даже на весь период реализации проекта.`,
+        capabilities_item_text_education: `CEEC предоставляет целостные и передовые знания, которые будут хорошо работать на развитие вашей карьеры и преодоление новых вызовов. CEEC предоставляет качественные учебные курсы для инженеров и консультантов, признанные ведущими компаниями и министерствами. `,
+        read_more_capabilities: `Читать больше о наших возможностях`,
         our_clients: `Наши клиенты`,
         our_partners: `Наши партнёры`,
         testimonials_title: `Что говорят наши клиенты`,
+        contact_us:"связаться с нами",
+        date:"Дата",
+        place:"Место",
+        price:"Цена",
+        pm:"Программный менеджер",
+        rd:"Требуемые документы",
+        license:"Лицензий" ,
+        other_courses:"Другие курсы",
+        about_the_event:"О событии",
+        teachers:"Учителя",
+        feedbacks:"Отзывы",
+        title_ed:"Тренинги, семинары, курсы по",
+        course_name:"Название курса",
+        teachers_title:"ПРЕПОДАВАТЕЛИ/ДОКЛАДЧИКИ КУРСА",
     },
     [LOCALES.UZBEK]: {
+        open_position:"ОЧИҚ ПОЗИЦИЯ",
         about_title: `Pro consult company`,
-        about_text: `Pro Consult Company is a multi-industrial engineering, management and development
-                            consultancy, who
-                            delivers verified and tailored solutions for the clients and partners.
-                            Using extensive experience and practice of its experts PCC provides consultancy and
-                            engineering
-                            services across the project lifecycle: initiation, feasibility studies and researches,
-                            design,
-                            procurement, construction, comissioning, operation and maintenance.
-                            PCC prioritizes quality, efficiency and innovativeness, integrates national knowledge with
-                            international experience and is committed to deliver fit for purpose and sustainable
-                            solutions.
-                            PCC does not set competition to show its superiority, instead PCC cooperates with the
-                            leaders of the
-                            piece of area when it is wise to provide the best result for customers and clients and
-                            recieve true
-                            recognition.`,
-        more_info: `More info`,
-        about_title_sphera: `Core areas`,
-        about_item_title_services: `Services`,
-        about_item_text_services: `The company focuses on providing engineering and consulting services to improve the energy efficiency of industrial enterprises and buildings, the development of innovative products`,
-        about_item_title_sectors: `Sectors`,
-        about_item_text_sectors: `The company provides services in various industries, such as energy, civil
-                                    engineering,
-                                    heavy and light industry, as well as services related to the implementation of
-                                    investment
-                                    projects.`,
-        about_item_title_education: `Education`,
-        about_item_text_education: `Courses to improve the qualifications of engineers and also individual consultants.
-                                    Pro consult company is a developer of author's training courses and periodically
-                                    conducts
-                                    seminars...`,
-        news_title: `Current news`,
-        all_news: "Read all news",
-        capabilities_title: `Our capabilities`,
-        capabilities_item_title_plan: "Plan & design",
-        capabilities_item_title_consulting: "Consulting",
-        capabilities_item_title_procurement: "Procurement",
-        capabilities_item_title_project_supervision: "Project supervision",
-        capabilities_item_title_education: "Education",
-        capabilities_item_text_plan: `Our company provides services for the design and development stage of feasibility
-                                studies,
-                                including the development of feasibility studies, business plans and more`,
-        capabilities_item_text_consulting: ` We advise on the implementation of investment projects, from the development of a
-                                feasibility study to the signing of the act of commissioning
-              `,
-        capabilities_item_text_procurement: `                 Our company provides services for the development of tender documents and universal
-                                provisions of the company for procurement procedures
-              `,
-        capabilities_item_text_project_supervision: `We provide supervision of the project both during the construction period and for the
-                                entire
-                                period of the project
-               `,
-        capabilities_item_text_education: `Our company provides quality training courses for engineers, recognized by leading
-                                companies
-                                and ministries`,
-        read_more_capabilities: `Read more about our capabilities`,
-        our_clients: `Our Clients`,
-        our_partners: `Our Partners`,
-        testimonials_title: `What Our Clients Say`,
+        about_text:`Pro consult company ўз мижозлари ва шериклари учун ишончли ва индивидуал ечимларни тақдим этадиган муҳандислик, менежмент ва ривожланиш соҳасидаги кўп тармоқли консалтинг компанияси. Ўз мутахассисларининг катта тажрибаси ва амалиётидан фойдаланган ҳолда, PCC лойиҳанинг бутун умри давомида консалтинг ва муҳандислик, шу жумладан: лойиҳани бошлаш, шу жумладан техник-иқтисодий асосларни тайёрлаш ва бозорни ўрганиш, лойиҳалаш, харид қилиш тартибларини ташкил этиш, қурилиш, ишга тушириш, шунингдек фойдаланиш ва техник хизмат кўрсатиш хизматларини тақдим этади.
+PCC масалани ҳал қилишда сифат, самарадорлик ва инновационликни устун қўйган ҳолда, мақсадларга жавоб берадиган барқарор ечимларни тақдим этишга қаратилган миллий билимларни халқаро тажриба билан бирлаштиради.
+Шунинг учун PCC ўзининг устунлигини кўрсатиш учун компаниялар билан рақобатлашишга интилмайди, аксинча PCC мижозлар томонидан қўйилган вазифаларни ҳал қилишнинг энг яхши натижаларини таъминлашга қаратилган ўзаро манфаатли шартларда соҳадаги етакчи компаниялар билан ҳамкорлик қилади.`,
+        more_info: `Қўшимча маълумот`,
+        about_title_sphera: `Асосий соҳалар`,
+        about_item_title_services: `Хизматлар`,
+        about_item_text_services: `PCC муҳандислик ва консалтинг шу жумладан, лекин бу билан чекланмаган ҳолда режалаштириш, лойиҳалаштириш, харидлар, етказиб бериш ва ишга тушириш каби хизматларнинг кенг кўламини профессионал даражада кўрсатади.`,
+        about_item_title_sectors: `Секторлар`,
+        about_item_text_sectors: `Бизнинг тажрибамиз сув таъминоти ва атроф-муҳитни муҳофаза қилиш, энергетика ва ресурслар, транспорт ва телекоммуникация кабилар, лекин булар билан чегараланмай иқтисодиётининг барча асосий тармоқларини қамраб олади.`,
+        about_item_title_education: `Таълим олиш`,
+        about_item_text_education: `Ҳар бир мутахассис илғор билимларни олиш ва қўшимча кўникма ва тажрибани ривожлантириш имкониятига эга бўлиши керак.
+"Муҳандислар ва консультантлар таълим Маркази" (CEEC) ҳажмли ва илғор таълим бериш билан бирга, ёш мутахассислар ва иш тажрибасига эга мутахассислар учун ўз билимларини, кўникмаларини ва тажрибаларини янада кенгайтиришлари учун хизмат қиладиган платформадир.`,
+        news_title: `Ҳозирги янгиликлар`,
+        all_news: "Барча янгиликлар",
+        capabilities_title: `Бизнинг имкониятларимиз`,
+        capabilities_item_title_plan: "Режа&Лойиҳа",
+        capabilities_item_title_consulting: "Консалтинг",
+        capabilities_item_title_procurement: "Харид",
+        capabilities_item_title_project_supervision: "Лойиҳани бошқариш",
+        capabilities_item_title_education: "Таълим",
+        capabilities_item_text_plan: `Биз лойиҳани амалга оширишда исталган босқичида, яъни бошиданоқ, режалаштириш ва лойиҳалаштиршда, ҳамда ундан кейин бўлган босқичларда хизмат кўрсатиб сизни қўллаб-қувватлаймиз.`,
+        capabilities_item_text_consulting: `Биз лойиҳани амалга оширишнинг барча босқичларида, техник-иқтисодий асосни ишлаб чиқишдан бошлаб лойиҳани ишга туширишгача бўлган консультация хизматларини кўрсатамиза.`,
+        capabilities_item_text_procurement: `Биз сизга харидларни қилиш бўйича консалтинг хизматимизни тўлиқ (под-ключ) кўрсатишни, шу жумладан тендер ҳужжатларни ва харидлар тартиби тўғрисидаги низомларни ишлаб чиқиш хизматларимизни таклиф қилишимиз мумкин.`,
+        capabilities_item_text_project_supervision: `Лойиҳани бошқариш хизмати маълум бир давр учун, ҳамда қурилишнинг бутун даври, ҳатто лойиҳани амалга оширишнинг бутун даври учун ҳам тақдим этилади.`,
+        capabilities_item_text_education: `CЕЕC мавқеингизни ошишига, ҳамда муаммоларни ечишингизда сиз учун маъқул бўладиган ҳажмли ва замонавий таълим беради. CЕЕC етакчи компаниялар ва вазирликлар томонидан тан олинган муҳандислар ва консультантлар учун сифатли ўқув курсларини тақдим этади.`,
+        read_more_capabilities: `Кўпроқ бизнинг имкониятларимиз ҳақида`,
+        our_clients: `Бизнинг мижозларимиз`,
+        our_partners: `Бизнинг шерикларимиз`,
+        contact_us:"контактлар",
+        testimonials_title: `Бизнинг мижозларимиз нима дейишади`,
+        date:"Сана",
+        place:"Жой",
+        price:"Нархи",
+        pm:"Дастур бошқарувчиси",
+        rd:"Керакли ҳужжатлар",
+        license:"Лицензия" ,
+        other_courses:"БОШҚА КУРСЛАР",
+        about_the_event:"Тадбир ҳақида",
+        teachers:"Ўқитувчилар",
+        feedbacks:"Хабарлар",
+        title_ed:"Тренинглар, семинарлар, курслар",
+        course_name:"Курс номи",
+        teachers_title:"КУРС ЎҚИТУВЧИЛАРИ / МАЪРУЗАЧИЛАР",
     },
 };

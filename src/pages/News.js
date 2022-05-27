@@ -13,7 +13,6 @@ const News = observer((props) => {
     const { locale } = useContext(Context);
     return (
         <div>
-            <MainSlider />
             <div className={"center_container"}>
                 <div className={"container"}>
                     <Breadcrumbs />

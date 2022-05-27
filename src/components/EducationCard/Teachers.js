@@ -1,23 +1,22 @@
 import React from 'react';
+import { useOutletContext } from "react-router";
+import { FormattedMessage } from "react-intl";
 
 const Teachers = () => {
+    const [value,locale] = useOutletContext()
+    if(value === null)
+        return <></>
     return (
         <div className={"container"}>
-            <h5 className={"educationcard__teacher__title"}>Course Teachers/speakers</h5>
+            <h5 className={"educationcard__teacher__title"}><FormattedMessage id={"teachers_title"}/></h5>
             <div className={"educationcard__teacher"}>
 
-                {['', '', ''].map(((value, index) =>
-                    <div className={"educationcard__teacher__slide"}>
-                    <img src={"/image/ProgramMeneger.png"}/>
+                {['teacherFirst', 'teacherSecond', 'teacherThird'].map(((teacher, index) =>
+                    <div className={"educationcard__teacher__slide"} id={index}>
+                    <img src={value[teacher].image}/>
                     <div >
-                        <h5 >Ахмедова Гузаль Рустамовна</h5>
-                        <p >Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        <h5 >{value[teacher].name[locale.getLocale()]}</h5>
+                        <p >{value[teacher].description[locale.getLocale()]}
                         </p>
                     </div>
                 </div>))}

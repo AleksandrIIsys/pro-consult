@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import { LOCALES } from "../../i18n/Locale";
 import { useDropzone } from "react-dropzone";
 import { Form } from "react-bootstrap";
+import DropImage from "../DropImage";
 
 const CreatePanel = (props) => {
     const [newPartner, setNewPartner] = useState(props.data);
@@ -61,25 +62,7 @@ const CreatePanel = (props) => {
         <div>
             <div className={"admin_create_news"}>
                 <div>
-                    <div style={{ cursor: "pointer" }} {...getRootProps()}>
-                        <input {...getInputProps()} />
-
-                        {haveIMG ? (
-                            <img
-                                src={url}
-                                className={"admin_create_news-image"}
-                            />
-                        ) : isDragActive ? (
-                            <p className={"admin_create_news-image"}>
-                                Drop the files here ...
-                            </p>
-                        ) : (
-                            <p className={"admin_create_news-image"}>
-                                Drag 'n' drop some files here, or click to
-                                select files...
-                            </p>
-                        )}
-                    </div>
+                    <DropImage image={props.data.image} setImage={setImage}/>
                     <div className={"topmenu_createmenu"}>
                         <div
                             className="lang"

@@ -19,10 +19,7 @@ const Education = () => {
                 messages={messageEducation[locale.getLocale()]}
                 locale={locale.getLocale()}
                 defaultLocale={LOCALES.ENGLISH}
-            >
-                {" "}
-                <MainSlider></MainSlider>
-                <div className={"center_container"}>
+            >                <div className={"center_container"}>
                     <div className={"container"}>
                         <Breadcrumbs />
                         <div className={"about__title"}>
@@ -52,23 +49,9 @@ const Education = () => {
                                 </span>
                             </div>
                         </div>
-                        <div style={{ marginTop: "20px" }}>
+                        <div style={{ marginTop: "20px"}}>
                             <EducationTable
                                 row={5}
-                                data={[
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                ]}
                             />
                         </div>
                     </div>

@@ -65,7 +65,6 @@ const ModalWindow = observer(({ show, handleClose, type, defaultData,isLoad,setI
             case "create":
                 fd.append("data", JSON.stringify(obj));
                 createNews(fd).then((res) => {
-                    console.log(2);
                     setIsLoad(false);
                     event.target.disabled = false;
                 });

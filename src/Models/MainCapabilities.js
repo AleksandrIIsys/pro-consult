@@ -1,5 +1,6 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
+import { NavLink } from "react-router-dom";
 
 const MainCapabilities = () => {
     return (
@@ -10,7 +11,7 @@ const MainCapabilities = () => {
                 </div>
                 <div className="capabilities__items">
                     <div className="capabilities__item">
-                        <a href={"/services/plan"}>
+                        <NavLink to={"/services/plan"}>
                             <div className="capabilities__item__title">
                                 <FormattedMessage
                                     id={"capabilities_item_title_plan"}
@@ -27,10 +28,10 @@ const MainCapabilities = () => {
                                     id={"capabilities_item_text_plan"}
                                 />
                             </div>
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="capabilities__item">
-                        <a href={"/about-us"}>
+                        <NavLink to={"/about-us"}>
                             <div className="capabilities__item__title">
                                 <FormattedMessage
                                     id={"capabilities_item_title_consulting"}
@@ -47,10 +48,10 @@ const MainCapabilities = () => {
                                     id={"capabilities_item_text_consulting"}
                                 />
                             </div>
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="capabilities__item">
-                        <a href={"/services/procurement"}>
+                        <NavLink to={"/services/procurement"}>
                             <div className="capabilities__item__title">
                                 <FormattedMessage
                                     id={"capabilities_item_title_procurement"}
@@ -67,10 +68,10 @@ const MainCapabilities = () => {
                                     id={"capabilities_item_text_procurement"}
                                 />
                             </div>
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="capabilities__item">
-                        <a href={"/about-us"}>
+                        <NavLink to={"/about-us"}>
                             <div className="capabilities__item__title">
                                 <FormattedMessage
                                     id={
@@ -91,10 +92,10 @@ const MainCapabilities = () => {
                                     }
                                 />{" "}
                             </div>
-                        </a>
+                        </NavLink>
                     </div>
                     <div className="capabilities__item">
-                        <a href={"/education"}>
+                        <NavLink to={"/education"}>
                             <div className="capabilities__item__title">
                                 <FormattedMessage
                                     id={"capabilities_item_title_education"}
@@ -111,13 +112,13 @@ const MainCapabilities = () => {
                                     id={"capabilities_item_text_education"}
                                 />{" "}
                             </div>
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
                 <div className=" capabilities__item__btn">
-                    <a href="/services">
+                    <NavLink to="/services">
                         <FormattedMessage id={"read_more_capabilities"} />
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         </div>

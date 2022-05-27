@@ -5,21 +5,27 @@ import {FormattedMessage} from "react-intl";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Mousewheel, Navigation, Pagination} from "swiper";
 import {useMediaQuery} from "react-responsive";
+import { NavLink } from "react-router-dom";
 
 const MainNews = observer(() => {
     const {news,locale} = useContext(Context)
     const isMobile = useMediaQuery({ query: "(max-width:480px)" });
-    const isTablet = useMediaQuery({ query: "(max-width:1080px)" });
-
+    const isTablet = useMediaQuery({query:"(max-width:720px)"})
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + ' bullet_style">'+"</span>";
+        },
+    };
     return (
         <div className="news">
             {
-                news.getNews().length > 3 ?
+                news.getNews().length > 1 ?
             <div className="container">
 
                 {isMobile ? <div className="news__title">
                         <FormattedMessage id={"news_title"}/>
-                        <a href={"/news"}><FormattedMessage id={"all_news"}/></a>
+                        <NavLink to={"/news"}><FormattedMessage id={"all_news"}/></NavLink>
                     </div>
                     :
                     <div className="news__title">
@@ -28,13 +34,13 @@ const MainNews = observer(() => {
 
                 <Swiper
                     modules={[Navigation, Pagination, Mousewheel]}
-                    pagination={{clickable:true}}
-                    slidesPerView={isMobile ? 1 : isTablet ? 2 : 4}>
-
+                    pagination={pagination}
+                    slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
+                    style={isMobile ? {height:"200px"} : {height:"700px"}}
+                >
                     {
                     news.getNews().map((news_element,key)=>
-                        <SwiperSlide  key={key}>
-                            <div className="news__item">
+                        <SwiperSlide  key={key} className="news__item">
                                 <img src= {news_element.image}  alt=""/>
                                 <div className="news__item__title">
                                     {news_element.title[locale.getLocale()]}
@@ -44,12 +50,11 @@ const MainNews = observer(() => {
                                         <div  dangerouslySetInnerHTML={{__html:news_element.text[locale.getLocale()]}}/>
                                     }
                                 </div>
-                            </div>
                         </SwiperSlide>
                     )}
                 </Swiper>
                 {isMobile ? <></> :
-                    <div className=" news__item__btn"><a href={"/news"}><FormattedMessage id={"all_news"}/></a>
+                    <div className=" news__item__btn"><NavLink to={"/news"}><FormattedMessage id={"all_news"}/></NavLink>
                     </div>
                 }
             </div>

@@ -102,7 +102,7 @@ PCC масалани ҳал қилишда сифат, самарадорлик 
         specialization_table:"Ихтисослик",
         member_status:"Аъзолик статуси",
         partners_table:"Шерик",
-        more_info:"more info",
+        more_info:"батафсил маълумот",
         all_course:"Ҳамма курслар",
 
 

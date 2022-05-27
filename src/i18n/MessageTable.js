@@ -23,14 +23,14 @@ export const messageTable={
         other_news:"Другие новости"
     },
     [LOCALES.UZBEK]:{
-        btn:"apply",
+        btn:"қўллаш",
         enoc:"Курс номини киритинг",
         edoc:"Курс санасини киритинг",
-        btn_news:"read news",
+        btn_news:"янгиликларни ўқинг",
         enon:"Курс номини янгиликлар",
         edon:"Курс санасини янгиликлар",
-        company_news:"Company news",
-        other_news:"other news"
+        company_news:"Янгиликлар",
+        other_news:"бошқа янгиликлар"
     },
 
 }

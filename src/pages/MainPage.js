@@ -10,7 +10,6 @@ import MainTestimonials from "../Models/MainTestimonials";
 const MainPage = () => {
     return (
         <div>
-            <MainSlider></MainSlider>
             <MainAbout></MainAbout>
             <MainNews></MainNews>
             <MainCapabilities></MainCapabilities>

@@ -6,7 +6,6 @@ import TestimonialsTable from "../EditableTable/TestimonialsTable";
 import ModalWindow from "../AdminTestimonials/ModalWindow";
 
 const AdminTestimonials = () => {
-    const { testimonials } = useContext(Context);
     const [lang, setLang] = useState("en-US");
     const columns = [
         { field: "id", fieldName: "#" },

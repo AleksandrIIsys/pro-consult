@@ -230,6 +230,7 @@
 
 .projects__item__btn a {
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -355,6 +356,7 @@
     margin-top: 20px;
     margin-right: 20px;
     text-align: justify;
+    width: 100%;
 }
 
 .careers-text span {
@@ -422,7 +424,6 @@
 
 .educationcard__sidebar {
     float: right;
-    width: 650px;
     color: black;
     background: rgba(21, 51, 126, 0.1);
     padding: 10px;
@@ -451,6 +452,8 @@
 .educationcard__about {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .educationcard__sidebar__btn {

@@ -3,6 +3,7 @@ import { LOCALES } from "../../i18n/Locale";
 import { useDropzone } from "react-dropzone";
 import { Form } from "react-bootstrap";
 import Editor from "../Editor";
+import DropImage from "../DropImage";
 
 const CreatePanel = (props) => {
     const [newNews, setNewNews] = useState(props.data);
@@ -10,31 +11,13 @@ const CreatePanel = (props) => {
         setNewNews(props.data);
     }, [props.data]);
     const [language, setLang] = useState("ru-RU");
-    const [haveIMG, setHAVE] = useState(props.data.image !== "");
-    const [url, setURL] = useState(
-        props.data.image !== "" ? props.data.image : ""
-    );
-    const setImage = props.setImage;
     const [titleEdit, setTitleEdit] = useState("");
     const [textEdit, setTextEdit] = useState(props.data.text[language]);
     const [isChange, setChange] = useState(true);
-    const onDrop = useCallback(async (acceptedFiles) => {
-        setHAVE(true);
-        setImage(acceptedFiles[0]);
-        const filereader = new FileReader();
-        filereader.onload = (file) => {
-            setURL(file.target.result);
-        };
-        filereader.readAsDataURL(acceptedFiles[0]);
-    }, []);
     useEffect(() => {
         setTitleEdit(newNews.title[language]);
         setTextEdit(newNews.text[language]);
     }, [language, isChange]);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({
-        onDrop,
-        accept: "image/jpeg,image/png,image/jpg",
-    });
     useEffect(() => {
         let object = newNews;
         newNews.text[language] = textEdit;
@@ -43,9 +26,9 @@ const CreatePanel = (props) => {
     const handleChangeTitle = (e) => {
         const { name: fieldName, value } = e.target;
         let obj = newNews;
-        obj[fieldName][language] = value;
+        setTitleEdit(value);
+        obj.title[language] = value;
         setNewNews(obj);
-        setChange(!isChange);
     };
     const handleChangeLanguage = (e) => {
         setLang(e.target.value);
@@ -54,25 +37,7 @@ const CreatePanel = (props) => {
         <div>
             <div className={"admin_create_news"}>
                 <div>
-                    <div style={{ cursor: "pointer" }} {...getRootProps()}>
-                        <input {...getInputProps()} />
-
-                        {haveIMG ? (
-                            <img
-                                src={url}
-                                className={"admin_create_news-image"}
-                            />
-                        ) : isDragActive ? (
-                            <p className={"admin_create_news-image"}>
-                                Drop the files here ...
-                            </p>
-                        ) : (
-                            <p className={"admin_create_news-image"}>
-                                Drag 'n' drop some files here, or click to
-                                select files...
-                            </p>
-                        )}
-                    </div>
+                    <DropImage image={props.data.image} setImage={props.setImage}/>
                     <div className={"topmenu_createmenu"}>
                         <div
                             className="lang"

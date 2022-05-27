@@ -8,16 +8,16 @@ import {FormattedMessage, IntlProvider} from "react-intl";
 import DatePicker from "react-datepicker";
 import {messageTable} from "../i18n/MessageTable";
 import {observer} from "mobx-react-lite";
+import { Link, NavLink } from "react-router-dom";
 
 const EducationTable = observer(({ row, data }) => {
     const { locale } = useContext(Context);
     const { courses } = useContext(Context);
-    const [filter, setFilter] = useState(courses);
+    const [filter, setFilter] = useState(courses.getCourse());
     const isMobile = useMediaQuery({ query: "(max-width:480px)" });
     const handleFilterName = (e) => {
-        console.log(courses);
         const { value } = e.target;
-        setFilter(courses.filter((i) => i.name.toLowerCase().includes(value)));
+        setFilter(courses.filter((i) => i.title[locale.getLocale()].toLowerCase().includes(value)));
     };
     const [date, setDate] = useState(null);
 
@@ -56,21 +56,27 @@ const EducationTable = observer(({ row, data }) => {
                                 <SwiperSlide
                                     style={{ height: "40px", width: "320px" }}
                                 >
-                                    <a
-                                        href={`/education/${key}`}
+                                    <NavLink
+                                        to={`/education/${key+1}`}
                                         className={"slide_activity"}
                                     >
                                         <div className={"slide_news"}>
                                             <div id={"date"}>
-                                                {value.date.toLocaleDateString(
-                                                    locale
-                                                )}
+                                                {new Date(value.dateStart).toLocaleDateString(locale.getLocale())}
                                             </div>
-                                            <div>{value.name}</div>
+                                            <div>{value.title[locale.getLocale()]}</div>
                                         </div>
-                                    </a>
+                                    </NavLink>
                                 </SwiperSlide>
                             ))}
+                            {new Array(row - (courses.getCourse().length % row))
+                                .fill("")
+                                .map((value, key) => (
+                                    <SwiperSlide
+                                        className={"slide_news"}
+                                        key={key}
+                                    ></SwiperSlide>
+                                ))}
                         </Swiper>
                     </div>
                 ) : (
@@ -109,24 +115,33 @@ const EducationTable = observer(({ row, data }) => {
                             {filter.map((value, key) => (
                                 <SwiperSlide className={"slide_news"}>
                                     <div id={"number"}>{key + 1}</div>
-                                    <div>{value.name}</div>
+                                    <div>{value.title[locale.getLocale()]}</div>
                                     <div id={"date"}>
-                                        {value.date.toLocaleDateString(locale)}
+                                        {new Date(value.dateStart).toLocaleDateString(locale.getLocale())}
                                     </div>
                                     <div
                                         style={{ padding: "10px 5px 10px 5px" }}
                                     >
-                                        <a
-                                            href={`/education/${key}`}
+                                        <Link
+                                            to={`/education/${value.id}`}
                                             className={"slide_button"}
                                         >
                                             <div>
                                                 <FormattedMessage id={"btn"} />
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                             ))}
+
+                            {new Array(row - (courses.getCourse().length % row))
+                                .fill("")
+                                .map((value, key) => (
+                                    <SwiperSlide
+                                        className={"slide_news"}
+                                        key={key}
+                                    ></SwiperSlide>
+                                ))}
                         </Swiper>
                     </div>
                 )}

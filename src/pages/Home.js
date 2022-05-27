@@ -8,6 +8,7 @@ import { MessageHeader } from "../i18n/MessageHeader";
 import { LOCALES } from "../i18n/Locale";
 import { IntlProvider } from "react-intl";
 import { observer } from "mobx-react-lite";
+import MainSlider from "../Models/MainSlider";
 
 const Home = observer(({ currentLocale, handleChangeLocale }) => {
     const isMobile = useMediaQuery({ query: "(max-width:768px)" });
@@ -30,7 +31,9 @@ const Home = observer(({ currentLocale, handleChangeLocale }) => {
                     />
                 )}
             </IntlProvider>
+
             <div className={"main"}>
+                <MainSlider></MainSlider>
                 <Outlet></Outlet>
             </div>
             <FooterTest />

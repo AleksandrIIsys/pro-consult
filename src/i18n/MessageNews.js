@@ -9,6 +9,6 @@ export const messageNews = {
         company_news:"Новости компании"
     },
     [LOCALES.UZBEK]:{
-        company_news:"Company news"
+        company_news:"Компания янгиликлари"
     },
 }

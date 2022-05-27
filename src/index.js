@@ -8,6 +8,11 @@ import PartnersStore from "./store/partnersStore";
 import ClientsStore from "./store/clientsStore";
 import TestimonialsStore from "./store/testimonialsStore";
 import LocaleStore from "./store/localeStore";
+import CareersStore from "./store/careersStore";
+import CoursesTable from "./components/EditableTable/CoursesTable";
+import CourseStore from "./store/courseStore";
+import ProjectStore from "./store/projectStore";
+import SliderStore from "./store/sliderStore";
 export const Context = createContext(null);
 ReactDOM.render(
 
@@ -16,33 +21,11 @@ ReactDOM.render(
       partners: new PartnersStore(),
       clients: new ClientsStore(),
       testimonials: new TestimonialsStore(),
-      courses: [
-          {name:"Advanced training course The practice of investment projects in the Republic of Uzbekistan.",
-              date: new Date(2022,3,15),
-              irl:""},
-          {name:"Advanced training course The practice of investment projects in the Republic of Uzbekistan.",
-              date:new Date(2022,4,15),
-              irl:""},
-          {name:"aboba training course The practice of investment projects in the Republic of Uzbekistan.",
-              date: new Date(2022,3,15),
-              irl:""},
-          {name:"jorj training course The practice of investment projects in the Republic of Uzbekistan.",
-              date: new Date(2022,3,15),
-              irl:""},
-          {name:"vvdfg training course The practice of investment projects in the Republic of Uzbekistan.",
-              date: new Date(2022,3,15),
-              irl:""},
-          {name:"Advanced training course The practice of investment projects in the Republic of Uzbekistan.",
-              date:new Date(2022,4,15),
-              irl:""},
-          {name:"Advanced training course The practice of investment projects in the Republic of Uzbekistan.",
-              date:new Date(2022,4,15),
-              irl:""},
-          {name:"Advanced training course The practice of investment projects in the Republic of Uzbekistan.",
-              date:new Date(2022,4,15),
-              irl:""},
-      ],
+      courses: new CourseStore(),
       locale: new LocaleStore(),
+      careers: new CareersStore(),
+      project: new ProjectStore(),
+      slider: new SliderStore()
   }}>
     <App />
   </Context.Provider>,

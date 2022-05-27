@@ -59,7 +59,7 @@ export const MessageHeader = {
         about_us:`Биз ҳақимизда`,
         foundation:`Таъсис этилиш`,
         partners:`Шериклар`,
-        membership:`АЪЗОЛИК`,
+        membership:`Аъзолик`,
         initiation:"Ташаббусчилик ва концептуаллаштириш",
         police:`Сиёсат ва стратегиялар`,
         references:`Тавсияномалар`,
